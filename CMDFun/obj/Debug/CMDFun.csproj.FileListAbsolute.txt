@@ -1,0 +1,6 @@
+c:\users\daniel kaas\documents\visual studio 2015\Projects\CMDFun\CMDFun\bin\Debug\CMDFun.exe.config
+c:\users\daniel kaas\documents\visual studio 2015\Projects\CMDFun\CMDFun\bin\Debug\CMDFun.exe
+c:\users\daniel kaas\documents\visual studio 2015\Projects\CMDFun\CMDFun\bin\Debug\CMDFun.pdb
+c:\users\daniel kaas\documents\visual studio 2015\Projects\CMDFun\CMDFun\obj\Debug\CMDFun.csprojResolveAssemblyReference.cache
+c:\users\daniel kaas\documents\visual studio 2015\Projects\CMDFun\CMDFun\obj\Debug\CMDFun.exe
+c:\users\daniel kaas\documents\visual studio 2015\Projects\CMDFun\CMDFun\obj\Debug\CMDFun.pdb
