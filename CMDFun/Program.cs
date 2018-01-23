@@ -212,7 +212,7 @@ namespace CMDFun
         #region Fake Code
         /*
          * 
-        // This is pure bullshit, i have to fo it right. 
+        // This is pure bullshit, i have to do it right. 
         string longWord = "supercalifragilisticexpialidocious";
         if (word3.ToUpper() == "MMM")
         {
