@@ -139,18 +139,12 @@ namespace CMDFun
             throw new NotImplementedException();
         }
 
-
-
-
         private static void WriteLikeThereWasNoTomorrow()
         {
 
             Console.WriteLine("Welcome");
 
             string name = "Daniel";
-
-
-
 
             throw new NotImplementedException();
         }
@@ -253,7 +247,6 @@ namespace CMDFun
             Array.Sort(words, (x, y) => x.Length.CompareTo(y.Length));
 
             return words;
-
         }
 
         private static string Bmi(double weight, double height)
@@ -348,7 +341,6 @@ namespace CMDFun
             return smileys.Count(s => Regex.IsMatch(s, @"^[:;]{1}[~-]{0,1}[\)D]{1}$"));
         }
 
-
         private static string DoubleChar(string abc_string)
         {
 
@@ -367,7 +359,6 @@ namespace CMDFun
 
         }
 
-
         /*
         // Crap is not working.
         public static long[] Digitize(long n)
@@ -381,24 +372,17 @@ namespace CMDFun
 
             Console.WriteLine(tempString);
             
-
             //for (int i = 0; i < n.ToString().Length / 2; i++)
             //{
             //    //long tmp = 
 
             //}
-
-
-
             string result = n.ToString();
             result.Reverse();
 
             Console.WriteLine(result);
 
             //Console.WriteLine(n.ToString().Reverse());
-
-
-
 
             return null;
         }
@@ -424,7 +408,6 @@ namespace CMDFun
             return sheeps.Count(s => s);
         }
 
-
         private static DynamicMethod MultiplyBy2AndAdd1()
         {
             DynamicMethod myDynamaticMethod = new DynamicMethod("DynamicMultiply", typeof(int), new Type[] { typeof(int) });
@@ -440,7 +423,6 @@ namespace CMDFun
 
             return myDynamaticMethod;
         }
-
 
         private static void WelcomeScreen()
         {
