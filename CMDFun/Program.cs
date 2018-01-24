@@ -16,7 +16,13 @@ namespace CMDFun
             WelcomeScreen();
             ShowOptionsOnScreen();
 
+            //Tests();
+            Console.WriteLine(Rot13("test"));
+            Console.WriteLine(Rot13("Test"));
+        }
 
+        private static void Tests()
+        {
             var sheeps = new bool[] { true, false, true, false, true };
             Console.WriteLine(CountSheep(sheeps));
             Console.WriteLine(CountSheep2(sheeps));
@@ -32,11 +38,6 @@ namespace CMDFun
 
             Console.WriteLine(Bmi(weight, height)); ;
 
-
-            //string abc_string = "abc";
-            //DoubleChar(abc_string);
-
-
             ////Digitize(35231);
             //string[] smileys = { ":D", ":~)", ";~D", ":)" };
             //CountSmiley(smileys);
@@ -50,22 +51,11 @@ namespace CMDFun
             {
                 Console.WriteLine(some);
             }
-            //int year = 1582;
-            //EasterSunday(year);
-
-            //long myLongNumbers = 35231;
-            //digitize(myLongNumbers);
-
-
-            //input int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15}
-            //return int[] { 10, -65}.
-
-
 
             int[] input = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15 };
             int[] sometigng = CountPositivesSumNegatives(input);
 
-            Console.WriteLine("resultat:" + something[0] + " " + something[1]);
+            Console.WriteLine("resultat: " + something[0] + " " + something[1]);
 
 
             //WriteLikeThereWasNoTomorrow();
@@ -73,6 +63,50 @@ namespace CMDFun
             int[] intArray2 = new int[] { 4, 5, 6 };
 
             ArrayPlusArray(intArray1, intArray2);
+        }
+
+        /// <summary>
+        /// Performs the ROT13 character rotation.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public static string Rot13(string message)
+        {
+            char[] array = message.ToCharArray();
+            for (int i = 0; i < array.Length; i++)
+            {
+                int number = (int)array[i]; // Converts char to int.
+
+                if (number >= 'a' && number <= 'z')
+                {
+                    if (number > 'm')
+                    {
+                        number -= 13;
+                    }
+                    else
+                    {
+                        number += 13;
+                    }
+                }
+                else if (number >= 'A' && number <= 'Z')
+                {
+                    if (number > 'M')
+                    {
+                        number -= 13;
+                    }
+                    else
+                    {
+                        number += 13;
+                    }
+                }
+                array[i] = (char)number; // Converts number to char.
+            }
+            return new string(array);
+        }
+
+        public static string Rot13ver2(string message)
+        {
+            return new String(message.Select(u => (Char.IsLetter(u)) ? (char)(u + ((Char.ToLower(u) > 'm') ? -13 : 13)) : u).ToArray());
         }
 
         private static int ArrayPlusArray(int[] arr1, int[] arr2)
