@@ -21,6 +21,18 @@ namespace CMDFun
             Console.WriteLine(Rot13("Test"));
         }
 
+
+        // Race(720, 850, 70) => [0, 32, 18]
+        // Race(80, 91, 37) => [3, 21, 49]
+        public static int[] Race(int v1, int v2, int g)
+        {
+            // your code
+
+            // Output: [hour, min, sec]
+            return null;
+        }
+
+
         private static void Tests()
         {
             var sheeps = new bool[] { true, false, true, false, true };
@@ -108,6 +120,7 @@ namespace CMDFun
         {
             return new String(message.Select(u => (Char.IsLetter(u)) ? (char)(u + ((Char.ToLower(u) > 'm') ? -13 : 13)) : u).ToArray());
         }
+
 
         private static int ArrayPlusArray(int[] arr1, int[] arr2)
         {
