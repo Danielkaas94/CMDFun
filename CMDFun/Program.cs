@@ -79,7 +79,7 @@ namespace CMDFun
             //string[] smileys = { ":D", ":~)", ";~D", ":)" };
             //CountSmiley(smileys);
 
-            string word3 = "supercalifragilisticexpialidocious";
+            string longWordFromMerryPoppins = "supercalifragilisticexpialidocious";
             string word4 = "super";
 
             var something = VowelIndices(word4);
