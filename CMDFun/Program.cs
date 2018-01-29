@@ -17,8 +17,34 @@ namespace CMDFun
             ShowOptionsOnScreen();
 
             //Tests();
+            
+            var list = new List<object>() { 1, 2, "a", "b" };
+            var list2 = new List<object>() { 1, 2, "aasf", "1", "123", 123 };
+            GetIntegersFromList2(list2);
+
             Console.WriteLine(Rot13("test"));
             Console.WriteLine(Rot13("Test"));
+        }
+
+        public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)
+        {
+            // Believe 👍
+            List<int> integerList = new List<int>();
+            int content;
+            foreach (var item in listOfItems)
+            {
+                if (item is int)
+                {
+                    int.TryParse(item.ToString(), out content);
+                    integerList.Add(content);
+                }
+            }
+            return integerList;
+        }
+
+        public static IEnumerable<int> GetIntegersFromList2(List<object> listOfItems)
+        {
+            return listOfItems.OfType<int>();
         }
 
 
@@ -31,7 +57,6 @@ namespace CMDFun
             // Output: [hour, min, sec]
             return null;
         }
-
 
         private static void Tests()
         {
