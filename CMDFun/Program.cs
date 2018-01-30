@@ -432,7 +432,7 @@ namespace CMDFun
         }
 
         /*
-        // Crap is not working.
+        // Crap is not working 💩
         public static long[] Digitize(long n)
         {
             Convert.ToString(n);
