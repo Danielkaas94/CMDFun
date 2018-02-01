@@ -17,13 +17,45 @@ namespace CMDFun
             ShowOptionsOnScreen();
 
             //Tests();
-            
-            var list = new List<object>() { 1, 2, "a", "b" };
-            var list2 = new List<object>() { 1, 2, "aasf", "1", "123", 123 };
-            GetIntegersFromList2(list2);
 
-            Console.WriteLine(Rot13("test"));
-            Console.WriteLine(Rot13("Test"));
+            // Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" as a string.
+            AlphabetPosition("The sunset sets at twelve o' clock.");
+        }
+
+        /// <summary>
+        /// Replace every letter with its position in the alphabet.
+        /// If anything in the text isn't a letter, ignore it and don't return it.
+        /// A being 1, B being 2, etc.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static string AlphabetPosition(string text)
+        {
+            int index;
+            StringBuilder sB = new StringBuilder();
+
+            // Replace everything that is not (^) a word character (\w), a digit (\d) or whitespace (\s) with an empty string.
+            string stringWithoutSpecialCharacters = Regex.Replace(text, @"[^\w\d\s]", "");
+            foreach (char item in stringWithoutSpecialCharacters)
+            {
+                index = char.ToUpper(item) - 64;
+                if (index > 0 && index <= 30)
+                {
+                    sB.Append(index);
+                    sB.Append(" ");
+                }
+            }
+            return sB.ToString().TrimEnd();
+        }
+
+        /// <summary>
+        /// Same as AlphabetPosition, just in one line.
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static string AlphabetPosition2(string text)
+        {
+            return string.Join(" ", text.ToLower().Where(char.IsLetter).Select(x => x - 'a' + 1));
         }
 
         public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)
