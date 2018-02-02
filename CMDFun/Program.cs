@@ -23,6 +23,49 @@ namespace CMDFun
         }
 
         /// <summary>
+        /// Check to see if a string has the same amount of 'x's and 'o's.
+        /// The method must return a boolean and be case insensitive.
+        /// </summary>
+        /// <param name="input">The string can contain any char.</param>
+        /// <returns></returns>
+        public static bool XO(string input)
+        {
+            int xCounter = 0;
+            int oCounter = 0;
+
+            foreach (char item in input)
+            {
+                if ("x" == item.ToString().ToLower())
+                {
+                    xCounter++;
+                }
+                else if ("o" == item.ToString().ToLower())
+                {
+                    oCounter++;
+                }
+            }
+            if (xCounter == oCounter)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Same as XO, just in one line.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        public static bool XO2(string input)
+        {
+            return input.ToLower().Count(i => i == 'x') == input.ToLower().Count(i => i == 'o');
+        }
+
+
+        /// <summary>
         /// Replace every letter with its position in the alphabet.
         /// If anything in the text isn't a letter, ignore it and don't return it.
         /// A being 1, B being 2, etc.
