@@ -18,8 +18,55 @@ namespace CMDFun
 
             //Tests();
 
+            ToCamelCase("the-stealth-warrior");
+            ToCamelCase("The_Stealth_Warrior");
+            ToCamelCase2("the-stealth-warrior");
+            ToCamelCase2("The_Stealth_Warrior");
             // Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" as a string.
             AlphabetPosition("The sunset sets at twelve o' clock.");
+        }
+
+
+        /// <summary>
+        /// Converts dash/underscore delimited words into camel casing.
+        /// The first word within the output should be capitalized only if the original word was capitalized.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string ToCamelCase(string str)
+        {
+            StringBuilder sb = new StringBuilder();
+            string tempStr = str;
+            char lastChar = 'a';
+            foreach (char character in str)
+            {
+                if (character == '-' || character == '_')
+                {
+
+                }
+                else
+                {
+                    if (lastChar == '_' || lastChar == '-')
+                    {
+                        sb.Append(character.ToString().ToUpper());
+                    }
+                    else
+                    {
+                        sb.Append(character);
+                    }
+                }
+                lastChar = character;
+            }
+            return sb.ToString();
+        }
+        /// <summary>
+        /// Same as ToCamelCase, just in one line.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string ToCamelCase2(string str)
+        {
+            return Regex.Replace(str, @"[_-](\w)", m => m.Groups[1].Value.ToUpper());
         }
 
         /// <summary>
