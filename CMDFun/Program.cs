@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Reflection;
 using System.Reflection.Emit;
 using System.Text.RegularExpressions;
+using System.Numerics;
 
 namespace CMDFun
 {
@@ -13,8 +14,22 @@ namespace CMDFun
     {
         static void Main(string[] args)
         {
-            WelcomeScreen();
-            ShowOptionsOnScreen();
+            Dictionary<string, string> presetColors = new Dictionary<string, string>();
+            presetColors.Add("something", "somthing");
+            HtmlColorParser htmlColorParser = new HtmlColorParser(presetColors);
+            htmlColorParser.DisplayColor();
+
+
+            CMDTools.WelcomeScreen();
+            CMDTools.ShowOptionsOnScreen();
+            CMDTools CmdTools = new CMDTools();
+
+            //int[] something = MoveZeroes(new int[] { 1, 2, 0, 1, 0, 1, 0, 3, 0, 1 }); // 1, 2, 1, 1, 3, 1, 0, 0, 0, 0}
+
+            //foreach (var item in something)
+            //{
+            //    Console.WriteLine("lol" + item);
+            //}
 
             //Tests();
 
@@ -22,9 +37,74 @@ namespace CMDFun
             ToCamelCase("The_Stealth_Warrior");
             ToCamelCase2("the-stealth-warrior");
             ToCamelCase2("The_Stealth_Warrior");
+            
+            //Console.WriteLine(sumStrings("123", "456")); ; // "579"
+            //Console.WriteLine(sumStrings("712569312664357328695151392", "8100824045303269669937"));
             // Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" as a string.
             AlphabetPosition("The sunset sets at twelve o' clock.");
         }
+
+        /// <summary>
+        /// An algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+        /// </summary>
+        /// <param name="arr">Integer array.</param>
+        /// <returns>Integer array with zeros at the end</returns>
+        public static int[] MoveZeroes(int[] arr)
+        {
+            if (arr == null || arr.Length < 2)
+            {
+                return arr;
+            }
+
+            int swapCount = 0;
+            int max = arr.Length;
+            int lastIndex = arr.Length -1;
+
+            for (int i = lastIndex-1; i > 0; i--)
+            {
+                if (arr[i] == 0 || arr[i] == 0.0)
+                {
+                    arr[i] = arr[lastIndex - swapCount];
+                    arr[lastIndex - swapCount] = 0;
+                    swapCount++;
+                }
+            }
+
+            foreach (var item in arr)
+            {
+                Console.WriteLine("Lal " +  item);
+            }
+
+            return arr;
+        }
+
+
+
+        public static string sumStrings(string a, string b)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append(2+2);
+            Console.WriteLine(sb);
+
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            BigInteger valueA = 0;
+            BigInteger valueB = 0;
+
+            if (a == null || a == "" )
+            {
+
+            }
+
+
+            valueA = ulong.Parse(a);
+            valueB = ulong.Parse(b);
+
+            return (valueA + valueB).ToString();
+        }
+
+
+
 
 
         /// <summary>
@@ -59,6 +139,7 @@ namespace CMDFun
             }
             return sb.ToString();
         }
+
         /// <summary>
         /// Same as ToCamelCase, just in one line.
         /// </summary>
@@ -616,22 +697,6 @@ namespace CMDFun
             ilGenerator.Emit(OpCodes.Ret); // Returns from the current method, pushing a return value (if present) from the callee's evaluation stack onto the caller's evaluation stack.
 
             return myDynamaticMethod;
-        }
-
-        private static void WelcomeScreen()
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Welcome to CMDFun version 0.1\n##############################\n");
-        }
-
-        private static void ShowOptionsOnScreen()
-        {
-            Console.WriteLine("We have some options to you:");
-            Console.WriteLine("1) - Dir");
-            Console.WriteLine("2) - Get IP adresse");
-            Console.WriteLine("3) - Get list of known networks");
-            Console.WriteLine("4) - Get code from specific known network");
-            Console.WriteLine("0) - Close the application");
         }
     }
 }
