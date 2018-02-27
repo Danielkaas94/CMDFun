@@ -24,15 +24,6 @@ namespace CMDFun
 
             Console.ReadLine();
 
-            ToCamelCase("the-stealth-warrior");
-            ToCamelCase("The_Stealth_Warrior");
-            ToCamelCase2("the-stealth-warrior");
-            ToCamelCase2("The_Stealth_Warrior");
-            
-            //Console.WriteLine(sumStrings("123", "456")); ; // "579"
-            //Console.WriteLine(sumStrings("712569312664357328695151392", "8100824045303269669937"));
-            // Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" as a string.
-            AlphabetPosition("The sunset sets at twelve o' clock.");
         }
 
         /// <summary>
@@ -193,6 +184,8 @@ namespace CMDFun
         /// <returns></returns>
         public static string AlphabetPosition(string text)
         {
+            // "The sunset sets at twelve o' clock." => "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
+
             int index;
             StringBuilder sB = new StringBuilder();
 
@@ -288,8 +281,6 @@ namespace CMDFun
 
             Console.WriteLine("resultat: " + something[0] + " " + something[1]);
 
-
-            //WriteLikeThereWasNoTomorrow();
             int[] intArray1 = new int[] { 1, 2, 3 };
             int[] intArray2 = new int[] { 4, 5, 6 };
 
@@ -400,18 +391,8 @@ namespace CMDFun
             return new int[2] { positiveCounter, negativeSum };
         }
 
-        private static long[] digitize(long myLongNumbers)
+        private static long[] Digitize(long myLongNumbers)
         {
-            throw new NotImplementedException();
-        }
-
-        private static void WriteLikeThereWasNoTomorrow()
-        {
-
-            Console.WriteLine("Welcome");
-
-            string name = "Daniel";
-
             throw new NotImplementedException();
         }
 

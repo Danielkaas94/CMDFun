@@ -22,6 +22,7 @@ namespace CMDFun
         public CMDTools()
         {
             WelcomeScreen();
+            ShowOptionsOnScreen();
             ChooseOption();
         }
 
@@ -70,7 +71,7 @@ namespace CMDFun
             Console.WriteLine("0) - Close the application");
         }
 
-        private void ChooseOption()
+        public void ChooseOption()
         {
             int numberOption;
             string strOptionInput = Console.ReadLine();
@@ -85,7 +86,12 @@ namespace CMDFun
                     case 1:
                         Dir();
                         break;
-
+                    case 3:
+                        GetKnownNetWorks();
+                        break;
+                    case 6:
+                        ShowTree();
+                        break;
                     default:
                         Console.WriteLine("Default Case - Indtast et brugbart tal");
                         break;
@@ -97,6 +103,17 @@ namespace CMDFun
             }
 
 
+        }
+
+        private void ShowTree()
+        {
+            ExecuteCMDCommand("Tree");
+        }
+
+        private void GetKnownNetWorks()
+        {
+            //netsh wlan show networks
+            ExecuteCMDCommand("netsh wlan show networks");
         }
 
         private void ColoredMessage(string input, ConsoleColor messageColor = ConsoleColor.Red)
