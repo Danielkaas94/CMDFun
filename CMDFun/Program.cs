@@ -20,9 +20,11 @@ namespace CMDFun
             htmlColorParser.DisplayColor();
 
 
-            CMDTools.WelcomeScreen();
-            CMDTools.ShowOptionsOnScreen();
             CMDTools CmdTools = new CMDTools();
+            //CmdTools.Ping();
+            CmdTools.Dir();
+            CmdTools.Ping();
+
 
             //int[] something = MoveZeroes(new int[] { 1, 2, 0, 1, 0, 1, 0, 3, 0, 1 }); // 1, 2, 1, 1, 3, 1, 0, 0, 0, 0}
 
