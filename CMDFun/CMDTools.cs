@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 //using System.Diagnostics;
@@ -55,6 +56,7 @@ namespace CMDFun
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Welcome to CMDFun version 0.1\n##############################\n");
+            Console.ResetColor();
         }
 
         public void ShowOptionsOnScreen()
@@ -72,20 +74,36 @@ namespace CMDFun
         {
             int numberOption;
             string strOptionInput = Console.ReadLine();
-            numberOption = Convert.ToInt32(strOptionInput);
 
             // Lambda Expression ~
-
-            switch (numberOption)
+            Regex regexNumber = new Regex("^[0-9]+$");
+            if (regexNumber.IsMatch(strOptionInput))
             {
-                case 1:
-                    Dir();
-                    break;
+                numberOption = Convert.ToInt32(strOptionInput);
+                switch (numberOption)
+                {
+                    case 1:
+                        Dir();
+                        break;
 
-                default:
-                    Console.WriteLine("Default Case - Indtast et rigtigt tal");
-                    break;
+                    default:
+                        Console.WriteLine("Default Case - Indtast et brugbart tal");
+                        break;
+                }
             }
+            else
+            {
+                ColoredMessage("Fejl - Skriv et tal");
+            }
+
+
+        }
+
+        private void ColoredMessage(string input, ConsoleColor messageColor = ConsoleColor.Red)
+        {
+            Console.ForegroundColor = messageColor;
+            Console.WriteLine(input);
+            Console.ResetColor();
         }
     }
 }

@@ -21,19 +21,8 @@ namespace CMDFun
 
 
             CMDTools CmdTools = new CMDTools();
-            //CmdTools.Ping();
-            CmdTools.Dir();
-            CmdTools.Ping();
 
-
-            //int[] something = MoveZeroes(new int[] { 1, 2, 0, 1, 0, 1, 0, 3, 0, 1 }); // 1, 2, 1, 1, 3, 1, 0, 0, 0, 0}
-
-            //foreach (var item in something)
-            //{
-            //    Console.WriteLine("lol" + item);
-            //}
-
-            //Tests();
+            Console.ReadLine();
 
             ToCamelCase("the-stealth-warrior");
             ToCamelCase("The_Stealth_Warrior");
