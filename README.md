@@ -48,7 +48,26 @@ Here is an example, two versions of the same method  👀
         }
 ```
 
+This is how I execute a command through CMD. string strCommandToCMD could be something like "netsh wlan show networks"
 
+```csharp
+        private void ExecuteCMDCommand(string strCommandToCMD)
+        {
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start();
+
+            cmd.StandardInput.WriteLine(strCommandToCMD);
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
+            Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+        }
+```
 
 <p align="center">
   <img alt="CMDFun in Action!" src="https://i.imgur.com/zFOCp.png">
