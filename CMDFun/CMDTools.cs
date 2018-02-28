@@ -116,6 +116,21 @@ namespace CMDFun
             ExecuteCMDCommand("netsh wlan show networks");
         }
 
+        private void GetPassword()
+        {
+            // netsh wlan show profile "WiFi-name" key=clear
+        }
+
+        private void ShutDownComputer(int timeInSec)
+        {
+            ExecuteCMDCommand("shutdown -s -t " + timeInSec.ToString());
+        }
+
+        private void AbortShutdownComputer()
+        {
+            ExecuteCMDCommand("shutdown -a");
+        }
+
         private void ColoredMessage(string input, ConsoleColor messageColor = ConsoleColor.Red)
         {
             Console.ForegroundColor = messageColor;
