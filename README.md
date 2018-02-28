@@ -36,6 +36,7 @@ Here is an example, two versions of the same method  👀
             }
             return sb.ToString();
         }
+        
         /// <summary>
         /// Same as ToCamelCase, just in one line.
         /// </summary>
