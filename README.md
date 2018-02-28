@@ -48,7 +48,8 @@ Here is an example, two versions of the same method  👀
         }
 ```
 
-This is how I execute a command through CMD. The string strCommandToCMD could be something like "netsh wlan show networks"
+This is how I execute a command through CMD.
+The string strCommandToCMD could be something like "netsh wlan show networks"
 
 ```csharp
         private void ExecuteCMDCommand(string strCommandToCMD)
