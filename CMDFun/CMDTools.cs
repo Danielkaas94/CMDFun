@@ -13,6 +13,7 @@ namespace CMDFun
 {
     class CMDTools
     {
+        Regex regexNumber = new Regex("^[0-9]+$");
 
         internal void GetDataFromCMD()
         {
@@ -77,7 +78,7 @@ namespace CMDFun
             string strOptionInput = Console.ReadLine();
 
             // Lambda Expression ~
-            Regex regexNumber = new Regex("^[0-9]+$");
+            
             if (regexNumber.IsMatch(strOptionInput))
             {
                 numberOption = Convert.ToInt32(strOptionInput);
@@ -92,6 +93,13 @@ namespace CMDFun
                     case 6:
                         ShowTree();
                         break;
+                    case 7:
+                        ShutDownComputer();
+                        break;
+                    case 8:
+                        AbortShutdownComputer();
+                        break;
+
                     default:
                         Console.WriteLine("Default Case - Indtast et brugbart tal");
                         break;
@@ -121,9 +129,16 @@ namespace CMDFun
             // netsh wlan show profile "WiFi-name" key=clear
         }
 
-        private void ShutDownComputer(int timeInSec)
+        private void ShutDownComputer()
         {
-            ExecuteCMDCommand("shutdown -s -t " + timeInSec.ToString());
+            int timeInSec;
+            string strOptionInput = Console.ReadLine();
+
+            if (regexNumber.IsMatch(strOptionInput))
+            {
+                timeInSec = Convert.ToInt32(strOptionInput);
+                ExecuteCMDCommand("shutdown -s -t " + timeInSec.ToString());
+            }
         }
 
         private void AbortShutdownComputer()
