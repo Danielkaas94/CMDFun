@@ -1,8 +1,8 @@
 # CMDFun 👨‍💻
-Maybe this repository will get a new name, When I started this project, I wanted to get some values from the command-line interface.
+Maybe this repository will get a new name. When I started this project, I wanted to get some values from the command-line interface.
 Instead this is also a collection of methods. There is most likely two versions of the same method, a collection of "Gist".
 
-Here is an example, two versions of the same method  👀
+Here is an example: Two versions of the same method.  👀
 ```csharp
         /// <summary>
         /// Converts dash/underscore delimited words into camel casing.
@@ -49,7 +49,7 @@ Here is an example, two versions of the same method  👀
 ```
 
 This is how I execute a command through CMD.
-The string strCommandToCMD could be something like "netsh wlan show networks"
+The string strCommandToCMD could be something like "netsh wlan show networks".
 
 ```csharp
         private void ExecuteCMDCommand(string strCommandToCMD)
