@@ -61,7 +61,7 @@ namespace CMDFun
             return (health >= damage) ? health - damage : 0;
         }
 
-
+        public static float Combat3(float health, float damage) => health - damage <= 0 ? 0 : health - damage;
 
     }
 
