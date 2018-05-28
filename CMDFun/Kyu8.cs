@@ -39,6 +39,29 @@ namespace CMDFun
             }
         }
 
+        /// <summary>
+        /// Health - Damage = New Health
+        /// </summary>
+        /// <param name="health"></param>
+        /// <param name="damage"></param>
+        /// <returns></returns>
+        public static float Combat(float health, float damage)
+        {
+            float newHealth = health - damage;
+
+            if (newHealth < 0)
+            {
+                newHealth = 0;
+            }
+
+            return newHealth;
+        }
+        public static float Combat2(float health, float damage)
+        {
+            return (health >= damage) ? health - damage : 0;
+        }
+
+
 
     }
 
