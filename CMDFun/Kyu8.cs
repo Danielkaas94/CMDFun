@@ -82,7 +82,11 @@ namespace CMDFun
             }
 
             return stringBuilder.ToString();
+        }
 
+        public static string ToAlternatingCase2(this string Input)
+        {
+            return String.Join("", Input.ToCharArray().Select(character => Char.IsLower(character) ? Char.ToUpper(character) : Char.ToLower(character)));
         }
     }
 
