@@ -9,13 +9,11 @@ namespace CMDFun
     class Kyu8
     {
         /// <summary>
-        /// 
         /// Example:
         /// isDivisible(3,1,3)--> true because 3 is divisible by 1 and 3
         /// isDivisible(12,2,6)--> true because 12 is divisible by 2 and 6
         /// isDivisible(100,5,3)--> false because 100 is not divisible by 3
         /// isDivisible(12,7,5)--> false because 12 is neither divisible by 7 nor 5
-        /// 
         /// </summary>
         /// <param name="n">Number</param>
         /// <param name="x">Divider #1</param>
@@ -39,6 +37,7 @@ namespace CMDFun
             }
         }
 
+        #region Combat
         /// <summary>
         /// Health - Damage = New Health
         /// </summary>
@@ -62,7 +61,23 @@ namespace CMDFun
         }
 
         public static float Combat3(float health, float damage) => health - damage <= 0 ? 0 : health - damage;
+        #endregion
 
+        /// <summary>
+        /// returns that number in a binary format 5 => 101
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int ToBinary(int n)
+        {
+            string binary = Convert.ToString(n, 2);
+            return Convert.ToInt32(binary);
+        }
+    
+        public static int ToBinary2(int n)
+        {
+            return Convert.ToInt32(Convert.ToString(n, 2));
+        }
     }
 
     public static class StringExt
