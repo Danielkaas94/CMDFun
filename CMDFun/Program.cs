@@ -14,17 +14,92 @@ namespace CMDFun
     {
         static void Main(string[] args)
         {
-            Dictionary<string, string> presetColors = new Dictionary<string, string>();
-            presetColors.Add("something", "somthing");
-            HtmlColorParser htmlColorParser = new HtmlColorParser(presetColors);
-            htmlColorParser.DisplayColor();
+            string hello = "Hello World";
+            Console.WriteLine(hello.ToAlternatingCase());
 
 
-            CMDTools CmdTools = new CMDTools();
 
-            Console.ReadLine();
+
+            //Wave("hello");
+
+
+
+            //Dictionary<string, string> presetColors = new Dictionary<string, string>();
+            //presetColors.Add("something", "somthing");
+            //HtmlColorParser htmlColorParser = new HtmlColorParser(presetColors);
+            //htmlColorParser.DisplayColor();
+
+
+            //CMDTools CmdTools = new CMDTools();
+
+            //Console.ReadLine();
 
         }
+
+        public static List<string> Wave(string str)
+        {
+            // https://www.codewars.com/kata/58f5c63f1e26ecda7e000029/train/csharp
+            // hello => "Hello", "hEllo", "heLlo", "helLo", "hellO"
+
+            List<string> listWaveString = new List<string>();
+
+            string copy = str;
+            int positionCounter = 0;
+            foreach (char letter in str)
+            {
+
+
+                positionCounter++;
+            }
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                listWaveString.Add(char.ToUpper(str[i]) + str.Substring(i + 1));
+                // Replace
+            }
+
+            foreach (var item in listWaveString)
+            {
+                Console.WriteLine(item);
+            }
+            Console.ReadLine();
+
+            return new List<string> { };
+        }
+
+        public static string BreakCamelCase(string str)
+        {
+            // complete the function
+            throw new NotImplementedException();
+        }
+
+        public static string getIssuer(long number)
+        {
+            //Code your solution here - http://www.codewars.com/kata/credit-card-issuer-checking/train/csharp
+            throw new NotImplementedException();
+        }
+
+        public static int[] Get_size(int w, int h, int d)
+        {
+            //Your code
+            throw new NotImplementedException();
+        }
+
+        public Dictionary<double, bool> Drive(double[,] drinks, string finished, string drive_time)
+        {
+            // Code here https://www.codewars.com/kata/am-i-safe-to-drive/train/csharp
+            // double[,] alcohol = new double[,] { { 5.2, 568.0 }, { 5.2, 568.0 }, { 5.2, 568.0 }, { 12.0, 175.0 }, { 12.0, 175.0 }, { 12.0, 175.0 } }; drive(alcohol, "23:00", "08:15"); => { 15.16, false }
+            return null;
+        }
+
+
+        public string driver(params string[] data)
+        {
+            // Code here - https://www.codewars.com/kata/driving-license/train/csharp
+            // data = ["John","James","Smith","01-Jan-2000","M"]; => SMITH001010JJ9AA
+            return null;
+        }
+
 
         /// <summary>
         /// An algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.

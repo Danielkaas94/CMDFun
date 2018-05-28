@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="CMDTools.cs" />
     <Compile Include="HtmlColorParser.cs" />
+    <Compile Include="Kyu7.cs" />
+    <Compile Include="Kyu8.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
