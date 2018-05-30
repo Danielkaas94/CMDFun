@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="CMDTools.cs" />
     <Compile Include="HtmlColorParser.cs" />
+    <Compile Include="Kyu5.cs" />
     <Compile Include="Kyu6.cs" />
     <Compile Include="Kyu7.cs" />
     <Compile Include="Kyu8.cs" />
