@@ -20,7 +20,7 @@ namespace CMDFun
             Console.WriteLine(Kyu7.ValidatePin("a234")); // Should be false 
             Console.WriteLine(Kyu7.ValidatePin("123456")); // Should be true 
             Console.WriteLine(Kyu7.ValidatePin("1234")); // Should be true
-            Console.WriteLine(Kyu7.ValidatePin("12345")); // Should be true
+            Console.WriteLine(Kyu7.ValidatePin("12345")); // Should be false
 
 
 
