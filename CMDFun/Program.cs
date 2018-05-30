@@ -22,6 +22,9 @@ namespace CMDFun
             Console.WriteLine(Kyu7.ValidatePin("1234")); // Should be true
             Console.WriteLine(Kyu7.ValidatePin("12345")); // Should be false
 
+            Console.WriteLine(Kyu6.HighestRank(new int[] { 12, 10, 8, 12, 7, 6, 4, 10, 12 }));
+            Console.WriteLine(new int[] { 12, 10, 8, 12, 7, 6, 4, 10, 12, 10 });
+            Console.WriteLine(new int[] { 12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10 });
 
 
 
