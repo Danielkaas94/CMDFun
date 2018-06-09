@@ -8,6 +8,80 @@ namespace CMDFun
 {
     class Kyu8
     {
+
+        private static int[] CountPositivesSumNegatives(int[] input)
+        {
+            // Believe 👍
+            int positiveCounter = 0;
+            int negativeSum = 0;
+            if (input == null || input.Length == 0)
+            {
+                return new int[0];
+            }
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i] > 0)
+                {
+                    positiveCounter++;
+                }
+                else
+                {
+                    negativeSum += input[i];
+                }
+            }
+            return new int[2] { positiveCounter, negativeSum };
+        }
+
+        public static int[] CountPositivesSumNegatives2(int[] input)
+        {
+            if (input == null || !input.Any())
+            {
+                return new int[] { };
+            }
+
+            int countPositives = input.Count(n => n > 0);
+            int sumNegatives = input.Where(n => n < 0).Sum();
+
+            return new int[] { countPositives, sumNegatives };
+        }
+
+
+
+
+        private static int ArrayPlusArray(int[] arr1, int[] arr2)
+        {
+            int preSum1 = 0;
+            int preSum2 = 0;
+
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                if (arr1[i] > 0)
+                {
+                    preSum1 += arr1[i];
+                }
+                else
+                {
+                    preSum1 += arr1[i];
+                }
+            }
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                if (arr2[i] > 0)
+                {
+                    preSum2 += arr2[i];
+                }
+                else
+                {
+                    preSum2 += arr2[i];
+                }
+            }
+            return preSum1 + preSum2;
+        }
+        public static int ArrayPlusArray2(int[] arr1, int[] arr2)
+        {
+            return arr1.Sum(x => x) + arr2.Sum(x => x);
+        }
+
         /// <summary>
         /// Example:
         /// isDivisible(3,1,3)--> true because 3 is divisible by 1 and 3

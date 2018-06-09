@@ -8,6 +8,53 @@ namespace CMDFun
 {
     class Kyu5
     {
+
+        /// <summary>
+        /// Performs the ROT13 character rotation.
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        public static string Rot13(string message)
+        {
+            char[] array = message.ToCharArray();
+            for (int i = 0; i < array.Length; i++)
+            {
+                int number = (int)array[i]; // Converts char to int.
+
+                if (number >= 'a' && number <= 'z')
+                {
+                    if (number > 'm')
+                    {
+                        number -= 13;
+                    }
+                    else
+                    {
+                        number += 13;
+                    }
+                }
+                else if (number >= 'A' && number <= 'Z')
+                {
+                    if (number > 'M')
+                    {
+                        number -= 13;
+                    }
+                    else
+                    {
+                        number += 13;
+                    }
+                }
+                array[i] = (char)number; // Converts number to char.
+            }
+            return new string(array);
+        }
+
+        public static string Rot13ver2(string message)
+        {
+            return new String(message.Select(u => (Char.IsLetter(u)) ? (char)(u + ((Char.ToLower(u) > 'm') ? -13 : 13)) : u).ToArray());
+        }
+
+
+
         public class JosephusSurvivor
         {
 
