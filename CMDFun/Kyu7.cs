@@ -34,10 +34,10 @@ namespace CMDFun
         // https://www.codewars.com/kata/predict-your-age/train/csharp
         /// <summary>
         /// Take a list of ages when each of your great-grandparent died.
-        /// Multiply each number by itself.
-        /// Add them all together.
-        /// Take the square root of the result.
-        /// Divide by two.
+        /// Multiply each number by itself. ✅
+        /// Add them all together. ✅
+        /// Take the square root of the result. ✅
+        /// Divide by two. ✅
         /// </summary>
         /// <param name="age1"></param>
         /// <param name="age2"></param>
@@ -50,9 +50,30 @@ namespace CMDFun
         /// <returns></returns>
         public static int PredictAge(int age1, int age2, int age3, int age4, int age5, int age6, int age7, int age8)
         {
-            return 0;
+            age1 *= age1;
+            age2 *= age2;
+            age3 *= age3;
+            age4 *= age4;
+
+            age5 *= age5;
+            age6 *= age6;
+            age7 *= age7;
+            age8 *= age8;
+
+            int AddedTogether = age1 + age2 + age3 + age4 + age5 + age6 + age7 + age8;
+
+            double temp = (Math.Sqrt(AddedTogether));
+            Console.WriteLine(temp);
+            double finalValueAge = temp / 2;
+            Console.WriteLine(finalValueAge);
+
+            Console.WriteLine("Age: {0}  {1}", age1, finalValueAge);
+
+            return Convert.ToInt32(Math.Floor(finalValueAge));
         }
 
+
+        public static int PredictAge2(params int[] ages) => (int)Math.Sqrt(ages.Select(e => e * e).ToArray().Sum()) / 2;
 
 
         public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)

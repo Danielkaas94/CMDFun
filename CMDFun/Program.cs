@@ -17,6 +17,7 @@ namespace CMDFun
             string hello = "Hello World";
             Console.WriteLine(hello.ToAlternatingCase());
 
+            Console.WriteLine(Kyu7.PredictAge(65, 60, 75, 55, 60, 63, 64, 45));
             Console.WriteLine(Kyu8.boolean_to_string(true));
             Console.WriteLine(Kyu8.Summaration(8));
 

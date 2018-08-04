@@ -199,7 +199,7 @@ namespace CMDFun
             string binary = Convert.ToString(n, 2);
             return Convert.ToInt32(binary);
         }
-    
+
         public static int ToBinary2(int n)
         {
             return Convert.ToInt32(Convert.ToString(n, 2));
