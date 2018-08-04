@@ -9,6 +9,48 @@ namespace CMDFun
     class Kyu8
     {
 
+        /// <summary>
+        /// Write a program that finds the summation of every number between 1 and num. summation(8) -> 36
+        /// 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public static int Summaration(int num)
+        {
+
+            int sum = (num + 1) * num / 2;
+
+            Console.WriteLine(sum);
+
+
+            // Alternative
+
+            //int temp = num;
+            int score = 0;
+
+            for (int i = 1; i <= num; i++)
+            {
+                score += i;
+                Console.WriteLine($"{score}   {i}");
+            }
+
+
+            return sum;
+        }
+
+        private static void HvorforGiverDetLigeNetopDetteTal()
+        {
+            int score = 0;
+
+            for (int i = 1; i <= 36; i++)
+            {
+                score += i;
+                Console.WriteLine($"{score}   {i}");
+            }
+
+            Console.WriteLine(score); ;
+        }
+
         private static int[] CountPositivesSumNegatives(int[] input)
         {
             // Believe 👍
