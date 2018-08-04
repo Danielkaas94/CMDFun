@@ -10,6 +10,51 @@ namespace CMDFun
     class Kyu7
     {
 
+
+        // https://www.codewars.com/kata/google-interview-question-easy/train/csharp
+        public static string GetStringsAsterisk(string city)
+        {
+            string stringNameInAsterisk = "";
+
+
+            return stringNameInAsterisk;
+        }
+
+
+        // https://www.codewars.com/kata/form-the-largest/train/csharp
+        public static int MaxNumber(int n)
+        {
+            //Do Some Magic
+
+            return int.MaxValue;
+        }
+
+
+
+        // https://www.codewars.com/kata/predict-your-age/train/csharp
+        /// <summary>
+        /// Take a list of ages when each of your great-grandparent died.
+        /// Multiply each number by itself.
+        /// Add them all together.
+        /// Take the square root of the result.
+        /// Divide by two.
+        /// </summary>
+        /// <param name="age1"></param>
+        /// <param name="age2"></param>
+        /// <param name="age3"></param>
+        /// <param name="age4"></param>
+        /// <param name="age5"></param>
+        /// <param name="age6"></param>
+        /// <param name="age7"></param>
+        /// <param name="age8"></param>
+        /// <returns></returns>
+        public static int PredictAge(int age1, int age2, int age3, int age4, int age5, int age6, int age7, int age8)
+        {
+            return 0;
+        }
+
+
+
         public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)
         {
             // Believe 👍

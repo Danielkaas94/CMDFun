@@ -9,6 +9,16 @@ namespace CMDFun
     class Kyu8
     {
 
+        // https://www.codewars.com/kata/convert-a-boolean-to-a-string/train/csharp
+        public static string boolean_to_string(bool b)
+        {
+            // Please don't delete me! // Okay 💜💕❤💗💞💓
+            string strBool = Convert.ToString(b);
+
+            return strBool;
+        }
+
+
         /// <summary>
         /// Write a program that finds the summation of every number between 1 and num. summation(8) -> 36
         /// 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8

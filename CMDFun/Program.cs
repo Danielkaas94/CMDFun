@@ -17,6 +17,7 @@ namespace CMDFun
             string hello = "Hello World";
             Console.WriteLine(hello.ToAlternatingCase());
 
+            Console.WriteLine(Kyu8.boolean_to_string(true));
             Console.WriteLine(Kyu8.Summaration(8));
 
             /*
