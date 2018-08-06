@@ -9,6 +9,22 @@ namespace CMDFun
 {
     class Kyu6
     {
+
+        // https://www.codewars.com/kata/number-format/train/csharp
+        /// <summary>
+        /// Format any integer provided into a string with "," (commas) in the correct places. NumberFormat(5678545) => "5,678,545"
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static string NumberFormat(int number)
+        {
+            Console.WriteLine($"{number:F}");
+            return "0";
+        }
+
+
+
+
         /// <summary>
         /// Write a method highestRank(arr) which returns the number which is most frequent in the given input array (or ISeq).
         /// If there is a tie for most frequent number, return the largest number of which is most frequent.

@@ -10,6 +10,18 @@ namespace CMDFun
     class Kyu7
     {
 
+        // https://www.codewars.com/kata/going-to-the-cinema/train/csharp
+        /// <summary>
+        /// movie(500, 15, 0.9) should return 43
+        /// </summary>
+        /// <param name="card"></param>
+        /// <param name="ticket"></param>
+        /// <param name="percent"></param>
+        /// <returns></returns>
+        public static int Movie(int card, int ticket, double percent)
+        {
+            return 0;
+        }
 
         // https://www.codewars.com/kata/google-interview-question-easy/train/csharp
         public static string GetStringsAsterisk(string city)

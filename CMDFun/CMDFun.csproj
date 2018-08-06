@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Beta.cs" />
     <Compile Include="CMDTools.cs" />
     <Compile Include="HtmlColorParser.cs" />
     <Compile Include="Kyu5.cs" />
