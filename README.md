@@ -70,12 +70,13 @@ The string strCommandToCMD could be something like "netsh wlan show networks".
         }
 ```
 
-Join CodeWars with me!: www.codewars.com/r/hGyTsQ
+
 
 <p align="center">
   <img alt="CMDFun in Action!" src="https://i.imgur.com/zFOCp.png">
 </p>
 
+Join CodeWars with me!: www.codewars.com/r/hGyTsQ
 <p align="center">
   <img alt="CodeWars Badge" src="https://www.codewars.com/users/Danielkaas94/badges/large">
 </p>
