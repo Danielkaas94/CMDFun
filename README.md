@@ -77,6 +77,6 @@ The string strCommandToCMD could be something like "netsh wlan show networks".
 </p>
 
 Join CodeWars with me!: www.codewars.com/r/hGyTsQ
-<p align="center">
+<p>
   <img alt="CodeWars Badge" src="https://www.codewars.com/users/Danielkaas94/badges/large">
 </p>
