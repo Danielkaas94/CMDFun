@@ -75,3 +75,7 @@ Join CodeWars with me!: www.codewars.com/r/hGyTsQ
 <p align="center">
   <img alt="CMDFun in Action!" src="https://i.imgur.com/zFOCp.png">
 </p>
+
+<p align="center">
+  <img alt="CodeWars Badge" src="https://www.codewars.com/users/Danielkaas94/badges/large">
+</p>
