@@ -17,6 +17,57 @@ namespace CMDFun
 
             return strBool;
         }
+        
+                // if x>y - 3 points
+        // if x=y - 1 points
+        // if x<y - 0 points
+
+        public static int TotalPoints(string[] games)
+        {
+            // insert magic here
+            int points = 0;
+            int x_integer, y_integer;
+
+            foreach (string gameScore in games)
+            {
+                // Get X
+                string x_str = gameScore[0].ToString();
+                x_integer = Convert.ToInt32(x_str);
+
+
+                // Get Y
+                string y_str = gameScore[2].ToString();
+                y_integer = Convert.ToInt32(y_str);
+
+                // Validate
+                if (x_integer > y_integer)
+                {
+                    points += 3;
+                }
+                else if (x_integer == y_integer)
+                {
+                    points++;
+                }
+
+                Console.WriteLine(points);
+
+            }
+
+            return points;
+        }
+
+        public static int TotalPoints2(string[] games)
+        {
+            int total = 0;
+            foreach (string game in games)
+            {
+                if (game[0] > game[2])
+                    total += 3;
+                else if (game[0] == game[2])
+                    total += 1;
+            }
+            return total;
+        }
 
 
         // if x>y - 3 points
