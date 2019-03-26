@@ -14,14 +14,66 @@ namespace CMDFun
     {
         static void Main(string[] args)
         {
+
+            Kyu8.TotalPoints(new[] { "1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3" });
+
+            Console.WriteLine("Go fuck yourself");
+            Console.ReadLine();
+            Console.ReadLine();
+
             string hello = "Hello World";
-            Console.WriteLine(hello.ToAlternatingCase());
+            //Console.WriteLine(hello.ToAlternatingCase());
 
-            Console.WriteLine(Kyu6.NumberFormat(100000));
+            //Console.WriteLine(Kyu6.NumberFormat(100000));
 
-            Console.WriteLine(Kyu7.PredictAge(65, 60, 75, 55, 60, 63, 64, 45));
-            Console.WriteLine(Kyu8.boolean_to_string(true));
-            Console.WriteLine(Kyu8.Summaration(8));
+            //Console.WriteLine(Kyu7.PredictAge(65, 60, 75, 55, 60, 63, 64, 45));
+            //Console.WriteLine(Kyu8.boolean_to_string(true));
+            //Console.WriteLine(Kyu8.Summaration(8));
+
+            var matrix = new int[][] {
+                new int[] {1,2,3},
+                new int[] {4,5,6},
+                new int[] {7,8,9}};
+
+            var expected = new int[][]{
+                new int[]{9,2,7},
+                new int[]{4,5,6},
+                new int[]{3,8,1}};
+
+            //Console.WriteLine(Kyu7.ReverseOnDiagonals(matrix));
+
+            //matrix = new int[][]{
+            //new int[]{239}};
+
+            //matrix = new int[][]{
+            //new int[]{1,10},
+            //new int[]{100,1000}};
+
+            matrix = new int[][]{
+            new int[]{43,455,32,103},
+            new int[]{102,988,298,981},
+            new int[]{309,21,53,64},
+            new int[]{2,22,35,291}};
+
+            expected = new int[][]{
+            new int[]{291,455,32,2},
+            new int[]{102,53,21,981},
+            new int[]{309,298,988,64},
+            new int[]{103,22,35,43}};
+
+            matrix = new int[][]{
+            new int[]{358, 568, 288, 72, 70, 655, 935, 872, 396},
+            new int[]{169, 258, 776, 18, 124, 552, 983, 111, 960},
+            new int[]{366, 280, 438, 867, 343, 251, 579, 426, 164},
+            new int[]{699, 176, 731, 830, 265, 231, 934, 690, 993},
+            new int[]{665, 90, 717, 400, 385, 70, 169, 240, 63},
+            new int[]{867, 435, 490, 880, 817, 12, 676, 665, 723},
+            new int[]{370, 492, 225, 37, 494, 644, 492, 237, 697},
+            new int[]{665, 340, 993, 546, 84, 434, 560, 318, 22},
+            new int[]{243, 967, 895, 368, 699, 104, 189, 712, 992}};
+
+
+            Console.WriteLine(Kyu7.ReverseOnDiagonals(matrix));
 
             /*
             Console.WriteLine(Kyu7.ValidatePin("a234")); // Should be false 
@@ -85,9 +137,9 @@ namespace CMDFun
 
             int swapCount = 0;
             int max = arr.Length;
-            int lastIndex = arr.Length -1;
+            int lastIndex = arr.Length - 1;
 
-            for (int i = lastIndex-1; i > 0; i--)
+            for (int i = lastIndex - 1; i > 0; i--)
             {
                 if (arr[i] == 0 || arr[i] == 0.0)
                 {
@@ -99,7 +151,7 @@ namespace CMDFun
 
             foreach (var item in arr)
             {
-                Console.WriteLine("Lal " +  item);
+                Console.WriteLine("Lal " + item);
             }
 
             return arr;
@@ -110,7 +162,7 @@ namespace CMDFun
         public static string sumStrings(string a, string b)
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(2+2);
+            sb.Append(2 + 2);
             Console.WriteLine(sb);
 
             Console.WriteLine(a);
@@ -118,7 +170,7 @@ namespace CMDFun
             BigInteger valueA = 0;
             BigInteger valueB = 0;
 
-            if (a == null || a == "" )
+            if (a == null || a == "")
             {
 
             }

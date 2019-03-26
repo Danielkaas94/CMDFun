@@ -177,5 +177,170 @@ namespace CMDFun
         {
             return input.ToLower().Count(i => i == 'x') == input.ToLower().Count(i => i == 'o');
         }
+
+        public static int[][] ReverseOnDiagonals(int[][] matrix)
+        {
+            // Noget smart der kan regne ud, hvor diagonalen er...
+            // matrix.length kan bruges hvad ellers?
+            // temp variabel bliver nok nødvendigt.
+
+
+
+            return matrix;
+        }
+
+
+        public static int[][] ReverseOnDiagonals_Prototype2(int[][] matrix)
+        {
+            /*
+                {43,455,32,103}
+                {102,988,298,981}
+                {309,21,53,64}
+                {2,22,35,291}
+
+            int leftTop = matrix[0][0];
+            int rightTop = matrix[0][lenght -1];
+            int innerTopLeft = matrix[1][1];
+            int innerTopRight = matrix[1][2];
+            int innerBotLeft = matrix[2][1];
+            int innerBotRight = matrix[2][2];
+            int leftTop = matrix[lenght -1][0];
+            int rightTop = matrix[lenght -1][lenght -1];
+
+                {291,455,32,2}
+                {102,53,21,981}
+                {309,298,988,64}
+                {103,22,35,43}
+            */
+
+            int length = matrix.Length;
+
+            Console.WriteLine($"Matrix.Length: {matrix.Length}\n");
+
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                int[] innerArray = matrix[i];
+                //Console.WriteLine($"InnerArray.Length: {innerArray.Length}");
+
+                for (int a = 0; a < innerArray.Length; a++)
+                {
+                    Console.Write(innerArray[a] + " ");
+                }
+                Console.WriteLine();
+            }
+
+
+            int leftTop = matrix[0][0];
+            int rightTop = matrix[0][length - 1];
+            int innerTopLeft = matrix[1][1];
+            int innerTopRight = matrix[1][2];
+            int innerBotLeft = matrix[2][1];
+            int innerBotRight = matrix[2][2];
+            int leftBot = matrix[length - 1][0];
+            int rightBot = matrix[length - 1][length - 1];
+
+            Console.WriteLine($"\n\nleftTop: {leftTop}"); // 43      - Skal byttes med rightBot
+            Console.WriteLine($"rightTop: {rightTop}"); // 103    - Skal byttes med leftBot
+
+            Console.WriteLine($"innerTopLeft: {innerTopLeft}"); // 988    - Skal byttes med innerBotRight
+            Console.WriteLine($"innerTopRight: {innerTopRight}"); // 298    - Skal byttes med innerBotLeft
+
+            Console.WriteLine($"innerBotLeft: {innerBotLeft}"); // 21    - Skal byttes med innerTopRight
+            Console.WriteLine($"innerBotRight: {innerBotRight}"); // 53    - Skal byttes med innerTopLeft
+
+            Console.WriteLine($"leftBot: {leftBot}"); // 2      - Skal byttes med rightTop
+            Console.WriteLine($"rightBot: {rightBot}"); // 291    - Skal byttes med leftTop
+
+            matrix[0][0] = rightBot;
+            matrix[0][length - 1] = leftBot;
+
+            matrix[1][1] = innerBotRight;
+            matrix[1][2] = innerBotLeft;
+
+            matrix[2][1] = innerTopRight;
+            matrix[2][2] = innerTopLeft;
+
+            matrix[length - 1][0] = rightTop;
+            matrix[length - 1][length - 1] = leftTop;
+
+
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                int[] innerArray = matrix[i];
+                //Console.WriteLine($"InnerArray.Length: {innerArray.Length}");
+
+                for (int a = 0; a < innerArray.Length; a++)
+                {
+                    Console.Write(innerArray[a] + " ");
+                }
+                Console.WriteLine();
+            }
+
+
+
+
+
+            Console.WriteLine();
+            return matrix;
+        }
+
+
+        public static int[][] ReverseOnDiagonals_Prototype(int[][] matrix)
+        {
+            /*
+                {1,2,3}  
+                {4,5,6}  
+                {7,8,9} 
+
+                {9,2,7}
+                {4,5,6}
+                {3,8,1}
+            */
+
+
+            int length = matrix.Length;
+
+            Console.WriteLine($"Matrix.Length: {matrix.Length}\n");
+
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                int[] innerArray = matrix[i];
+                //Console.WriteLine($"InnerArray.Length: {innerArray.Length}");
+
+                for (int a = 0; a < innerArray.Length; a++)
+                {
+                    Console.Write(innerArray[a] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            int leftTop = matrix[0][0];
+            int rightTop = matrix[0][length - 1];
+            int leftBot = matrix[length - 1][0];
+            int rightBot = matrix[length - 1][length - 1];
+            Console.WriteLine($"\nleftTop: {leftTop}"); // 1      - Skal byttes med rightBot
+            Console.WriteLine($"rightTop: {rightTop}"); // 3    - Skal byttes med leftBot
+            Console.WriteLine($"leftBot: {leftBot}"); // 7      - Skal byttes med rightTop
+            Console.WriteLine($"rightBot: {rightBot}"); // 9    - Skal byttes med leftTop
+
+            matrix[0][0] = rightBot;
+            matrix[0][length - 1] = leftBot;
+            matrix[length - 1][0] = rightTop;
+            matrix[length - 1][length - 1] = leftTop;
+
+            for (int i = 0; i < matrix.Length; i++)
+            {
+                int[] innerArray = matrix[i];
+                //Console.WriteLine($"InnerArray.Length: {innerArray.Length}");
+
+                for (int a = 0; a < innerArray.Length; a++)
+                {
+                    Console.Write(innerArray[a] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            return matrix;
+        }
     }
 }

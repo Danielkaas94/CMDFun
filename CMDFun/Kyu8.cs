@@ -19,6 +19,58 @@ namespace CMDFun
         }
 
 
+        // if x>y - 3 points
+        // if x=y - 1 points
+        // if x<y - 0 points
+
+        public static int TotalPoints(string[] games)
+        {
+            // insert magic here
+            int points = 0;
+            int x_integer, y_integer;
+
+            foreach (string gameScore in games)
+            {
+                // Get X
+                string x_str = gameScore[0].ToString();
+                x_integer = Convert.ToInt32(x_str);
+
+
+                // Get Y
+                string y_str = gameScore[2].ToString();
+                y_integer = Convert.ToInt32(y_str);
+
+                // Validate
+                if (x_integer > y_integer)
+                {
+                    points += 3;
+                }
+                else if (x_integer == y_integer)
+                {
+                    points++;
+                }
+
+                Console.WriteLine(points);
+
+            }
+
+            return points;
+        }
+
+        public static int TotalPoints2(string[] games)
+        {
+            int total = 0;
+            foreach (string game in games)
+            {
+                if (game[0] > game[2])
+                    total += 3;
+                else if (game[0] == game[2])
+                    total += 1;
+            }
+            return total;
+        }
+
+
         /// <summary>
         /// Write a program that finds the summation of every number between 1 and num. summation(8) -> 36
         /// 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8
@@ -203,6 +255,22 @@ namespace CMDFun
         public static int ToBinary2(int n)
         {
             return Convert.ToInt32(Convert.ToString(n, 2));
+        }
+
+
+
+        public static int summation(int num)
+        {
+            //Code here
+            int result = 0;
+
+            for (int i = 1; i <= num; i++)
+            {
+                result += i;
+            }
+            Console.WriteLine(result);
+
+            return result;
         }
     }
 

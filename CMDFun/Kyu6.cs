@@ -23,6 +23,10 @@ namespace CMDFun
         }
 
 
+        public static void diff()
+        {
+
+        }
 
 
         /// <summary>
