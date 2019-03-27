@@ -17,63 +17,41 @@ namespace CMDFun
 
             return strBool;
         }
-        
-                // if x>y - 3 points
-        // if x=y - 1 points
-        // if x<y - 0 points
 
-        public static int TotalPoints(string[] games)
+        public static int Opposite(int number)
         {
-            // insert magic here
-            int points = 0;
-            int x_integer, y_integer;
+            string temp = "-";
+            int newNumber = 0;
 
-            foreach (string gameScore in games)
+            // Happy Coding
+            if (number > 0)
             {
-                // Get X
-                string x_str = gameScore[0].ToString();
-                x_integer = Convert.ToInt32(x_str);
-
-
-                // Get Y
-                string y_str = gameScore[2].ToString();
-                y_integer = Convert.ToInt32(y_str);
-
-                // Validate
-                if (x_integer > y_integer)
-                {
-                    points += 3;
-                }
-                else if (x_integer == y_integer)
-                {
-                    points++;
-                }
-
-                Console.WriteLine(points);
-
+                temp += number.ToString();
+                newNumber = Convert.ToInt32(temp);
+            }
+            else if (number < 0)
+            {
+                temp = number.ToString();
+                newNumber = Convert.ToInt32(temp.Remove(0,1));
             }
 
-            return points;
+            return newNumber;
         }
 
-        public static int TotalPoints2(string[] games)
+        public static int Opposite2(int number)
         {
-            int total = 0;
-            foreach (string game in games)
-            {
-                if (game[0] > game[2])
-                    total += 3;
-                else if (game[0] == game[2])
-                    total += 1;
-            }
-            return total;
+            return -number;
+        }
+
+        public static int Opposite3(int number)
+        {
+            return number * -1;
         }
 
 
         // if x>y - 3 points
         // if x=y - 1 points
         // if x<y - 0 points
-
         public static int TotalPoints(string[] games)
         {
             // insert magic here
