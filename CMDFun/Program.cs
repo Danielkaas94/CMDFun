@@ -16,11 +16,11 @@ namespace CMDFun
         {
 
             //Kyu8.TotalPoints(new[] { "1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3" });
-            Console.WriteLine(Kyu8.Opposite(-10)); ;
-            Console.WriteLine(Kyu8.Opposite(10)); ;
+            //Console.WriteLine(Kyu8.Opposite(-10)); ;
+            //Console.WriteLine(Kyu8.Opposite(10)); ;
 
+            Kyu7.FindShort("bitcoin take over the world maybe who knows perhaps");
 
-            Console.WriteLine("Go fuck yourself");
             Console.ReadLine();
             Console.ReadLine();
 

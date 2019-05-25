@@ -9,6 +9,32 @@ namespace CMDFun
 {
     class Kyu7
     {
+        // https://www.codewars.com/kata/shortest-word/train/csharp
+        /// <summary>
+        /// Given a string of words, return the length of the shortest word(s).
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static int FindShort(string s)
+        {
+            string[] words = s.Split(' ');
+
+            int[] arrayWithNumberLength = new int[words.Length];
+
+                for (int i = 0; i < words.Length; i++)
+                {
+                    arrayWithNumberLength[i] = words[i].Length;
+                }
+
+            return arrayWithNumberLength.Min();
+        }
+
+
+        public static int FindShort2(string s)
+        {
+            return s.Split(' ').Min(x => x.Length);
+        }
+
 
         // https://www.codewars.com/kata/going-to-the-cinema/train/csharp
         /// <summary>
