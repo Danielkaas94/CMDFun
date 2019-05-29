@@ -16,9 +16,13 @@ namespace CMDFun
         {
 
             //Kyu8.TotalPoints(new[] { "1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3" });
-            //Console.WriteLine(Kyu8.Opposite(-10)); ;
-            //Console.WriteLine(Kyu8.Opposite(10)); ;
+            //Console.WriteLine(Kyu8.Opposite(-10));
+            //Console.WriteLine(Kyu8.Opposite(10));
 
+            Kyu8.DivisibleBy(new int[] { 1, 2, 3, 4, 5, 6 }, 2); // Should give int[2,4,6]
+
+            Kyu6.print(3);
+            Kyu6.print(5);
             Kyu7.FindShort("bitcoin take over the world maybe who knows perhaps");
 
             Console.ReadLine();

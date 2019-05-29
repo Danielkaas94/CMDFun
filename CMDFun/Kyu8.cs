@@ -18,6 +18,42 @@ namespace CMDFun
             return strBool;
         }
 
+        /// <summary>
+        /// https://www.codewars.com/kata/find-numbers-which-are-divisible-by-given-number/train/csharp
+        /// </summary>
+        /// <param name="numbers">Numbers to be divided</param>
+        /// <param name="divisor">Divisor</param>
+        /// <returns></returns>
+        public static int[] DivisibleBy(int[] numbers, int divisor)
+        {
+            int[] temp = new int[numbers.Length];
+            int counter = 0;
+
+            foreach (int number in numbers)
+            {
+                if (number % divisor == 0)
+                {
+                    // Add number to array;
+                    Console.WriteLine(number);
+                    temp[counter] = number;
+
+                    counter++;
+                }
+            }
+
+            int[] returnedNumbers = new int[counter];
+
+            for (int i = 0; i < returnedNumbers.Length; i++)
+            {
+                returnedNumbers[i] = temp[i];
+            }
+
+            return returnedNumbers;
+        }
+
+        public static int[] DivisibleBy2(int[] numbers, int divisor) => numbers.Where(e => e % divisor == 0).ToArray();
+
+
         public static int Opposite(int number)
         {
             string temp = "-";
@@ -32,7 +68,7 @@ namespace CMDFun
             else if (number < 0)
             {
                 temp = number.ToString();
-                newNumber = Convert.ToInt32(temp.Remove(0,1));
+                newNumber = Convert.ToInt32(temp.Remove(0, 1));
             }
 
             return newNumber;
