@@ -18,6 +18,12 @@ namespace CMDFun
             return strBool;
         }
 
+        /// <summary>
+        /// https://www.codewars.com/kata/remove-string-spaces/csharp
+        /// Remove spaces from the input string
+        /// </summary>
+        /// <param name="input">String with spaces</param>
+        /// <returns></returns>
         public static string NoSpace(string input)
         {
             StringBuilder sb = new StringBuilder();
