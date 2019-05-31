@@ -19,6 +19,7 @@ namespace CMDFun
             //Console.WriteLine(Kyu8.Opposite(-10));
             //Console.WriteLine(Kyu8.Opposite(10));
 
+            Kyu8.NoSpace("8 j 8   mBliB8g  imjB8B8  jl  B");
             Kyu8.DivisibleBy(new int[] { 1, 2, 3, 4, 5, 6 }, 2); // Should give int[2,4,6]
 
             Kyu6.print(3);

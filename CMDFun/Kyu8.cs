@@ -18,6 +18,29 @@ namespace CMDFun
             return strBool;
         }
 
+        public static string NoSpace(string input)
+        {
+            StringBuilder sb = new StringBuilder();
+
+            foreach (char sign in input)
+            {
+                if (sign == ' ')
+                {
+                }
+                else
+                {
+                    sb.Append(sign);
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        public static string NoSpace2(string input)
+        {
+            return input.Replace(" ", "");
+        }
+
         /// <summary>
         /// https://www.codewars.com/kata/find-numbers-which-are-divisible-by-given-number/train/csharp
         /// </summary>
