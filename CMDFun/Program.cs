@@ -18,7 +18,7 @@ namespace CMDFun
             //Kyu8.TotalPoints(new[] { "1:0", "2:0", "3:0", "4:0", "2:1", "3:1", "4:1", "3:2", "4:2", "4:3" });
             //Console.WriteLine(Kyu8.Opposite(-10));
             //Console.WriteLine(Kyu8.Opposite(10));
-
+            Kyu8.Remove_char("Hello World");
             Kyu8.NoSpace("8 j 8   mBliB8g  imjB8B8  jl  B");
             Kyu8.DivisibleBy(new int[] { 1, 2, 3, 4, 5, 6 }, 2); // Should give int[2,4,6]
 

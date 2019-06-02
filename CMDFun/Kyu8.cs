@@ -18,6 +18,35 @@ namespace CMDFun
             return strBool;
         }
 
+        // https://www.codewars.com/kata/remove-first-and-last-character/train/csharp
+        /// <summary>
+        /// Removes the first and last characters of a string.
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static string Remove_char(string s)
+        {
+            // Your Code
+            StringBuilder result = new StringBuilder();
+            for (int i = 0; i < s.Length -1; i++)
+            {
+                if (i == 0 || i == s.Length -1)
+                {
+
+                }
+                else
+                {
+                    result.Append(s[i]);
+                }
+            }
+            return result.ToString();
+        }
+
+        public static string Remove_char2(string s)
+        {
+            return s.Substring(1, (s.Length - 2));
+        }
+
         /// <summary>
         /// https://www.codewars.com/kata/remove-string-spaces/csharp
         /// Remove spaces from the input string
