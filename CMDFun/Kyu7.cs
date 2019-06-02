@@ -9,6 +9,29 @@ namespace CMDFun
 {
     class Kyu7
     {
+
+        // https://www.codewars.com/kata/sum-of-angles/train/csharp
+        /// <summary>
+        /// Find the total sum of angles in an n sided shape. N will be greater than 2
+        /// </summary>
+        /// <param name="n_sides"></param>
+        /// <returns></returns>
+        public static int Angle(int n_sides)
+        {
+            // Your code here
+            int result_Angle = 180;
+
+            for (int i = 3; i < n_sides; i++)
+            {
+                result_Angle += 180;
+            }
+
+            return result_Angle;
+        }
+
+        public static int Angle2(int n) => (n - 2) * 180;
+
+
         // https://www.codewars.com/kata/shortest-word/train/csharp
         /// <summary>
         /// Given a string of words, return the length of the shortest word(s).
