@@ -18,6 +18,38 @@ namespace CMDFun
             return strBool;
         }
 
+        //  https://www.codewars.com/kata/sum-mixed-array/train/csharp
+        /// <summary>
+        /// Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
+        public static int SumMix(object[] x)
+        {
+            int result = 0;
+
+            foreach (var number in x)
+            {
+                if (number.GetType().ToString() == "System.String")
+                {
+                    Console.WriteLine("## STRING ##");
+
+                    result += Convert.ToInt32(number);
+                }
+                else
+                {
+                    Console.WriteLine("## INT ##");
+
+                    result += Convert.ToInt32(number);
+                }
+            }
+
+            return result;
+        }
+
+        public static int SumMix2(object[] x) => x.Sum(Convert.ToInt32);
+
+
         // https://www.codewars.com/kata/third-angle-of-a-triangle/train/csharp
         /// <summary>
         /// You are given two angles (in degrees) of a triangle.

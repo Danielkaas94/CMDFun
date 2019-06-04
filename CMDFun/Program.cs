@@ -14,6 +14,7 @@ namespace CMDFun
     {
         static void Main(string[] args)
         {
+            Console.WriteLine(Kyu8.SumMix(new object[] { 9, 3, "7", "3" }));
             Console.WriteLine(Kyu8.OtherAngle(30, 60));
             Kyu7.Angle(4);
             Kyu7.Angle(5);
