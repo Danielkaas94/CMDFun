@@ -18,6 +18,18 @@ namespace CMDFun
             return strBool;
         }
 
+        // https://www.codewars.com/kata/third-angle-of-a-triangle/train/csharp
+        /// <summary>
+        /// You are given two angles (in degrees) of a triangle.
+        /// </summary>
+        /// <param name="a">Angle a - In degrees</param>
+        /// <param name="b">Angle b - In degrees</param>
+        /// <returns>Returns the 3rd. angle</returns>
+        public static int OtherAngle(int a, int b)
+        {
+            return 180 - (a + b);
+        }
+
         // https://www.codewars.com/kata/remove-first-and-last-character/train/csharp
         /// <summary>
         /// Removes the first and last characters of a string.

@@ -14,7 +14,7 @@ namespace CMDFun
     {
         static void Main(string[] args)
         {
-
+            Console.WriteLine(Kyu8.OtherAngle(30, 60));
             Kyu7.Angle(4);
             Kyu7.Angle(5);
             Kyu8.Remove_char("Hello World");
