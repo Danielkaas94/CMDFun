@@ -9,6 +9,56 @@ namespace CMDFun
     class Kyu8
     {
 
+        // https://www.codewars.com/kata/welcome/train/csharp
+        /// <summary>
+        /// 'Welcome' function that takes a parameter 'language' (always a string), and returns a greeting
+        /// </summary>
+        /// <param name="language">A language</param>
+        /// <returns></returns>
+        public static string Greet(string language)
+        {
+            // Database with key/value language/welcome
+
+            // if language is in database, use the language key and get the value
+            if (data.ContainsKey(language))
+            {
+                return data[language];
+            }
+            else // Default to English Welcome
+            {
+                return data["english"];
+            }
+        }
+
+        public static string Greet2(string language)
+        {
+            return (data.ContainsKey(language))
+              ? data[language]
+              : "Welcome";
+        }
+
+        private static readonly Dictionary<string, string> data = new Dictionary<string, string>
+        {
+            {"english", "Welcome"},
+            {"czech", "Vitejte"},
+            {"danish", "Velkomst"},
+            {"dutch", "Welkom"},
+            {"estonian", "Tere tulemast"},
+            {"finnish", "Tervetuloa"},
+            {"flemish", "Welgekomen"},
+            {"french", "Bienvenue"},
+            {"german", "Willkommen"},
+            {"irish", "Failte"},
+            {"italian", "Benvenuto"},
+            {"latvian", "Gaidits"},
+            {"lithuanian", "Laukiamas"},
+            {"polish", "Witamy"},
+            {"spanish", "Bienvenido"},
+            {"swedish", "Valkommen"},
+            {"welsh", "Croeso"}
+        };
+
+
         // https://www.codewars.com/kata/convert-a-boolean-to-a-string/train/csharp
         public static string boolean_to_string(bool b)
         {
@@ -72,9 +122,9 @@ namespace CMDFun
         {
             // Your Code
             StringBuilder result = new StringBuilder();
-            for (int i = 0; i < s.Length -1; i++)
+            for (int i = 0; i < s.Length - 1; i++)
             {
-                if (i == 0 || i == s.Length -1)
+                if (i == 0 || i == s.Length - 1)
                 {
 
                 }
