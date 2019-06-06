@@ -10,6 +10,91 @@ namespace CMDFun
     class Kyu7
     {
 
+        //  https://www.codewars.com/kata/determine-if-the-poker-hand-is-flush/train/csharp
+        /// <summary>
+        /// Determine if the poker hand is flush
+        /// </summary>
+        /// <param name="cards"></param>
+        /// <returns></returns>
+        public static bool CheckIfFlush(string[] cards)
+        {
+            //Write your code here
+
+            int hearthCounter = 0;
+            int spadesCounter = 0;
+            int diamonsCounter = 0;
+            int clubsCounter = 0;
+
+
+            char type;
+
+            foreach (string card in cards)
+            {
+                if (card.Length == 3)
+                {
+                    type = card[2];
+
+                    switch (type)
+                    {
+
+                        case 'H':
+                            hearthCounter++;
+                            break;
+
+                        case 'S':
+                            spadesCounter++;
+                            break;
+
+                        case 'D':
+                            diamonsCounter++;
+                            break;
+
+                        case 'C':
+                            clubsCounter++;
+                            break;
+                    }
+
+                    if (hearthCounter >= 5 || spadesCounter >= 5 || diamonsCounter >= 5 || clubsCounter >= 5)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    type = card[1];
+
+                    switch (type)
+                    {
+
+                        case 'H':
+                            hearthCounter++;
+                            break;
+
+                        case 'S':
+                            spadesCounter++;
+                            break;
+
+                        case 'D':
+                            diamonsCounter++;
+                            break;
+
+                        case 'C':
+                            clubsCounter++;
+                            break;
+                    }
+
+                    if (hearthCounter >= 5 || spadesCounter >= 5 || diamonsCounter >= 5 || clubsCounter >= 5)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
+        public static bool CheckIfFlush2(string[] cards) => cards.All(x => x.Last() == cards.First().Last());
+
         // https://www.codewars.com/kata/sum-of-angles/train/csharp
         /// <summary>
         /// Find the total sum of angles in an n sided shape. N will be greater than 2
@@ -44,10 +129,10 @@ namespace CMDFun
 
             int[] arrayWithNumberLength = new int[words.Length];
 
-                for (int i = 0; i < words.Length; i++)
-                {
-                    arrayWithNumberLength[i] = words[i].Length;
-                }
+            for (int i = 0; i < words.Length; i++)
+            {
+                arrayWithNumberLength[i] = words[i].Length;
+            }
 
             return arrayWithNumberLength.Min();
         }

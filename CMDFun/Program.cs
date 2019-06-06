@@ -14,6 +14,18 @@ namespace CMDFun
     {
         static void Main(string[] args)
         {
+            string[] cards = { "AS", "3S", "9S", "KS", "4S" };
+            string[] cards2 = { "AD", "4S", "7H", "KC", "5S" };
+            string[] cards3 = { "10D", "4S", "7H", "KC", "5S" };
+            string[] cards4 = { "10D", "QD", "7D", "KD", "5D" };
+
+            Kyu7.CheckIfFlush(cards);
+            Console.WriteLine(Kyu7.CheckIfFlush(cards));
+            Console.WriteLine(Kyu7.CheckIfFlush(cards2));
+            Console.WriteLine(Kyu7.CheckIfFlush(cards3));
+            Console.WriteLine(Kyu7.CheckIfFlush(cards4));
+            Console.ReadLine();
+
             Console.WriteLine(Kyu8.SumMix(new object[] { 9, 3, "7", "3" }));
             Console.WriteLine(Kyu8.OtherAngle(30, 60));
             Kyu7.Angle(4);
