@@ -8,6 +8,37 @@ namespace CMDFun
 {
     class Kyu8
     {
+        //  https://www.codewars.com/kata/abbreviate-a-two-word-name/train/csharp
+        /// <summary>
+        /// Sam Harris => S.H
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static string AbbrevName(string name)
+        {
+            return "";
+        }
+
+
+        //  https://www.codewars.com/kata/square-n-sum/csharp
+        /// <summary>
+        ///  it squares each number from the array and then sums the results together
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int SquareSum(int[] n)
+        {
+            int sum = 0;
+
+            foreach (int number in n)
+            {
+                sum += number * number;
+            }
+
+            return sum;
+        }
+
+        public static int SquareSum2(int[] n) => n.Sum(i => i * i);
 
         // https://www.codewars.com/kata/welcome/train/csharp
         /// <summary>
