@@ -12,12 +12,27 @@ namespace CMDFun
         /// <summary>
         /// Sam Harris => S.H
         /// </summary>
-        /// <param name="name"></param>
+        /// <param name="name">A name</param>
         /// <returns></returns>
         public static string AbbrevName(string name)
         {
-            return "";
+            StringBuilder sb = new StringBuilder();
+
+            int spaceIndex;
+            char temp;
+
+            spaceIndex = name.IndexOf(' ');
+
+            temp = name[0];
+            sb.Append(temp.ToString().ToUpper());
+            sb.Append('.');
+            temp = name[++spaceIndex];
+            sb.Append(temp.ToString().ToUpper());
+
+            return sb.ToString();
         }
+
+        public static string AbbrevName2(string name) => string.Join(".", name.Split(' ').Select(w => w[0])).ToUpper();
 
 
         //  https://www.codewars.com/kata/square-n-sum/csharp
