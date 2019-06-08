@@ -8,6 +8,30 @@ namespace CMDFun
 {
     class Kyu8
     {
+
+        //  https://www.codewars.com/kata/beginner-reduce-but-grow/csharp
+        /// <summary>
+        /// [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+        /// </summary>
+        /// <param name="x"></param>
+        /// <returns></returns>
+        public static int Grow(int[] x)
+        {
+            int result = x[0];
+
+            for (int i = 1; i < x.Length; i++)
+            {
+                result *= x[i];
+            }
+
+            return result;
+        }
+
+        public static int Grow2(int[] x)
+        {
+            return x.Aggregate((p, next) => p * next);
+        }
+
         //  https://www.codewars.com/kata/abbreviate-a-two-word-name/train/csharp
         /// <summary>
         /// Sam Harris => S.H
