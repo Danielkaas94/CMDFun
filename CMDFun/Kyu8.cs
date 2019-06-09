@@ -8,6 +8,16 @@ namespace CMDFun
 {
     class Kyu8
     {
+        //  https://www.codewars.com/kata/how-many-lightsabers-do-you-own/train/csharp
+        /// <summary>
+        /// The only person who owns lightsabers is Zach, by the way. He owns 18, which is an awesome number of lightsabers. Anyone else owns 0
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public static int HowManyLightsabersDoYouOwn(string name)
+        {
+            return name == "Zach" ? 18 : 0;
+        }
 
         //  https://www.codewars.com/kata/will-there-be-enough-space/csharp
         /// <summary>
