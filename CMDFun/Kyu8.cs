@@ -9,6 +9,28 @@ namespace CMDFun
     class Kyu8
     {
 
+        //  https://www.codewars.com/kata/will-there-be-enough-space/csharp
+        /// <summary>
+        /// Returns the number of passengers the bus cannot fit, or 0 if the bus can fit every passenger.
+        /// </summary>
+        /// <param name="cap">Is the amount of people the bus can hold excluding the driver</param>
+        /// <param name="on">Is the number of people on the bus</param>
+        /// <param name="wait">Is the number of people waiting to get on to the bus.</param>
+        /// <returns></returns>
+        public static int Enough(int cap, int on, int wait)
+        {
+            int result = cap - (on + wait);
+
+            if (!(result > 0))
+            {
+                return Math.Abs(result);
+            }
+
+            return 0;
+        }
+
+        public static int Enough2(int cap, int on, int wait) => Math.Max(on + wait - cap, 0);
+
         //  https://www.codewars.com/kata/beginner-reduce-but-grow/csharp
         /// <summary>
         /// [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
