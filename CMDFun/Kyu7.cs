@@ -9,6 +9,30 @@ namespace CMDFun
 {
     class Kyu7
     {
+        //  https://www.codewars.com/kata/sum-of-all-the-multiples-of-3-or-5/csharp
+        /// <summary>
+        /// This function will return the sum of all multiples of 3 and 5.
+        /// 5 => 8,
+        /// 10 => 33
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int findSum(int n)
+        {
+            int result = 0;
+
+            for (int i = 0; i <= n; i++)
+            {
+                if (i % 3 == 0 || i % 5 == 0)
+                {
+                    result += i;
+                }
+            }
+
+            return result;
+        }
+
+        public static int findSum2(int n) => Enumerable.Range(1, n).Where(x => x % 5 == 0 || x % 3 == 0).Sum();
 
         //  https://www.codewars.com/kata/determine-if-the-poker-hand-is-flush/train/csharp
         /// <summary>

@@ -19,6 +19,8 @@ namespace CMDFun
             string[] cards3 = { "10D", "4S", "7H", "KC", "5S" };
             string[] cards4 = { "10D", "QD", "7D", "KD", "5D" };
 
+            Console.WriteLine(Kyu7.findSum(10));
+            Console.ReadLine();
             Kyu7.CheckIfFlush(cards);
             Console.WriteLine(Kyu7.CheckIfFlush(cards));
             Console.WriteLine(Kyu7.CheckIfFlush(cards2));
