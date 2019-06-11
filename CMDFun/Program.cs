@@ -22,6 +22,20 @@ namespace CMDFun
             Console.WriteLine(Kyu7.findSum(10));
             Console.ReadLine();
             Kyu7.CheckIfFlush(cards);
+
+            Console.WriteLine(Kyu6.SumConsecutives(new List<int> { 1, 4, 4, 4, 0, 4, 3, 3, 1 })); // => 1,12,0,4,6,1
+            Console.WriteLine(Kyu6.SumConsecutives(new List<int> { -5, -5, 7, 7, 12, 0 })); // => -10,14,12,0
+
+            var result = Kyu6.SumConsecutives(new List<int> { -5, -5, 7, 7, 12, 0, 12, 12 }); // => -10,14,12,0,24
+
+            foreach (var item in result) 
+            {
+                Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine(item); Console.ResetColor();
+            }
+
+            Console.WriteLine("DONE");
+            Console.ReadLine();
+
             Console.WriteLine(Kyu7.CheckIfFlush(cards));
             Console.WriteLine(Kyu7.CheckIfFlush(cards2));
             Console.WriteLine(Kyu7.CheckIfFlush(cards3));

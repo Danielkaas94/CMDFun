@@ -10,6 +10,115 @@ namespace CMDFun
     class Kyu6
     {
 
+        //  https://www.codewars.com/kata/sum-consecutives/train/csharp
+        /// <summary>
+        /// [1,4,4,4,0,4,3,3,1] # should return [1,12,0,4,6,1]
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        public static List<int> SumConsecutives(List<int> s)
+        {
+            List<int> result = new List<int>();
+            int previousNumber = s[0];
+            int counter = 1;
+            int tempCounter = counter;
+
+            bool changed = false;
+
+            for (int i = 1; i < s.Count; i++)
+            {
+                if (previousNumber == s[i])
+                {
+                    counter++;
+                }
+                else
+                {
+                    if (i == 1 && counter == 1)
+                    {
+                        result.Add(previousNumber);
+                    }
+                    else if (counter > 1 && tempCounter > 0 || tempCounter == 1 || changed == true)
+                    {
+                        result.Add(previousNumber * counter);
+
+                        tempCounter = counter;
+                        counter = 1;
+                        changed = true;
+                    }
+                }
+
+                previousNumber = s[i];
+                if (i + 1 == s.Count && counter > 1)
+                {
+                    result.Add(previousNumber * counter);
+                }
+                else if (i + 1 == s.Count)
+                {
+                    result.Add(previousNumber);
+                }
+            }
+
+            return result;
+        }
+
+        public static List<int> SumConsecutives2(List<int> s) => s.Select((v, i) => (i > 0 && s[i - 1] == v) ? (int?)null : s.Skip(i).TakeWhile(vi => vi == v).Sum()).Where(r => r.HasValue).Select(r => r.Value).ToList();
+
+
+        public static List<int> SumConsecutives_protoype(List<int> s)
+        {
+            // your code
+            List<int> result = new List<int>();
+            int previousNumber = s[0];
+            int counter = 0;
+            int tempCounter = counter;
+
+
+            for (int i = 1; i < s.Count; i++)
+            {
+                if (previousNumber == s[i])
+                {
+                    // Counter?
+                    counter++;
+                }
+                else
+                {
+
+                    // Execute Method n/counter times if n > 0
+                    if (counter > 0)
+                    {
+                        // previous || s[i]
+                        result.Add(previousNumber * counter);
+                    }
+                    else
+                    {
+                        if (i == 1 && counter == 0)
+                        {
+                            result.Add(previousNumber);
+                        }
+                        else
+                        {
+                            result.Add(s[i]);
+                        }
+                    }
+
+                }
+
+
+                previousNumber = s[i];
+            }
+
+            Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine(previousNumber); Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine(previousNumber); Console.ResetColor();
+
+            foreach (var item in result)
+            {
+                Console.ForegroundColor = ConsoleColor.Blue; Console.WriteLine(item); Console.ResetColor();
+            }
+
+            //return new List<int>();
+            return null;
+        }
+
         // https://www.codewars.com/kata/number-format/train/csharp
         /// <summary>
         /// Format any integer provided into a string with "," (commas) in the correct places. NumberFormat(5678545) => "5,678,545"
@@ -21,6 +130,83 @@ namespace CMDFun
             Console.WriteLine($"{number:F}");
             return "0";
         }
+
+
+
+        //1
+        //3
+        //5
+        //7
+        //5
+        //3
+        //1
+
+        /// <summary>
+        /// Give me a Diamond
+        ///  https://www.codewars.com/kata/give-me-a-diamond/train/csharp
+        /// </summary>
+        /// <param name="n">Null for even numbers</param>
+        /// <returns></returns>
+        public static string print(int n)
+        {
+            StringBuilder sbTop = new StringBuilder();
+            StringBuilder sbMiddle = new StringBuilder();
+            StringBuilder sbBot = new StringBuilder();
+
+
+            int spaceCounter = 0;
+            int rowCounter = n;
+
+
+            // Create the Middle of the diamon
+            for (int i = 0; i < n; i++)
+            {
+                sbMiddle.Append("*");
+            }
+
+            n--; n--;
+
+            Console.WriteLine("Hvad er n: " + n);
+
+            for (int i = 0; i < rowCounter - 2; i++)
+            {
+                for (int k = 0; k < n; k++)
+                {
+                    sbTop.Append("*");
+                }
+
+            }
+
+            Console.WriteLine();
+            //Console.WriteLine(sbTop);
+            Console.WriteLine(sbMiddle);
+            Console.WriteLine("### END ###");
+            Console.WriteLine();
+            return "Just Testing";
+        }
+
+        /*
+         * 
+            StringBuilder sb = new StringBuilder();
+
+            int spaceCounter = 0;
+            int rowCounter = n;
+
+            for (int i = 1; i <= n; i++, i++)
+            {
+                Console.WriteLine(i);
+                sb.Append("*");
+                spaceCounter++;
+                Console.WriteLine("spaceCounter: " + spaceCounter);
+                Console.WriteLine("rowCounter: " + rowCounter);
+
+            }
+            Console.WriteLine();
+            Console.WriteLine(sb);
+
+            return "Just Testing";
+         * 
+         */
 
 
         public static void diff()
