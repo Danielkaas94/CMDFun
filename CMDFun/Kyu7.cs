@@ -9,6 +9,36 @@ namespace CMDFun
 {
     class Kyu7
     {
+        //  https://www.codewars.com/kata/reverse-a-number/train/csharp
+        /// <summary>
+        /// Reverse digits. 1337 => 7331
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static int ReverseNumber(int n)
+        {
+            StringBuilder sb = new StringBuilder();
+            string number = Math.Abs(n).ToString();
+
+            for (int i = number.Length - 1; i >= 0; i--)
+            {
+                sb.Append(number[i]);
+            }
+
+            // If n is negative, add minus '-'
+            if (n < 0)
+            {
+                sb.Insert(0, '-');
+            }
+
+            int result = Convert.ToInt32(sb.ToString());
+
+            return result;
+        }
+
+        public static int ReverseNumber2(int n) => int.Parse(String.Join("", Math.Abs(n).ToString().Reverse())) * (n < 0 ? -1 : 1);
+
+
         //  https://www.codewars.com/kata/sum-of-all-the-multiples-of-3-or-5/csharp
         /// <summary>
         /// This function will return the sum of all multiples of 3 and 5.
