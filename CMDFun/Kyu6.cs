@@ -141,13 +141,58 @@ namespace CMDFun
         //3
         //1
 
+        //  https://www.codewars.com/kata/give-me-a-diamond/train/csharp
         /// <summary>
-        /// Give me a Diamond
-        ///  https://www.codewars.com/kata/give-me-a-diamond/train/csharp
+        /// <para>♦ Give me a Diamond! ♦</para>
+        /// Returns a string that displays a diamond shape on the screen using asterisk * signs
         /// </summary>
         /// <param name="n">Null for even numbers</param>
         /// <returns></returns>
         public static string print(int n)
+        {
+            string result_diamond = "";
+            string temp = "";
+            int starCounter = n - 2;
+            int spaceCounter = 1;
+
+            if (n % 2 == 0 || n < 0)
+            {
+                return null;
+            }
+
+
+            // The middle of the diamond ♦
+            for (int i = 0; i < n; i++)
+            {
+                result_diamond += "*";
+            }
+
+            result_diamond += "\n";
+
+
+            for (int i = 1; i < n; i += 2) // Adds two layers each time 
+            {
+                for (int k = 0; k < spaceCounter; k++) // Amount of spaces to be added
+                {
+                    temp += " ";
+                }
+
+                for (int j = 0; j < starCounter; j++) // Adds asterisks/stars *
+                {
+                    temp += "*";
+                }
+
+                result_diamond = temp + "\n" + result_diamond + temp + "\n";
+
+                temp = "";
+                spaceCounter++;
+                starCounter -= 2;
+            }
+
+            return result_diamond;
+        }
+
+        public static string print_prototype(int n)
         {
             StringBuilder sbTop = new StringBuilder();
             StringBuilder sbMiddle = new StringBuilder();
