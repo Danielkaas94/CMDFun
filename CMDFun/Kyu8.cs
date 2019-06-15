@@ -8,6 +8,79 @@ namespace CMDFun
 {
     class Kyu8
     {
+
+        //  https://www.codewars.com/kata/convert-number-to-reversed-array-of-digits/train/csharp
+        /// <summary>
+        /// Return the digits of this number within an array in reverse order.
+        /// </summary>
+        /// <param name="myLongNumbers"></param>
+        /// <returns></returns>
+        private static long[] Digitize(long myLongNumbers)
+        {
+            throw new NotImplementedException();
+        }
+
+        /*
+        // Crap is not working 💩
+        public static long[] Digitize(long n)
+        {
+            Convert.ToString(n);
+
+            //long[] array = new long[n.ToString().Count()];
+
+            string tempString = n.ToString() + "";
+            char[] StringArray = tempString.Split("");
+
+            Console.WriteLine(tempString);
+
+            //for (int i = 0; i < n.ToString().Length / 2; i++)
+            //{
+            //    //long tmp = 
+
+            //}
+            string result = n.ToString();
+            result.Reverse();
+
+            Console.WriteLine(result);
+
+            //Console.WriteLine(n.ToString().Reverse());
+
+            return null;
+        }
+        */
+
+
+        //  https://www.codewars.com/kata/calculate-bmi/train/csharp
+        /// <summary>
+        /// Write function bmi that calculates body mass index (bmi = weight / height ^ 2).
+        /// </summary>
+        /// <param name="weight">The weight of a person</param>
+        /// <param name="height">The height of a person</param>
+        /// <returns></returns>
+        private static string Bmi(double weight, double height)
+        {
+            double doubleHeight = height * height;
+
+            if (weight / doubleHeight <= 18.5)
+            {
+                return "Underweight";
+            }
+            else if (weight / doubleHeight <= 25.0)
+            {
+                return "Normal";
+            }
+            else if (weight / doubleHeight <= 30.0)
+            {
+                return "Overweight";
+            }
+            else if (weight / doubleHeight > 30.0)
+            {
+                return "Obese";
+            }
+
+            return "";
+        }
+
         //  https://www.codewars.com/kata/how-many-lightsabers-do-you-own/train/csharp
         /// <summary>
         /// The only person who owns lightsabers is Zach, by the way. He owns 18, which is an awesome number of lightsabers. Anyone else owns 0
@@ -243,8 +316,9 @@ namespace CMDFun
             return s.Substring(1, (s.Length - 2));
         }
 
+
+        //  https://www.codewars.com/kata/remove-string-spaces/csharp
         /// <summary>
-        /// https://www.codewars.com/kata/remove-string-spaces/csharp
         /// Remove spaces from the input string
         /// </summary>
         /// <param name="input">String with spaces</param>

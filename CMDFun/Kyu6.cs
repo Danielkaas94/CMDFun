@@ -9,6 +9,13 @@ namespace CMDFun
 {
     class Kyu6
     {
+        public Dictionary<double, bool> Drive(double[,] drinks, string finished, string drive_time)
+        {
+            // Code here https://www.codewars.com/kata/am-i-safe-to-drive/train/csharp
+            // double[,] alcohol = new double[,] { { 5.2, 568.0 }, { 5.2, 568.0 }, { 5.2, 568.0 }, { 12.0, 175.0 }, { 12.0, 175.0 }, { 12.0, 175.0 } }; drive(alcohol, "23:00", "08:15"); => { 15.16, false }
+            return null;
+        }
+
 
         //  https://www.codewars.com/kata/sum-consecutives/train/csharp
         /// <summary>
@@ -132,6 +139,8 @@ namespace CMDFun
         }
 
 
+        //  https://www.codewars.com/kata/build-tower
+
 
         //1
         //3
@@ -198,8 +207,6 @@ namespace CMDFun
             StringBuilder sbMiddle = new StringBuilder();
             StringBuilder sbBot = new StringBuilder();
 
-
-            int spaceCounter = 0;
             int rowCounter = n;
 
 
@@ -257,6 +264,78 @@ namespace CMDFun
         public static void diff()
         {
 
+        }
+
+        //  https://www.codewars.com/kata/count-the-smiley-faces/train/csharp
+        /// <summary>
+        /// Given an array, it should return the total number of smiling faces.
+        /// </summary>
+        /// <param name="smileys"></param>
+        /// <returns></returns>
+        private static int CountSmiley(string[] smileys)
+        {
+            // :) :D ;-D :~) - Valid.
+            // ;( :> :} :] - Invalid.
+            int counter = 0;
+
+            foreach (string item in smileys)
+            {
+                switch (item)
+                {
+                    case ":D":
+                        counter++;
+                        break;
+
+                    case ":~)":
+                        counter++;
+                        break;
+
+                    case ";~D":
+                        counter++;
+                        break;
+
+                    case ":-)":
+                        break;
+
+                    case ":)":
+                        counter++;
+                        break;
+
+                    case ";-D":
+                        counter++;
+                        break;
+
+                    case ";D":
+                        counter++;
+                        break;
+
+                    case ";-)":
+                        counter++;
+                        break;
+
+                    case ":-D":
+                        counter++;
+                        break;
+
+                    case ";)":
+                        counter++;
+                        break;
+
+                    case ";~)":
+                        counter++;
+                        break;
+
+                    case ":~D":
+                        counter++;
+                        break;
+                }
+            }
+            return counter;
+        }
+
+        public static int CountSmileys2(string[] smileys)
+        {
+            return smileys.Count(s => Regex.IsMatch(s, @"^[:;]{1}[~-]{0,1}[\)D]{1}$"));
         }
 
 

@@ -9,6 +9,39 @@ namespace CMDFun
 {
     class Kyu7
     {
+        //Code your solution here - http://www.codewars.com/kata/credit-card-issuer-checking/train/csharp
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public static string getIssuer(long number)
+        {
+            /*
+                | Card Type  | Begins With          | Number Length |
+                |------------|----------------------|---------------|
+                | AMEX       | 34 or 37             | 15            |
+                | Discover   | 6011                 | 16            |
+                | Mastercard | 51, 52, 53, 54 or 55 | 16            |
+                | VISA       | 4                    | 13 or 16      |
+             */
+            throw new NotImplementedException();
+        }
+
+        //  https://www.codewars.com/kata/sort-array-by-string-length/train/csharp
+        /// <summary>
+        /// Takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+        /// </summary>
+        /// <param name="words"></param>
+        /// <returns></returns>
+        private static string[] SortByLenght(string[] words)
+        {
+            Array.Sort(words, (x, y) => x.Length.CompareTo(y.Length));
+
+            return words;
+        }
+
+
         //  https://www.codewars.com/kata/reverse-a-number/train/csharp
         /// <summary>
         /// Reverse digits. 1337 => 7331
@@ -323,6 +356,83 @@ namespace CMDFun
             return Regex.IsMatch(pin, @"^\d{4}$|^\d{6}$");
         }
 
+
+        //  https://www.codewars.com/kata/find-the-vowels/train/csharp
+        /// <summary>
+        /// Check for vowels - aeiouy
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns></returns>
+        private static int[] VowelIndices(string word)
+        {
+            List<int> myVowelList = new List<int>();
+
+            for (int i = 0; i < word.Length; i++)
+            {
+                switch (word.ToLower()[i])
+                {
+                    case 'a':
+                        myVowelList.Add(i + 1);
+                        break;
+                    case 'e':
+                        myVowelList.Add(i + 1);
+                        break;
+                    case 'i':
+                        myVowelList.Add(i + 1);
+                        break;
+                    case 'o':
+                        myVowelList.Add(i + 1);
+                        break;
+                    case 'u':
+                        myVowelList.Add(i + 1);
+                        break;
+                    case 'y':
+                        myVowelList.Add(i + 1);
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+            int[] myVowelArray = myVowelList.ToArray();
+            return myVowelArray;
+        }
+        public static int[] VowelIndices2(string word) =>
+                new Regex("[aeiouy]", RegexOptions.IgnoreCase).Matches(word).Cast<Match>().Select(m => m.Index + 1).ToArray();
+
+        #region Fake Code
+        /*
+        // This is pure bullshit, i have to do it right. 
+        string longWord = "supercalifragilisticexpialidocious";
+        if (word3.ToUpper() == "MMM")
+        {
+            return new int[] { };
+        }
+        else if (word3.ToUpper() == "SUPER")
+        {
+            return new int[] { 2, 4 };
+        }
+        else if (word3.ToUpper() == "APPLE")
+        {
+            return new int[] { 1, 5 };
+        }
+        else if (word3.ToUpper() == "YOMAMA")
+        {
+            return new int[] { 1, 2, 4, 6 };
+        }
+        else if (word3.ToUpper() == "ORANGE")
+        {
+            return new int[] { 1, 3,6 };
+        }
+        else if (word3.ToUpper() == longWord.ToUpper())
+        {
+            return new int[] { 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 25, 27, 29, 31, 32, 33 };
+        }
+        *
+        */
+        #endregion
+
+
         /// <summary>
         /// Check to see if a string has the same amount of 'x's and 'o's.
         /// The method must return a boolean and be case insensitive.
@@ -376,6 +486,7 @@ namespace CMDFun
 
             return matrix;
         }
+
 
 
         public static int[][] ReverseOnDiagonals_Prototype2(int[][] matrix)

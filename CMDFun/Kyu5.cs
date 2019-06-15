@@ -8,6 +8,41 @@ namespace CMDFun
 {
     class Kyu5
     {
+        //  https://www.codewars.com/kata/moving-zeros-to-the-end/train/csharp
+        /// <summary>
+        /// An algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+        /// </summary>
+        /// <param name="arr">Integer array.</param>
+        /// <returns>Integer array with zeros at the end</returns>
+        public static int[] MoveZeroes(int[] arr)
+        {
+            if (arr == null || arr.Length < 2)
+            {
+                return arr;
+            }
+
+            int swapCount = 0;
+            int max = arr.Length;
+            int lastIndex = arr.Length - 1;
+
+            for (int i = lastIndex - 1; i > 0; i--)
+            {
+                if (arr[i] == 0 || arr[i] == 0.0)
+                {
+                    arr[i] = arr[lastIndex - swapCount];
+                    arr[lastIndex - swapCount] = 0;
+                    swapCount++;
+                }
+            }
+
+            foreach (var item in arr)
+            {
+                Console.WriteLine("Lal " + item);
+            }
+
+            return arr;
+        }
+
 
         /// <summary>
         /// Performs the ROT13 character rotation.

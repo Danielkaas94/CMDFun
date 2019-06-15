@@ -19,6 +19,11 @@ namespace CMDFun
             string[] cards3 = { "10D", "4S", "7H", "KC", "5S" };
             string[] cards4 = { "10D", "QD", "7D", "KD", "5D" };
 
+            Console.WriteLine(Kyu7.CheckIfFlush(cards));
+            Console.WriteLine(Kyu7.CheckIfFlush(cards2));
+            Console.WriteLine(Kyu7.CheckIfFlush(cards3));
+            Console.WriteLine(Kyu7.CheckIfFlush(cards4));
+            Console.ReadLine();
 
             Console.WriteLine(Kyu6.print(3));
             Console.WriteLine("\n## Just Testing ##\n");
@@ -29,39 +34,27 @@ namespace CMDFun
             Console.WriteLine(Kyu6.print(9));
             Console.WriteLine("\n## Just Testing ##\n");
             Console.WriteLine(Kyu6.print(11));
+            Console.WriteLine(Kyu6.print(21));
+            Console.WriteLine(Kyu6.print(43));
+            Console.WriteLine(Kyu6.print(87));
+            Console.WriteLine(Kyu6.print(175));
 
             Console.ReadLine();
 
-            //Console.WriteLine(Kyu7.ReverseNumber(1337));
-            //Console.WriteLine(Kyu7.ReverseNumber(123));
             Console.WriteLine(Kyu7.ReverseNumber(-123));
-            Console.WriteLine(Kyu7.ReverseNumber(10000));
 
             Console.WriteLine(Kyu7.findSum(10));
             Console.ReadLine();
-            Kyu7.CheckIfFlush(cards);
-
-            Console.WriteLine(Kyu6.SumConsecutives(new List<int> { 1, 4, 4, 4, 0, 4, 3, 3, 1 })); // => 1,12,0,4,6,1
-            Console.WriteLine(Kyu6.SumConsecutives(new List<int> { -5, -5, 7, 7, 12, 0 })); // => -10,14,12,0
 
             var result = Kyu6.SumConsecutives(new List<int> { -5, -5, 7, 7, 12, 0, 12, 12 }); // => -10,14,12,0,24
 
-            foreach (var item in result) 
+            foreach (var item in result)
             {
                 Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine(item); Console.ResetColor();
             }
 
-            Console.WriteLine("DONE");
             Console.ReadLine();
 
-            Console.WriteLine(Kyu7.CheckIfFlush(cards));
-            Console.WriteLine(Kyu7.CheckIfFlush(cards2));
-            Console.WriteLine(Kyu7.CheckIfFlush(cards3));
-            Console.WriteLine(Kyu7.CheckIfFlush(cards4));
-            Console.ReadLine();
-
-            Console.WriteLine(Kyu8.SumMix(new object[] { 9, 3, "7", "3" }));
-            Console.WriteLine(Kyu8.OtherAngle(30, 60));
             Kyu7.Angle(4);
             Kyu7.Angle(5);
             Kyu8.Remove_char("Hello World");
@@ -71,16 +64,6 @@ namespace CMDFun
             Kyu7.FindShort("bitcoin take over the world maybe who knows perhaps");
 
             Console.ReadLine();
-            Console.ReadLine();
-
-            string hello = "Hello World";
-            //Console.WriteLine(hello.ToAlternatingCase());
-
-            //Console.WriteLine(Kyu6.NumberFormat(100000));
-
-            //Console.WriteLine(Kyu7.PredictAge(65, 60, 75, 55, 60, 63, 64, 45));
-            //Console.WriteLine(Kyu8.boolean_to_string(true));
-            //Console.WriteLine(Kyu8.Summaration(8));
 
             var matrix = new int[][] {
                 new int[] {1,2,3},
@@ -91,8 +74,6 @@ namespace CMDFun
                 new int[]{9,2,7},
                 new int[]{4,5,6},
                 new int[]{3,8,1}};
-
-            //Console.WriteLine(Kyu7.ReverseOnDiagonals(matrix));
 
             //matrix = new int[][]{
             //new int[]{239}};
@@ -123,116 +104,8 @@ namespace CMDFun
             new int[]{370, 492, 225, 37, 494, 644, 492, 237, 697},
             new int[]{665, 340, 993, 546, 84, 434, 560, 318, 22},
             new int[]{243, 967, 895, 368, 699, 104, 189, 712, 992}};
-
-
-            Console.WriteLine(Kyu7.ReverseOnDiagonals(matrix));
-
-            /*
-            Console.WriteLine(Kyu7.ValidatePin("a234")); // Should be false 
-            Console.WriteLine(Kyu7.ValidatePin("123456")); // Should be true 
-            Console.WriteLine(Kyu7.ValidatePin("1234")); // Should be true
-            Console.WriteLine(Kyu7.ValidatePin("12345")); // Should be false
-
-            Console.WriteLine(Kyu6.HighestRank(new int[] { 12, 10, 8, 12, 7, 6, 4, 10, 12 }));
-            Console.WriteLine(Kyu6.HighestRank(new int[] { 12, 10, 8, 12, 7, 6, 4, 10, 12, 10 }));
-            Console.WriteLine(Kyu6.HighestRank(new int[] { 12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10 }));
-            Console.WriteLine(Kyu6.HighestRank(new int[] { 9, 10 }));
-            */
         }
 
-
-        public static string BreakCamelCase(string str)
-        {
-            // complete the function
-            throw new NotImplementedException();
-        }
-
-        public static string getIssuer(long number)
-        {
-            //Code your solution here - http://www.codewars.com/kata/credit-card-issuer-checking/train/csharp
-            throw new NotImplementedException();
-        }
-
-        public static int[] Get_size(int w, int h, int d)
-        {
-            //Your code
-            throw new NotImplementedException();
-        }
-
-        public Dictionary<double, bool> Drive(double[,] drinks, string finished, string drive_time)
-        {
-            // Code here https://www.codewars.com/kata/am-i-safe-to-drive/train/csharp
-            // double[,] alcohol = new double[,] { { 5.2, 568.0 }, { 5.2, 568.0 }, { 5.2, 568.0 }, { 12.0, 175.0 }, { 12.0, 175.0 }, { 12.0, 175.0 } }; drive(alcohol, "23:00", "08:15"); => { 15.16, false }
-            return null;
-        }
-
-
-        public string driver(params string[] data)
-        {
-            // Code here - https://www.codewars.com/kata/driving-license/train/csharp
-            // data = ["John","James","Smith","01-Jan-2000","M"]; => SMITH001010JJ9AA
-            return null;
-        }
-
-
-        /// <summary>
-        /// An algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
-        /// </summary>
-        /// <param name="arr">Integer array.</param>
-        /// <returns>Integer array with zeros at the end</returns>
-        public static int[] MoveZeroes(int[] arr)
-        {
-            if (arr == null || arr.Length < 2)
-            {
-                return arr;
-            }
-
-            int swapCount = 0;
-            int max = arr.Length;
-            int lastIndex = arr.Length - 1;
-
-            for (int i = lastIndex - 1; i > 0; i--)
-            {
-                if (arr[i] == 0 || arr[i] == 0.0)
-                {
-                    arr[i] = arr[lastIndex - swapCount];
-                    arr[lastIndex - swapCount] = 0;
-                    swapCount++;
-                }
-            }
-
-            foreach (var item in arr)
-            {
-                Console.WriteLine("Lal " + item);
-            }
-
-            return arr;
-        }
-
-
-
-        public static string sumStrings(string a, string b)
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.Append(2 + 2);
-            Console.WriteLine(sb);
-
-            Console.WriteLine(a);
-            Console.WriteLine(b);
-            BigInteger valueA = 0;
-            BigInteger valueB = 0;
-
-            if (a == null || a == "")
-            {
-
-            }
-
-
-            valueA = ulong.Parse(a);
-            valueB = ulong.Parse(b);
-
-            return (valueA + valueB).ToString();
-        }
 
         // Race(720, 850, 70) => [0, 32, 18]
         // Race(80, 91, 37) => [3, 21, 49]
@@ -244,11 +117,6 @@ namespace CMDFun
             return null;
         }
 
-
-        private static long[] Digitize(long myLongNumbers)
-        {
-            throw new NotImplementedException();
-        }
 
         private static DateTime EasterSunday(int year)
         {
@@ -262,185 +130,12 @@ namespace CMDFun
             // return new DateTime(year, month, day);
         }
 
-        /// <summary>
-        /// Check for vowels - aeiouy
-        /// </summary>
-        /// <param name="word"></param>
-        /// <returns></returns>
-        private static int[] VowelIndices(string word)
-        {
-            List<int> myVowelList = new List<int>();
-
-            for (int i = 0; i < word.Length; i++)
-            {
-                switch (word.ToLower()[i])
-                {
-                    case 'a':
-                        myVowelList.Add(i + 1);
-                        break;
-                    case 'e':
-                        myVowelList.Add(i + 1);
-                        break;
-                    case 'i':
-                        myVowelList.Add(i + 1);
-                        break;
-                    case 'o':
-                        myVowelList.Add(i + 1);
-                        break;
-                    case 'u':
-                        myVowelList.Add(i + 1);
-                        break;
-                    case 'y':
-                        myVowelList.Add(i + 1);
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-            int[] myVowelArray = myVowelList.ToArray();
-            return myVowelArray;
-        }
-        public static int[] VowelIndices2(string word) =>
-                new Regex("[aeiouy]", RegexOptions.IgnoreCase).Matches(word).Cast<Match>().Select(m => m.Index + 1).ToArray();
-
-        #region Fake Code
-        /*
-         * 
-        // This is pure bullshit, i have to do it right. 
-        string longWord = "supercalifragilisticexpialidocious";
-        if (word3.ToUpper() == "MMM")
-        {
-            return new int[] { };
-        }
-        else if (word3.ToUpper() == "SUPER")
-        {
-            return new int[] { 2, 4 };
-        }
-        else if (word3.ToUpper() == "APPLE")
-        {
-            return new int[] { 1, 5 };
-        }
-        else if (word3.ToUpper() == "YOMAMA")
-        {
-            return new int[] { 1, 2, 4, 6 };
-        }
-        else if (word3.ToUpper() == "ORANGE")
-        {
-            return new int[] { 1, 3,6 };
-        }
-        else if (word3.ToUpper() == longWord.ToUpper())
-        {
-            return new int[] { 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 25, 27, 29, 31, 32, 33 };
-        }
-        *
-        */
-        #endregion
-
 
         private static void Abbreviate(string words)
         {
             throw new NotImplementedException();
         }
 
-        private static string[] SortByLenght(string[] words)
-        {
-            Array.Sort(words, (x, y) => x.Length.CompareTo(y.Length));
-
-            return words;
-        }
-
-        private static string Bmi(double weight, double height)
-        {
-            double doubleHeight = height * height;
-
-            if (weight / doubleHeight <= 18.5)
-            {
-                return "Underweight";
-            }
-            else if (weight / doubleHeight <= 25.0)
-            {
-                return "Normal";
-            }
-            else if (weight / doubleHeight <= 30.0)
-            {
-                return "Overweight";
-            }
-            else if (weight / doubleHeight > 30.0)
-            {
-                return "Obese";
-            }
-
-            return "";
-        }
-
-        private static int CountSmiley(string[] smileys)
-        {
-            // :) :D ;-D :~) - Valid.
-            // ;( :> :} :] - Invalid.
-            int counter = 0;
-
-            foreach (string item in smileys)
-            {
-                switch (item)
-                {
-                    case ":D":
-                        counter++;
-                        break;
-
-                    case ":~)":
-                        counter++;
-                        break;
-
-                    case ";~D":
-                        counter++;
-                        break;
-
-                    case ":-)":
-                        break;
-
-                    case ":)":
-                        counter++;
-                        break;
-
-                    case ";-D":
-                        counter++;
-                        break;
-
-                    case ";D":
-                        counter++;
-                        break;
-
-                    case ";-)":
-                        counter++;
-                        break;
-
-                    case ":-D":
-                        counter++;
-                        break;
-
-                    case ";)":
-                        counter++;
-                        break;
-
-                    case ";~)":
-                        counter++;
-                        break;
-
-                    case ":~D":
-                        counter++;
-                        break;
-
-                }
-
-            }
-            return counter;
-        }
-
-        public static int CountSmileys2(string[] smileys)
-        {
-            return smileys.Count(s => Regex.IsMatch(s, @"^[:;]{1}[~-]{0,1}[\)D]{1}$"));
-        }
 
         private static string DoubleChar(string abc_string)
         {
@@ -460,34 +155,6 @@ namespace CMDFun
 
         }
 
-        /*
-        // Crap is not working 💩
-        public static long[] Digitize(long n)
-        {
-            Convert.ToString(n);
-
-            //long[] array = new long[n.ToString().Count()];
-
-            string tempString = n.ToString() + "";
-            char[] StringArray = tempString.Split("");
-
-            Console.WriteLine(tempString);
-            
-            //for (int i = 0; i < n.ToString().Length / 2; i++)
-            //{
-            //    //long tmp = 
-
-            //}
-            string result = n.ToString();
-            result.Reverse();
-
-            Console.WriteLine(result);
-
-            //Console.WriteLine(n.ToString().Reverse());
-
-            return null;
-        }
-        */
 
         public static int CountSheep(bool[] sheeps)
         {
