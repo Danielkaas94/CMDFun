@@ -19,11 +19,37 @@ namespace CMDFun
             string[] cards3 = { "10D", "4S", "7H", "KC", "5S" };
             string[] cards4 = { "10D", "QD", "7D", "KD", "5D" };
 
-            Console.WriteLine(Kyu7.CheckIfFlush(cards));
-            Console.WriteLine(Kyu7.CheckIfFlush(cards2));
-            Console.WriteLine(Kyu7.CheckIfFlush(cards3));
-            Console.WriteLine(Kyu7.CheckIfFlush(cards4));
+            //Console.WriteLine(Kyu7.CheckIfFlush(cards));
+            //Console.WriteLine(Kyu7.CheckIfFlush(cards2));
+            //Console.WriteLine(Kyu7.CheckIfFlush(cards3));
+            //Console.WriteLine(Kyu7.CheckIfFlush(cards4));
+            //Console.ReadLine();
+
+
+
+            //Console.WriteLine(Kyu5.JosSurvivor(7,3)); // 4
+            //Console.WriteLine(Kyu5.JosSurvivor(11, 19)); // 10
+            //Console.WriteLine(Kyu5.JosSurvivor(40, 3)); // 28
+            //Console.WriteLine(Kyu5.JosSurvivor(100, 1)); // 100
+            //Console.WriteLine(Kyu5.JosSurvivor(1, 300)); // 1
+            //Console.WriteLine(Kyu5.JosSurvivor(2, 300)); // 1
+            //Console.WriteLine(Kyu5.JosSurvivor(5, 300)); // 1
+            //Console.WriteLine(Kyu5.JosSurvivor(7, 300)); // 7
+            //Console.WriteLine(Kyu5.JosSurvivor(300, 300)); // 265
+            Console.WriteLine();
+
             Console.ReadLine();
+
+            Console.WriteLine(Kyu6.IsPrime(609200726)); // Expect False 
+            Console.WriteLine(Kyu6.IsPrime(602731187));
+            Console.WriteLine(Kyu6.IsPrime(7919)); // Expect True
+            Console.WriteLine(Kyu6.IsPrime(7920)); // Expect False 
+            Console.WriteLine(Kyu6.IsPrime(222195107));
+            //Console.WriteLine(Kyu6.IsPrime(178514040014031954911581818913201172219497283401660732485136498346219247522492131785015699369789650364797));
+            Console.WriteLine(Kyu6.IsPrime(1884267767));
+            Console.WriteLine("Enter....");
+            Console.ReadLine();
+
 
             Console.WriteLine(Kyu6.print(3));
             Console.WriteLine("\n## Just Testing ##\n");
@@ -152,29 +178,8 @@ namespace CMDFun
 
             return stringBuilder.ToString();
 
-
         }
 
-
-        public static int CountSheep(bool[] sheeps)
-        {
-            int sheepCounter = 0;
-            // Todo.
-            foreach (var sheep in sheeps)
-            {
-                if (sheep == true)
-                {
-                    sheepCounter++;
-                }
-            }
-
-            return sheepCounter;
-        }
-
-        public static int CountSheep2(bool[] sheeps)
-        {
-            return sheeps.Count(s => s);
-        }
 
         private static DynamicMethod MultiplyBy2AndAdd1()
         {

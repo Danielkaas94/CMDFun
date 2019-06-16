@@ -43,7 +43,6 @@ namespace CMDFun
             return arr;
         }
 
-
         /// <summary>
         /// Performs the ROT13 character rotation.
         /// </summary>
@@ -89,34 +88,80 @@ namespace CMDFun
         }
 
 
+        /*
+            josephus_survivor(7,3) => means 7 people in a circle;
+            one every 3 is eliminated until one remains
+            [1,2,3,4,5,6,7] - initial sequence
+            [1,2,4,5,6,7] => 3 is counted out
+            [1,2,4,5,7] => 6 is counted out
+            [1,4,5,7] => 2 is counted out
+            [1,4,5] => 7 is counted out
+            [1,4] => 5 is counted out
+            [4] => 1 counted out, 4 is the last element - the survivor!
+        */
 
-        public class JosephusSurvivor
+        // Create array from Range(n);
+        // Start at index 0 and go k steps, remove the number and save it in a temp.
+        // Save what index we where before || start at index-1
+        // if steps > n ? start at index 0
+
+        // int varRest = index - k
+
+        //  https://www.codewars.com/kata/josephus-survivor/train/csharp
+        /// <summary>
+        /// <para>JosephusSurvivor(7,3) => 4</para>
+        /// means 7 people in a circle;
+        /// one every 3 is eliminated until one remains
+        /// </summary>
+        /// <param name="n">Number of people</param>
+        /// <param name="k">The amount of steps before execute</param>
+        /// <returns>The Survivor</returns>
+        public static int JosSurvivor(int n, int k)
         {
+            // your code
+            int indexTemp = 0 + k - 1;
 
-            /*
-                josephus_survivor(7,3) => means 7 people in a circle;
-                one every 3 is eliminated until one remains
-                [1,2,3,4,5,6,7] - initial sequence
-                [1,2,4,5,6,7] => 3 is counted out
-                [1,2,4,5,7] => 6 is counted out
-                [1,4,5,7] => 2 is counted out
-                [1,4,5] => 7 is counted out
-                [1,4] => 5 is counted out
-                [4] => 1 counted out, 4 is the last element - the survivor!
-            */
+            List<int> people = new List<int>();
 
-
-            /// <summary>
-            /// 
-            /// </summary>
-            /// <param name="n"></param>
-            /// <param name="k"></param>
-            /// <returns></returns>
-            public static int JosSurvivor(int n, int k)
+            for (int i = 0; i < n; i++)
             {
-                // your code
-                return 0;
+                people.Add(i + 1);
             }
+
+            for (int i = 0; i < n - 1; i++) // n amount of times
+            {
+
+                if (indexTemp < people.Count - 1)
+                {
+                    people.RemoveAt(indexTemp);
+                }
+                else if (indexTemp == people.Count - 1)
+                {
+                    people.RemoveAt(indexTemp);
+                    indexTemp = 0;
+                }
+                else if (indexTemp > people.Count - 1)
+                {
+                    do
+                    {
+                        indexTemp -= people.Count;
+                    } while (indexTemp > people.Count - 1);
+
+                    people.RemoveAt(indexTemp);
+                }
+
+                indexTemp += k - 1;
+            }
+
+            return people[0];
+        }
+
+        public static int JosSurvivor2(int n, int k)
+        {
+            if (n == 1)
+                return 1;
+            else
+                return (JosSurvivor2(n - 1, k) + k - 1) % n + 1;
         }
     }
 }
