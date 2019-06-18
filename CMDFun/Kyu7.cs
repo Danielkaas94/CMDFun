@@ -9,6 +9,53 @@ namespace CMDFun
 {
     class Kyu7
     {
+        /// <summary>
+        /// Creates complementary side of a DNA string
+        /// </summary>
+        /// <param name="dna"><para>Deoxyribonucleic acid (DNA)</para>
+        /// Is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.</param>
+        /// <returns></returns>
+        public static string MakeComplement(string dna)
+        {
+            string result = "";
+            char currentCharacter;
+
+            for (int i = 0; i < dna.Length; i++)
+            {
+                currentCharacter = dna[i];
+
+                switch (currentCharacter)
+                {
+                    case 'A':
+                        result += "T";
+                        break;
+
+                    case 'T':
+                        result += "A";
+                        break;
+
+                    case 'G':
+                        result += "C";
+                        break;
+
+                    case 'C':
+                        result += "G";
+                        break;
+
+                    default:
+                        break;
+                }
+            }
+
+            return result;
+        }
+
+        public static string MakeComplement2(string dna)
+        {
+            return dna.Replace('T', '?').Replace('A', 'T').Replace('?', 'A').Replace('G', '?').Replace('C', 'G').Replace('?', 'C');
+        }
+
+
         //Code your solution here - http://www.codewars.com/kata/credit-card-issuer-checking/train/csharp
         /// <summary>
         /// 

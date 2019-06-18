@@ -19,11 +19,14 @@ namespace CMDFun
             string[] cards3 = { "10D", "4S", "7H", "KC", "5S" };
             string[] cards4 = { "10D", "QD", "7D", "KD", "5D" };
 
+
+            Console.WriteLine(Kyu7.MakeComplement("ATTGC")); // "TAACG"
+            Console.WriteLine(Kyu7.MakeComplement("GTAT")); // "CATA"
+            Console.ReadLine();
             //Console.WriteLine(Kyu7.CheckIfFlush(cards));
             //Console.WriteLine(Kyu7.CheckIfFlush(cards2));
             //Console.WriteLine(Kyu7.CheckIfFlush(cards3));
             //Console.WriteLine(Kyu7.CheckIfFlush(cards4));
-            //Console.ReadLine();
 
 
 
