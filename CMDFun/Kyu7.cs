@@ -10,6 +10,42 @@ namespace CMDFun
     class Kyu7
     {
         /// <summary>
+        /// Creates squares with "+" based on n
+        /// </summary>
+        /// <param name="n">Size of the square</param>
+        /// <returns></returns>
+        public static string GenerateShape(int n)
+        {
+            string line = "";
+            string result = "";
+
+            if (n == 0)
+            {
+                return "";
+            }
+            else if (n == 1)
+            {
+                return "+";
+            }
+
+            for (int i = 0; i < n; i++)
+            {
+                line += "+";
+            }
+
+            line += "\n";
+
+            for (int i = 0; i < n; i++)
+            {
+                result += line;
+            }
+
+            return result.Remove(result.Length - 1);
+        }
+
+        public static string GenerateShape2(int n)  => string.Join("\n", Enumerable.Repeat(new string('+', n), n));
+
+        /// <summary>
         /// Creates complementary side of a DNA string
         /// </summary>
         /// <param name="dna"><para>Deoxyribonucleic acid (DNA)</para>

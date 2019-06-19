@@ -20,26 +20,10 @@ namespace CMDFun
             string[] cards4 = { "10D", "QD", "7D", "KD", "5D" };
 
 
+            Console.WriteLine(Kyu7.GenerateShape(3));
+            Console.ReadLine();
             Console.WriteLine(Kyu7.MakeComplement("ATTGC")); // "TAACG"
             Console.WriteLine(Kyu7.MakeComplement("GTAT")); // "CATA"
-            Console.ReadLine();
-            //Console.WriteLine(Kyu7.CheckIfFlush(cards));
-            //Console.WriteLine(Kyu7.CheckIfFlush(cards2));
-            //Console.WriteLine(Kyu7.CheckIfFlush(cards3));
-            //Console.WriteLine(Kyu7.CheckIfFlush(cards4));
-
-
-
-            //Console.WriteLine(Kyu5.JosSurvivor(7,3)); // 4
-            //Console.WriteLine(Kyu5.JosSurvivor(11, 19)); // 10
-            //Console.WriteLine(Kyu5.JosSurvivor(40, 3)); // 28
-            //Console.WriteLine(Kyu5.JosSurvivor(100, 1)); // 100
-            //Console.WriteLine(Kyu5.JosSurvivor(1, 300)); // 1
-            //Console.WriteLine(Kyu5.JosSurvivor(2, 300)); // 1
-            //Console.WriteLine(Kyu5.JosSurvivor(5, 300)); // 1
-            //Console.WriteLine(Kyu5.JosSurvivor(7, 300)); // 7
-            //Console.WriteLine(Kyu5.JosSurvivor(300, 300)); // 265
-            Console.WriteLine();
 
             Console.ReadLine();
 
@@ -48,7 +32,6 @@ namespace CMDFun
             Console.WriteLine(Kyu6.IsPrime(7919)); // Expect True
             Console.WriteLine(Kyu6.IsPrime(7920)); // Expect False 
             Console.WriteLine(Kyu6.IsPrime(222195107));
-            //Console.WriteLine(Kyu6.IsPrime(178514040014031954911581818913201172219497283401660732485136498346219247522492131785015699369789650364797));
             Console.WriteLine(Kyu6.IsPrime(1884267767));
             Console.WriteLine("Enter....");
             Console.ReadLine();
@@ -68,11 +51,6 @@ namespace CMDFun
             Console.WriteLine(Kyu6.print(87));
             Console.WriteLine(Kyu6.print(175));
 
-            Console.ReadLine();
-
-            Console.WriteLine(Kyu7.ReverseNumber(-123));
-
-            Console.WriteLine(Kyu7.findSum(10));
             Console.ReadLine();
 
             var result = Kyu6.SumConsecutives(new List<int> { -5, -5, 7, 7, 12, 0, 12, 12 }); // => -10,14,12,0,24
