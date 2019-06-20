@@ -20,8 +20,12 @@ namespace CMDFun
             string[] cards4 = { "10D", "QD", "7D", "KD", "5D" };
 
 
-            Console.WriteLine(Kyu7.GenerateShape(3));
+            Console.WriteLine(Kyu7.OddOrEven(new int[] { 0 })); // even
+            Console.WriteLine(Kyu7.OddOrEven(new int[] { 1 })); // odd
+            Console.WriteLine(Kyu7.OddOrEven(new int[] { }));   // even
             Console.ReadLine();
+
+            Console.WriteLine(Kyu7.GenerateShape(3));
             Console.WriteLine(Kyu7.MakeComplement("ATTGC")); // "TAACG"
             Console.WriteLine(Kyu7.MakeComplement("GTAT")); // "CATA"
 

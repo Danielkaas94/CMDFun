@@ -9,6 +9,35 @@ namespace CMDFun
 {
     class Kyu7
     {
+
+        //  https://www.codewars.com/kata/odd-or-even/train/csharp
+        /// <summary>
+        /// Given an array of numbers, determine whether the sum of all of the numbers is odd or even.
+        /// </summary>
+        /// <param name="array">Array with numbers</param>
+        /// <returns></returns>
+        public static string OddOrEven(int[] array)
+        {
+            int sum = 0;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                sum += array[i];
+            }
+
+            if (sum % 2 == 0)
+            {
+                return "even";
+            }
+
+            return "odd";
+        }
+
+        public static string OddOrEven2(int[] array)
+        {
+            return array.Sum() % 2 == 0 ? "even" : "odd";
+        }
+
         /// <summary>
         /// Creates squares with "+" based on n
         /// </summary>
@@ -43,7 +72,7 @@ namespace CMDFun
             return result.Remove(result.Length - 1);
         }
 
-        public static string GenerateShape2(int n)  => string.Join("\n", Enumerable.Repeat(new string('+', n), n));
+        public static string GenerateShape2(int n) => string.Join("\n", Enumerable.Repeat(new string('+', n), n));
 
         /// <summary>
         /// Creates complementary side of a DNA string
