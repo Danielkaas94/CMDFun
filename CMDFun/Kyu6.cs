@@ -9,6 +9,82 @@ namespace CMDFun
 {
     class Kyu6
     {
+        //  https://www.codewars.com/kata/write-number-in-expanded-form/train/csharp
+        /// <summary>
+        /// You will be given a number and you will need to return it as a string in Expanded Form. For example:
+        /// <para>ExpandedForm(70304); # Should return "70000 + 300 + 4"</para>
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public static string ExpandedForm(long num)
+        {
+            string temp = num.ToString();
+            int length = temp.Length;
+
+            throw new NotImplementedException();
+        }
+
+
+
+        //  https://www.codewars.com/kata/is-a-number-prime/train/csharp
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="n"></param>
+        /// <returns></returns>
+        public static bool IsPrime(int n)
+        {
+            if (n <= 1) return false;
+            if (n <= 3) return true;
+
+            if (n % 2 == 0 || n % 3 == 0)
+            {
+                return false;
+            }
+
+            for (int i = 5; i * 1 <= n; i = i + 6)
+            {
+                if (n % i == 0 || n % (i + 2) == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+        public static bool IsPrime_prototype(int n)
+        {
+            int number = n;
+
+            if (number <= 1)
+            {
+                return false;
+            }
+            if (number <= 3 || number == 5 || number == 7 || number == 11)
+            {
+                return true;
+            }
+
+            if (number % number == 0 && number % 1 == 0)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < 100; i++)
+            {
+                if (number % i == 0)
+                {
+                    return false;
+                }
+            }
+
+            Console.WriteLine("True");
+            return true;
+        }
+
+
         public Dictionary<double, bool> Drive(double[,] drinks, string finished, string drive_time)
         {
             // Code here https://www.codewars.com/kata/am-i-safe-to-drive/train/csharp

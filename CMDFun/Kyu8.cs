@@ -81,6 +81,34 @@ namespace CMDFun
             return "";
         }
 
+
+        //  https://www.codewars.com/kata/counting-sheep-dot-dot-dot/train/csharp
+        /// <summary>
+        /// Consider an array of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+        /// </summary>
+        /// <param name="sheeps"></param>
+        /// <returns></returns>
+        public static int CountSheep(bool[] sheeps)
+        {
+            int sheepCounter = 0;
+            // Todo.
+            foreach (var sheep in sheeps)
+            {
+                if (sheep == true)
+                {
+                    sheepCounter++;
+                }
+            }
+
+            return sheepCounter;
+        }
+
+        public static int CountSheep2(bool[] sheeps)
+        {
+            return sheeps.Count(s => s);
+        }
+
+
         //  https://www.codewars.com/kata/how-many-lightsabers-do-you-own/train/csharp
         /// <summary>
         /// The only person who owns lightsabers is Zach, by the way. He owns 18, which is an awesome number of lightsabers. Anyone else owns 0
@@ -543,6 +571,31 @@ namespace CMDFun
         }
 
 
+        /// <summary>
+        /// <para>Given a string, you have to return a string in which each character (case-sensitive) is repeated once.</para>
+        /// DoubleChar("String") == "SSttrriinngg"
+        /// </summary>
+        /// <param name="abc_string"></param>
+        /// <returns></returns>
+        private static string DoubleChar(string abc_string)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            foreach (char letter in abc_string)
+            {
+                stringBuilder.Append(letter.ToString() + letter.ToString());
+
+                Console.WriteLine(letter);
+            }
+            Console.WriteLine(stringBuilder.ToString());
+
+            return stringBuilder.ToString();
+        }
+
+        public static string DoubleChar2(string s)
+        {
+            return string.Join("", s.Select(x => "" + x + x));
+        }
 
 
         private static int ArrayPlusArray(int[] arr1, int[] arr2)
@@ -574,6 +627,7 @@ namespace CMDFun
             }
             return preSum1 + preSum2;
         }
+
         public static int ArrayPlusArray2(int[] arr1, int[] arr2)
         {
             return arr1.Sum(x => x) + arr2.Sum(x => x);

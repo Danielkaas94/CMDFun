@@ -626,6 +626,49 @@ namespace CMDFun
             return input.ToLower().Count(i => i == 'x') == input.ToLower().Count(i => i == 'o');
         }
 
+
+        #region matrix example
+
+        /*
+
+        var matrix = new int[][] {
+                new int[] {1,2,3},
+                new int[] {4,5,6},
+                new int[] {7,8,9}};
+
+        var expected = new int[][]{
+                new int[]{9,2,7},
+                new int[]{4,5,6},
+                new int[]{3,8,1}};
+
+        matrix = new int[][]{
+            new int[]{43,455,32,103},
+            new int[]{102,988,298,981},
+            new int[]{309,21,53,64},
+            new int[]{2,22,35,291}};
+
+       expected = new int[][]{
+            new int[]{291,455,32,2},
+            new int[]{102,53,21,981},
+            new int[]{309,298,988,64},
+            new int[]{103,22,35,43}};
+
+       matrix = new int[][]{
+            new int[]{358, 568, 288, 72, 70, 655, 935, 872, 396},
+            new int[]{169, 258, 776, 18, 124, 552, 983, 111, 960},
+            new int[]{366, 280, 438, 867, 343, 251, 579, 426, 164},
+            new int[]{699, 176, 731, 830, 265, 231, 934, 690, 993},
+            new int[]{665, 90, 717, 400, 385, 70, 169, 240, 63},
+            new int[]{867, 435, 490, 880, 817, 12, 676, 665, 723},
+            new int[]{370, 492, 225, 37, 494, 644, 492, 237, 697},
+            new int[]{665, 340, 993, 546, 84, 434, 560, 318, 22},
+            new int[]{243, 967, 895, 368, 699, 104, 189, 712, 992}};
+
+         */
+
+        #endregion
+
+
         public static int[][] ReverseOnDiagonals(int[][] matrix)
         {
             // Noget smart der kan regne ud, hvor diagonalen er...
