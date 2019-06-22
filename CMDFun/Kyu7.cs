@@ -9,6 +9,44 @@ namespace CMDFun
 {
     class Kyu7
     {
+        //  https://www.codewars.com/kata/substituting-variables-into-strings-padded-numbers/train/csharp
+        /// <summary>
+        /// The return value should equal "Value is VALUE" where value is a 5 digit padded number.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static string Solution(int value)
+        {
+            if (value <= 9)
+            {
+                return "Value is 0000" + value.ToString(); ;
+            }
+            else if (value <= 99)
+            {
+                return "Value is 000" + value.ToString(); ;
+            }
+            else if (value <= 999)
+            {
+                return "Value is 00" + value.ToString(); ;
+            }
+            else if (value <= 9999)
+            {
+                return "Value is 0" + value.ToString(); ;
+            }
+            else if (value <= 99999)
+            {
+                return "Value is " + value.ToString(); ;
+            }
+
+            return "Error";
+        }
+
+        public static string Solution2(int value)
+        {
+            return $"Value is {value:D5}";
+        }
+
+        public static string Solution3(int value) => "Value is " + value.ToString("00000");
 
         //  https://www.codewars.com/kata/odd-or-even/train/csharp
         /// <summary>
