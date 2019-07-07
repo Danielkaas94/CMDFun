@@ -9,6 +9,32 @@ namespace CMDFun
     class Kyu8
     {
 
+        /// <summary>
+        /// Given a number n, return the number of positive odd numbers below n
+        /// </summary>
+        /// <param name="n">Number</param>
+        /// <returns></returns>
+        public static ulong OddCount(ulong n)
+        {
+            return n / 2;
+        }
+
+        public static ulong OddCount_protype(ulong n)
+        {
+            ulong counter = 0;
+
+            for (ulong i = 1; i < n; i++)
+            {
+                if (i % 2 == 1)
+                {
+                    counter++;
+                }
+            }
+
+            return counter;
+        }
+
+
         //  https://www.codewars.com/kata/convert-number-to-reversed-array-of-digits/train/csharp
         /// <summary>
         /// Return the digits of this number within an array in reverse order.
