@@ -9,6 +9,89 @@ namespace CMDFun
 {
     class Kyu6
     {
+
+        // https://www.codewars.com/kata/523f5d21c841566fde000009/train/csharp
+        /// <summary>
+        /// <para>Array Difference</para>
+        /// It should remove all values from list a, which are present in list b.
+        /// If a value is present in b, all of its occurrences must be removed from the other:
+        /// </summary>
+        /// <param name="a">Array of integers, that should get it's elements removed</param>
+        /// <param name="b">Array of integers. If a value is present in b, all of its occurrences must be removed from the other</param>
+        /// <returns> Array a minus array b </returns>
+        public static int[] ArrayDiff(int[] a, int[] b)
+        {
+            int[] newArray;
+            List<int> newList = new List<int>();
+
+            if (b == null || b.Length == 0 ) // Should return a if any of the arrays are empty
+            {
+                return a;
+            }
+            else if ( a == null || a.Length == 0)
+            {
+                return new int[] { };
+            }
+
+            foreach (var item in a)
+            {
+                newList.Add(item);
+            }
+
+            /*
+                for (int i = 0; i < b.Length; i++)
+                {
+                    newList.Remove(b[i]);
+                }
+            */
+            //for (int i = 0; i < b.every; i++)
+            //{
+            //    newList.Remove(b[i]);
+            //    newList.RemoveAll(b[i] => b[i] == b[i]);
+            //}
+
+            foreach (var arrayElement in b)
+            {
+                newList.RemoveAll(item => item == arrayElement);
+            }
+
+
+
+
+            newArray = newList.ToArray();
+
+            foreach (var item in newArray)
+            {
+                Console.Write($"{item}, ");
+            }
+
+            Console.ReadLine();
+            return newArray;
+        }
+
+        public static int[] ArrayDiff2(int[] a, int[] b)
+        {
+            return a.Where(n => !b.Contains(n)).ToArray();
+        }
+
+        public static int[] ArrayDiff3(int[] a, int[] b)
+        {
+            // With a hashset, we won't have to iterate over b for every item in a.
+            // Instead, we can check if an item exists in constant time
+            HashSet<int> bSet = new HashSet<int>(b);
+
+            return a.Where(v => !bSet.Contains(v)).ToArray();
+        }
+
+        public static int[] ArrayDiff4(int[] a, int[] b)
+        {
+            var sb = new HashSet<int>(b);
+            return Array.FindAll(a, x => !sb.Contains(x));
+        }
+
+        public static int[] ArrayDiff5(int[] a, int[] b) => Array.FindAll(a, m => !b.Contains(m));
+        
+        
         //  https://www.codewars.com/kata/write-number-in-expanded-form/train/csharp
         /// <summary>
         /// You will be given a number and you will need to return it as a string in Expanded Form. For example:
