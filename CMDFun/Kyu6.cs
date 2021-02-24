@@ -38,34 +38,12 @@ namespace CMDFun
                 newList.Add(item);
             }
 
-            /*
-                for (int i = 0; i < b.Length; i++)
-                {
-                    newList.Remove(b[i]);
-                }
-            */
-            //for (int i = 0; i < b.every; i++)
-            //{
-            //    newList.Remove(b[i]);
-            //    newList.RemoveAll(b[i] => b[i] == b[i]);
-            //}
-
             foreach (var arrayElement in b)
             {
                 newList.RemoveAll(item => item == arrayElement);
             }
-
-
-
-
+            
             newArray = newList.ToArray();
-
-            foreach (var item in newArray)
-            {
-                Console.Write($"{item}, ");
-            }
-
-            Console.ReadLine();
             return newArray;
         }
 
