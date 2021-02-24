@@ -9,6 +9,58 @@ namespace CMDFun
 {
     class Kyu7
     {
+        /// <summary>
+        /// <para>Limit</para>
+        /// The function must return the truncated version of the given string up to the given limit followed by "..."
+        /// <para>if the result is shorter than the original. Return the same string if nothing was truncated.</para>
+        /// </summary>
+        /// <param name="text">Text, send amount based on 'limit'.If limit is >= than text.Length, just send the whole text</param>
+        /// <param name="limit">Amount of characters</param>
+        /// <returns>text with less chars</returns>
+        public static string Limit(string text, int limit)
+        {
+            if (limit >= text.Length)
+            {
+                return text;
+            }
+
+            string newString = "";
+
+            for (int i = 0; i < limit; i++)
+            {
+                newString += text[i];
+            }
+
+            newString += "...";
+            return newString;
+        }
+        
+        public static string Limit2(string text, int limit)
+        {
+            return limit < text.Length ? text[..limit] + "..." : text;
+        }
+
+        public static string Limit3(string s, int n)
+        {
+            return n < s.Length ? s.Substring(0, n) + "..." : s;
+        }
+
+        public static string Limit4(string text, int limit)
+        {
+            return text == null || text.Length <= limit ? text : text.Substring(0, limit) + "...";
+        }
+
+        public static string Limit5(string text, int limit)
+        {
+            if (limit >= text.Length)
+                return text;
+            return text.Substring(0, limit) + "...";
+        }
+
+        public static string Limit6(string text, int limit) => $"{string.Concat(text.Take(limit))}{(limit < text.Length ? "..." : "")}";
+        
+        
+        
         //  https://www.codewars.com/kata/substituting-variables-into-strings-padded-numbers/train/csharp
         /// <summary>
         /// The return value should equal "Value is VALUE" where value is a 5 digit padded number.
