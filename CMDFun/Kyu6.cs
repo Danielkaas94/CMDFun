@@ -9,6 +9,34 @@ namespace CMDFun
 {
     class Kyu6
     {
+        // https://www.codewars.com/kata/534d2f5b5371ecf8d2000a08/train/csharp
+        /// <summary>
+        /// <para>Multiplication Table</para>
+        /// Your task, is to create NxN multiplication table, of size provided in parameter.
+        /// When given size is 3: the return value should be: [[1,2,3],[2,4,6],[3,6,9]]
+        /// </summary>
+        /// <param name="size">Size of the Multiplication Table</param>
+        /// <returns></returns>
+        public static int[,] MultiplicationTable(int size)
+        {
+            int[,] arrayMultiplicationTable = new int[size, size];
+
+            for (int i = 1; i <= size; i++)
+            {
+                for (int k = 1; k <= size; k++)
+                {
+                    arrayMultiplicationTable[i - 1, k - 1] = i * k;
+                }
+            }
+
+            return arrayMultiplicationTable;
+        }
+
+        public static int[,] MultiplicationTable2(int size)
+        {
+            int[,] Mtable = new int[size, size]; for (int i = 0; i < size; i++) { for (int j = 0; j < size; j++) { Mtable[i, j] = (i + 1) * (j + 1); } } return Mtable;
+        }
+        
 
         // https://www.codewars.com/kata/523f5d21c841566fde000009/train/csharp
         /// <summary>
