@@ -8,6 +8,21 @@ namespace CMDFun
 {
     class Kyu8
     {
+        
+        // https://www.codewars.com/kata/57a0556c7cb1f31ab3000ad7/solutions/csharp
+        /// <summary>
+        /// Write a function which converts the input string to uppercase.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string MakeUpperCase(string str)
+        {
+            return str.ToUpper();
+        }
+
+        public static string MakeUpperCase2(string str) => str.ToUpper();
+        
+        
         // https://www.codewars.com/kata/59ca8246d751df55cc00014c/csharp
         /// <summary>
         /// <para>Hero</para>
