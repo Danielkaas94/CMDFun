@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +8,33 @@ namespace CMDFun
 {
     class Kyu8
     {
+        // https://www.codewars.com/kata/59ca8246d751df55cc00014c/csharp
+        /// <summary>
+        /// <para>Hero</para>
+        /// A hero is on his way to the castle to complete his mission.
+        /// However, he's been told that the castle is surrounded with a couple of powerful dragons!
+        /// Each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. 
+        /// </summary>
+        /// <param name="bullets">Amount of bullets, it takes 2 bullet foreach dragon</param>
+        /// <param name="dragons">Amount of dragons, they need two bullets</param>
+        /// <returns></returns>
+        public static bool Hero(int bullets, int dragons)
+        {
+            if (bullets / 2 >= dragons)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool Hero2(int bullets, int dragons)
+        {
+            return bullets / 2 >= dragons;
+        }
+
+        public static bool Hero3(int bullets, int dragons) => dragons * 2 <= bullets;
+        
 
         /// <summary>
         /// Given a number n, return the number of positive odd numbers below n
