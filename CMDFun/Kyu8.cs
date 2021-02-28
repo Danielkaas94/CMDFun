@@ -8,6 +8,69 @@ namespace CMDFun
 {
     class Kyu8
     {
+        // https://www.codewars.com/kata/58cb43f4256836ed95000f97/csharp
+        /// <summary>
+        /// Take two lists of integers, a and b. Each list will consist of 3 positive integers above 0, representing the dimensions of cuboids a and b.
+        /// You must find the difference of the cuboids' volumes regardless of which is bigger.
+        /// </summary>
+        /// <param name="a">Array with the length of a cube</param>
+        /// <param name="b">Array with the length of a cube</param>
+        /// <returns></returns>
+        public static int FindDifference(int[] a, int[] b)
+        {
+            int aVolume = 1;
+            int bVolume = 1;
+
+            for (int i = 0; i < 3; i++)
+            {
+                aVolume *= a[i];
+                bVolume *= b[i];
+            }
+
+            return Math.Abs(aVolume - bVolume);
+        }
+
+        public static int FindDifference2(int[] a, int[] b) => Math.Abs(a.Aggregate(1, (x, y) => x * y) - b.Aggregate(1, (x, y) => x * y));
+
+        public static int FindDifference3(int[] a, int[] b) => Math.Abs((a[0] * a[1] * a[2]) - (b[0] * b[1] * b[2]));
+
+        public static int FindDifference4(int[] a, int[] b)
+        {
+            return (int)Math.Abs(a.Aggregate((vol, x) => vol * x) - b.Aggregate((vol, y) => vol * y));
+        }
+
+        public static int FindDifference5(int[] a, int[] b)
+        {
+            return a[0] * a[1] * a[2] > b[0] * b[1] * b[2] ? a[0] * a[1] * a[2] - b[0] * b[1] * b[2] : b[0] * b[1] * b[2] - a[0] * a[1] * a[2];
+        }
+
+        public static int FindDifference6(int[] a, int[] b)
+        {
+            int limit = 0;
+            int maxLength = 3;
+
+            if (a.Length != maxLength | b.Length != maxLength)
+                throw new Exception("Arrays must contain length of 3");
+
+            foreach (var num in a)
+            {
+                if (num <= limit)
+                    throw new Exception("Values must be greater than 0");
+            }
+            foreach (var num in b)
+            {
+                if (num <= limit)
+                    throw new Exception("Values must be greater than 0");
+            }
+
+            var testa = a[0] * a[1] * a[2];
+            var testb = b[0] * b[1] * b[2];
+
+            return Math.Abs(testa - testb);
+        }
+        
+        
+        // https://www.codewars.com/kata/5168bb5dfe9a00b126000018/train/csharp
         /// <summary>
         /// <para>'Hello world'  =>  'dlrow olleH'</para>
         /// reverses the string passed into it.
