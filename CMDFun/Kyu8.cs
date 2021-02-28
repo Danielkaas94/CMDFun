@@ -8,6 +8,50 @@ namespace CMDFun
 {
     class Kyu8
     {
+        /// <summary>
+        /// <para>'Hello world'  =>  'dlrow olleH'</para>
+        /// reverses the string passed into it.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static string ReversedString(string str)
+        {
+            int counter = 1;
+            string result = "";
+
+            foreach (char character in str)
+            {
+                result += str[str.Length - counter];
+                counter++;
+            }
+
+            return result;
+        }
+
+        public static string ReversedString2(string str)
+        {
+            return new string(str.ToArray().Reverse().ToArray());
+        }
+
+        public static string ReversedString3(string str)
+        {
+            char[] newstr = str.ToCharArray();
+            Array.Reverse(newstr);
+            return new String(newstr);
+        }
+
+        public static string ReversedString4(string str)
+        {
+            return new String(str.Reverse().ToArray());
+        }
+
+        public static string ReversedString5(string str)
+        {
+            return string.Concat(str.Reverse());
+        }
+
+        public static string ReversedString6(string s) => string.Concat(s.Reverse());
+        
         
         // https://www.codewars.com/kata/57a0556c7cb1f31ab3000ad7/solutions/csharp
         /// <summary>
