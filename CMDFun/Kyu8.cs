@@ -8,6 +8,89 @@ namespace CMDFun
 {
     class Kyu8
     {
+        // https://www.codewars.com/kata/55cbd4ba903825f7970000f5/csharp
+        /// <summary>
+        /// finds the average of the three scores passed to it and returns the letter value associated with that grade.
+        /// </summary>
+        /// <param name="s1">Student - 1 - Grade</param>
+        /// <param name="s2">Student - 2 - Grade</param>
+        /// <param name="s3">Student - 3 - Grade</param>
+        /// <returns></returns>
+        public static char GetGrade(int s1, int s2, int s3)
+        {
+            int averageGradeScore = (s1 + s2 + s3) / 3;
+
+            if (averageGradeScore < 60)         { return 'F'; }
+            else if (averageGradeScore < 70)    { return 'D'; }
+            else if (averageGradeScore < 80)    { return 'C'; }
+            else if (averageGradeScore < 90)    { return 'B'; }
+            else if (averageGradeScore <= 100)  { return 'A'; }
+
+            return '0';
+        }
+
+        public static char GetGrade2(int s1, int s2, int s3)
+        {
+            var m = (s1 + s2 + s3) / 3.0;
+            return m >= 90 ? 'A' : m >= 80 ? 'B' : m >= 70 ? 'C' : m >= 60 ? 'D' : 'F';
+        }
+
+        public static char GetGrade3(int s1, int s2, int s3)
+        {
+            switch ((s1 + s2 + s3) / 3)
+            {
+                case int d when d >= 90: return 'A';
+                case int d when d >= 80: return 'B';
+                case int d when d >= 70: return 'C';
+                case int d when d >= 60: return 'D';
+                default: return 'F';
+            }
+        }
+
+        public static char GetGrade4(int s1, int s2, int s3) =>
+             ((s1 + s2 + s3) / 30) switch
+             {
+                 10 => 'A',
+                 9 => 'A',
+                 8 => 'B',
+                 7 => 'C',
+                 6 => 'D',
+                 _ => 'F'
+             };
+
+        public static char GetGrade5(int s1, int s2, int s3)
+        {
+            double avg = (s1 + s2 + s3) / 3;
+            return avg >= 90 ? 'A' :
+                   avg >= 80 ? 'B' :
+                   avg >= 70 ? 'C' :
+                   avg >= 60 ? 'D' :
+                   'F';
+        }
+
+        public static char GetGrade5(params int[] grades)
+        {
+            var dict = new Dictionary<int, char>
+            {
+                { 90, 'A' },
+                { 80, 'B' },
+                { 70, 'C' },
+                { 60, 'D' },
+                { 0, 'F' },
+            };
+
+            return dict.First(e => grades.Average() >= e.Key).Value;
+        }
+
+        public static char GetGrade6(int s1, int s2, int s3)
+        {
+            int s = (s1 + s2 + s3) / 3;
+
+            return (s >= 90 && s <= 100) ? 'A' : (s >= 80 && s < 90) ? 'B' : (s >= 70 && s < 80) ? 'C' : (s >= 60 && s < 80) ? 'D' : 'F';
+        }
+        
+        
+        
         // https://www.codewars.com/kata/568d0dd208ee69389d000016/csharp
         /// <summary>
         /// <para>Rental Car Cost - Transportation on vacation</para>
