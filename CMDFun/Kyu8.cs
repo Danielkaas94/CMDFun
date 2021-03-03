@@ -8,6 +8,32 @@ namespace CMDFun
 {
     class Kyu8
     {
+        
+        // https://www.codewars.com/kata/55685cd7ad70877c23000102/csharp
+        /// <summary>
+        /// given a number and have to make it negative
+        /// </summary>
+        /// <param name="number">Number, that has to be negative</param>
+        /// <returns></returns>
+        public static int MakeNegative(int number)
+        {
+            return -Math.Abs(number);
+        }
+
+        public static int MakeNegative2(int number)
+        {
+            return number > 0 ? -number : number;
+        }
+
+        public static int MakeNegative3(int number)
+        {
+            return Math.Abs(number) * -1;
+        }
+
+        public static int MakeNegative4(int n) => n < 0 ? n : -n;
+        
+        
+        
         // https://www.codewars.com/kata/58cb43f4256836ed95000f97/csharp
         /// <summary>
         /// Take two lists of integers, a and b. Each list will consist of 3 positive integers above 0, representing the dimensions of cuboids a and b.
