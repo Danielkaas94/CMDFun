@@ -8,6 +8,44 @@ namespace CMDFun
 {
     class Kyu8
     {
+        // https://www.codewars.com/kata/568d0dd208ee69389d000016/csharp
+        /// <summary>
+        /// <para>Rental Car Cost - Transportation on vacation</para>
+        /// Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+        /// Write a code that gives out the total amount for different days(d).
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public static int RentalCarCost(int d)
+        {
+            int basePrice = 40;
+            int result = basePrice * d;
+
+            if (d >= 7)
+            {
+                result -= 50;
+            }
+            else if (d >= 3)
+            {
+                result -= 20;
+            }
+
+            return result;
+        }
+
+        public static int RentalCarCost2(int d)
+        {
+            return d * 40 - (d > 6 ? 50 : d > 2 ? 20 : 0);
+        }
+
+        public static Int32 RentalCarCost3(Int32 Input)
+        {
+            return Input * 40 - ((Input > 6) ? 50 : ((Input > 2) ? 20 : 0));
+        }
+
+        public static int RentalCarCost4(int d) => 40 * d - (d > 6 ? 50 : d > 2 ? 20 : 0);
+        
+        
         
         // https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd/csharp
         /// <summary>
