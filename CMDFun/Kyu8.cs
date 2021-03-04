@@ -8,6 +8,22 @@ namespace CMDFun
 {
     class Kyu8
     {
+        // https://www.codewars.com/kata/563a631f7cbbc236cf0000c2/solutions/csharp
+        /// <summary>
+        /// In this game, the hero moves from left to right. The player rolls the die and moves the number of spaces indicated by the die two times.
+        /// </summary>
+        /// <param name="position">The current position of the player</param>
+        /// <param name="roll">A roll of D6</param>
+        /// <returns></returns>
+        public static int Move(int position, int roll)
+        {
+            return position + roll * 2;
+        }
+
+        public static int Move2(int position, int roll) => position + roll * 2;
+        
+        
+        
         // https://www.codewars.com/kata/55cbd4ba903825f7970000f5/csharp
         /// <summary>
         /// finds the average of the three scores passed to it and returns the letter value associated with that grade.
