@@ -8,6 +8,51 @@ namespace CMDFun
 {
     class Kyu8
     {
+        /// <summary>
+        /// <para>UEFA EURO 2016 - Return string just like in the examples below:</para>
+        /// uefaEuro2016(['Germany', 'Ukraine'],[2, 0]) // "At match Germany - Ukraine, Germany won!"
+        /// </summary>
+        /// <param name="teams"></param>
+        /// <param name="scores"></param>
+        /// <returns></returns>
+        public static string UefaEuro2016(string[] teams, int[] scores)
+        {
+            if (scores[0] > scores[1])
+            {
+                return $"At match {teams[0]} - {teams[1]}, {teams[0]} won!";
+            }
+            else if (scores[0] < scores[1])
+            {
+                return $"At match {teams[0]} - {teams[1]}, {teams[1]} won!";
+            }
+            else // Draw
+            {
+                return $"At match {teams[0]} - {teams[1]}, teams played draw.";
+            }
+        }
+
+        public static string UefaEuro2016_2(string[] teams, int[] scores)
+        {
+            if (scores[0] == scores[1])
+                return $"At match {teams[0]} - {teams[1]}, teams played draw.";
+
+            var winningIndex = scores.ToList().IndexOf(scores.Max());
+            return $"At match {teams[0]} - {teams[1]}, {teams[winningIndex]} won!";
+        }
+
+        public static string UefaEuro2016_3(string[] t, int[] s)
+        {
+            return $"At match {t[0]} - {t[1]}, {(s[0] == s[1] ? "teams played draw." : t[s[0] > s[1] ? 0 : 1] + " won!")}";
+        }
+
+        public static string UefaEuro2016_4(string[] t, int[] s) => $"At match {t[0]} - {t[1]}, {(s[0] == s[1] ? "teams played draw." : (s[0] > s[1] ? t[0] : t[1]) + " won!")}";
+
+        public static string UefaEuro2016_5(string[] teams, int[] scores)
+        {
+            return String.Format("At match {0} - {1}, ", teams[0], teams[1]) + ((scores[0] == scores[1]) ? "teams played draw." : String.Format("{0} won!", scores[0] > scores[1] ? teams[0] : teams[1]));
+        }
+        
+        
         // https://www.codewars.com/kata/563a631f7cbbc236cf0000c2/solutions/csharp
         /// <summary>
         /// In this game, the hero moves from left to right. The player rolls the die and moves the number of spaces indicated by the die two times.
