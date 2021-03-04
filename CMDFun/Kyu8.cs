@@ -8,6 +8,40 @@ namespace CMDFun
 {
     class Kyu8
     {
+        // https://www.codewars.com/kata/51c8991dee245d7ddf00000e/csharp
+        /// <summary>
+        /// It reverses all of the words within the string passed in.
+        /// </summary>
+        /// <param name="str">String of Words</param>
+        /// <returns></returns>
+        public static string ReverseWords(string str)
+        {
+            string[] words = str.Split(' ');
+
+            return words.Aggregate((Sentence, next) => next + " " + Sentence);
+        }
+
+        public static string ReverseWords2(string str)
+        {
+            return string.Join(" ", str.Split(' ').Reverse());
+        }
+
+        public static string ReverseWords3(string str)
+        {
+            string[] words = str.Split(' ');
+            Array.Reverse(words);
+            return string.Join(" ", words);
+        }
+
+        public static string ReverseWords4(string str) => string.Join(" ", str.Split(' ').Reverse());
+
+        public static string ReverseWords5(string str)
+        {
+            return str.Split().Aggregate((x, y) => y + " " + x);
+        }
+        
+        
+        
         // https://www.codewars.com/kata/57f781872e3d8ca2a000007e/csharp
         /// <summary>
         /// <para>Given an array of integers, return a new array with each value doubled. For example:</para>
