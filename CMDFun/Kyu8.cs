@@ -8,6 +8,51 @@ namespace CMDFun
 {
     class Kyu8
     {
+        // https://www.codewars.com/kata/57f781872e3d8ca2a000007e/csharp
+        /// <summary>
+        /// <para>Given an array of integers, return a new array with each value doubled. For example:</para>
+        /// [1, 2, 3] --> [2, 4, 6]
+        /// </summary>
+        /// <param name="x">Array, that has to be doubled</param>
+        /// <returns></returns>
+        public static int[] Maps(int[] x)
+        {
+            int[] result = new int[x.Length];
+
+            for (int i = 0; i < x.Length; i++)
+            {
+                result[i] = x[i] * 2;
+            }
+
+            return result;
+        }
+
+        public static int[] Maps2(int[] x)
+        {
+            return x.Select(e => e * 2).ToArray();
+        }
+
+        public static int[] Maps3(int[] x) => x.Select(i => i + i).ToArray();
+
+        public static int[] Maps4(int[] x)
+        {
+            return Array.ConvertAll(x, n => n * 2);
+        }
+
+        public static IEnumerable<int> Maps5(int[] number)
+        {
+            return number.Select(x => x * 2);
+        }
+
+        public static int[] Maps6(int[] x)
+        {
+            var myEnum = from a in x select a * 2;
+            return myEnum.ToArray();
+        }
+        
+        
+        
+        // https://www.codewars.com/kata/57613fb1033d766171000d60/csharp
         /// <summary>
         /// <para>UEFA EURO 2016 - Return string just like in the examples below:</para>
         /// uefaEuro2016(['Germany', 'Ukraine'],[2, 0]) // "At match Germany - Ukraine, Germany won!"
