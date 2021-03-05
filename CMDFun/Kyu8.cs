@@ -8,6 +8,70 @@ namespace CMDFun
 {
     class Kyu8
     {
+        // https://www.codewars.com/kata/563b74ddd19a3ad462000054/csharp
+        /// <summary>
+        /// Returns a string of alternating '1s' and '0s'. The string should start with a 1.
+        /// </summary>
+        /// <param name="size">Size of the "binary" string</param>
+        /// <returns></returns>
+        public static string Stringy(int size)
+        {
+            string result = "";
+
+            for (int i = 0; i < size; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    result += "1";
+                }
+                else 
+                {
+                    result += "0";
+                }
+            }
+
+            Console.WriteLine(result);
+            return result;
+        }
+
+        public static string Stringy2(int size)
+        {
+            var result = new StringBuilder();
+            for (var i = 1; i <= size; i++)
+            {
+                result.Append(i % 2);
+            }
+            return result.ToString();
+        }
+
+        public static string Stringy3(int size)
+        {
+            return string.Join("", Enumerable.Range(0, size).Select(x => (x + 1) % 2));
+        }
+
+        public static string Stringy4(int size)
+        {
+            return Regex.Replace(new string('1', size), "11", "10");
+        }
+
+        public static string Stringy5(int size)
+        {
+            return string.Concat(Enumerable.Range(0, size).Select(x => x % 2 == 0 ? "1" : "0"));
+        }
+
+        public static string Stringy6(int size)
+        {
+            return new string(string.Concat(Enumerable.Repeat("10", (size + 1) / 2)).Take(size).ToArray());
+        }
+
+        public static string Stringy7(int size)
+        {
+            var resultValues = Enumerable.Range(1, size).Select(s => s % 2);
+
+            return string.Join("", resultValues);
+        }
+        
+        
         // https://www.codewars.com/kata/51c8991dee245d7ddf00000e/csharp
         /// <summary>
         /// It reverses all of the words within the string passed in.
