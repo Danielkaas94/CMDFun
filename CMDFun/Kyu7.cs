@@ -9,6 +9,39 @@ namespace CMDFun
 {
     class Kyu7
     {
+        // https://www.codewars.com/kata/563b662a59afc2b5120000c6/csharp
+        /// <summary>
+        /// Return n number of entire years needed to get a population greater or equal to p.
+        /// <para>Examples: nb_year(1500, 5, 100, 5000) -> 15</para>
+        /// </summary>
+        /// <param name="p0">Starting Population Number</param>
+        /// <param name="percent">Growth of the Population</param>
+        /// <param name="aug">Additional newcomers</param>
+        /// <param name="p">The wanted population</param>
+        /// <returns>Amount of Years to hit the wanted population</returns>
+        public static int NbYear(int p0, double percent, int aug, int p)
+        {
+            int currentPopulation = p0;
+            int yearCounter = 0;
+
+            while (currentPopulation < p)
+            {
+                currentPopulation = currentPopulation + (int)((currentPopulation * (percent/100))) + aug;
+                yearCounter++;
+            }
+
+            return yearCounter;
+        }
+
+        public static int NbYear2(int p0, double percent, int aug, int p)
+        {
+            return p0 >= p ? 0 : 1 + NbYear2((int)(p0 + p0 * percent / 100 + aug), percent, aug, p);
+        }
+
+        public static int NbYear3(int p0, double percent, int aug, int p, int years = 0) => p0 >= p ? years : NbYear3(p0 + (int)(p0 * percent / 100) + aug, percent, aug, p, years + 1);
+
+        
+        
         /// <summary>
         /// <para>Limit</para>
         /// The function must return the truncated version of the given string up to the given limit followed by "..."
