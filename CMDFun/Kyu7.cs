@@ -9,6 +9,45 @@ namespace CMDFun
 {
     class Kyu7
     {
+        // https://www.codewars.com/kata/5783d8f3202c0e486c001d23/train/csharp
+        /// <summary>
+        /// Convert an array of strings to array of numbers
+        /// </summary>
+        /// <param name="stringArray">Array of string numbers</param>
+        /// <returns>Array of numbers</returns>
+        public static double[] ToDoubleArray(string[] stringArray)
+        {
+            double[] numberArray = new double[stringArray.Length];
+            
+            for (int i = 0; i < stringArray.Length; i++)
+            {
+                numberArray[i] = double.Parse(stringArray[i]);
+            }
+
+            return numberArray;
+        }
+
+        public static double[] ToDoubleArray2(string[] stringArray)
+        {
+            return stringArray.Select(x => Double.Parse(x)).ToArray();
+        }
+
+        public static double[] ToDoubleArray3(string[] stringArray)
+        {
+            return stringArray.Select(double.Parse).ToArray();
+        }
+
+        public static double[] ToDoubleArray4(string[] stringArray) => stringArray.Select(Convert.ToDouble).ToArray();
+
+        public static double[] ToDoubleArray5(string[] stringArray)
+        {
+            return Array.ConvertAll(stringArray, Double.Parse);
+        }
+
+        public static double[] ToDoubleArray6(string[] stringArray) => stringArray.Select(x => double.Parse(x)).ToArray();
+        
+        
+        
         // https://www.codewars.com/kata/563b662a59afc2b5120000c6/csharp
         /// <summary>
         /// Return n number of entire years needed to get a population greater or equal to p.
