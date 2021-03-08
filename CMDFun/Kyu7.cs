@@ -9,6 +9,74 @@ namespace CMDFun
 {
     class Kyu7
     {
+        
+        // https://www.codewars.com/kata/55f2b110f61eb01779000053/csharp
+        /// <summary>
+        /// Given two integers a and b, which can be positive or negative,
+        /// find the sum of all the integers between including them too and return it.
+        /// If the two numbers are equal return a or b.
+        /// </summary>
+        /// <param name="a">The first number</param>
+        /// <param name="b">The second number</param>
+        /// <returns>The difference between number a and b inclusive the number itself</returns>
+        public static int GetSum(int a, int b)
+        {
+            if (a == b)
+            {
+                return a;
+            }
+
+            int sum = 0;
+
+            if (a < b)
+            {
+                for (int i = a; i <= b; i++)
+                {
+                    sum += i; 
+                }
+            }
+            else
+            {
+                for (int i = b; i <= a; i++)
+                {
+                    sum += i;
+                }
+            }
+
+            return sum;
+        }
+
+        public int GetSum2(int a, int b)
+        {
+            return (a + b) * (Math.Abs(a - b) + 1) / 2;
+        }
+
+        public int GetSum3(int a, int b)
+        {
+            int max = Math.Max(a, b);
+            int min = Math.Min(a, b);
+            int result = 0;
+            for (int i = min; i <= max; i++)
+            {
+                result += i;
+            }
+            return result;
+        }
+
+        public int GetSum4(int a, int b)
+        {
+            return Enumerable.Range(Math.Min(a, b), Math.Max(b, a) - Math.Min(b, a) + 1).Sum();
+        }
+
+        public int GetSum5(int a, int b)
+        {
+            return Enumerable.Range(a < b ? a : b, Math.Abs(a - b) + 1).Sum();
+        }
+
+        public int GetSum6(int a, int b) => (Math.Abs(a - b) + 1) * (a + b) / 2;
+        
+        
+        
         // https://www.codewars.com/kata/5783d8f3202c0e486c001d23/train/csharp
         /// <summary>
         /// Convert an array of strings to array of numbers
