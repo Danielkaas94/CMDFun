@@ -9,6 +9,59 @@ namespace CMDFun
 {
     class Kyu7
     {
+        // https://www.codewars.com/kata/5467e4d82edf8bbf40000155/csharp
+        /// <summary>
+        /// <para>Descending Order</para>
+        /// take any non-negative integer as an argument and return it with its digits in descending order.
+        /// Essentially, rearrange the digits to create the highest possible number.
+        /// <para>Input: 42145 Output: 54421</para>
+        /// </summary>
+        /// <param name="num">Number that needs to be descending</param>
+        /// <returns>input as descending</returns>
+        public static int DescendingOrder(int num)
+        {
+            string strNumber = num.ToString();
+            string tempStringNumber = "";
+            List<int> singleNumberList = new List<int>();
+
+            for (int i = 0; i < strNumber.Length; i++)
+            {
+                singleNumberList.Add(Int32.Parse(strNumber[i].ToString()));
+            }
+
+            IEnumerable<int> query = singleNumberList.OrderByDescending(x => x);
+
+            foreach (var item in query)
+            {
+                tempStringNumber += item.ToString();
+            }
+
+            return Int32.Parse(tempStringNumber);
+        }
+
+        public static int DescendingOrder2(int num)
+        {
+            return int.Parse(string.Concat(num.ToString().OrderByDescending(x => x)));
+        }
+
+        public static int DescendingOrder3(int num)
+        {
+            char[] arr = num.ToString().ToCharArray();
+            Array.Sort(arr);
+            Array.Reverse(arr);
+            return Convert.ToInt32(new string(arr));
+        }
+
+        public static int DescendingOrder4(int num)
+        {
+            return int.Parse(new String(num.ToString().ToCharArray().OrderByDescending(x => x).ToArray()));
+        }
+
+        public static int DescendingOrder5(int num) => Int32.Parse(String.Join("", num.ToString().ToCharArray().OrderByDescending(x => x)));
+
+        public static int DescendingOrder6(int num) => int.Parse(string.Concat($"{num}".OrderByDescending(c => c)));
+        
+        
         
         // https://www.codewars.com/kata/55f2b110f61eb01779000053/csharp
         /// <summary>
