@@ -10,6 +10,60 @@ namespace CMDFun
     class Kyu7
     {
         
+        // https://www.codewars.com/kata/57f759bb664021a30300007d
+        /// <summary>
+        /// Given a string made up of letters a, b, and/or c,
+        /// switch the position of letters a and b (change a to b and vice versa). Leave any incidence of c untouched.
+        /// <para>'acb' --> 'bca'</para>
+        /// </summary>
+        /// <param name="x">string with abc letters</param>
+        /// <returns>returns x with 'a' and 'b' switching positions</returns>
+        public static string Switcheroo(string x)
+        {
+            string switcherooResult = "";
+
+            for (int i = 0; i < x.Length; i++)
+            {
+                switch (x[i])
+                {
+
+                    case 'a':
+                        switcherooResult += 'b';
+                        break;
+                    case 'b':
+                        switcherooResult += 'a';
+                        break;
+                    case 'c':
+                        switcherooResult += x[i];
+                        break;
+                }
+            }
+
+            return switcherooResult;
+        }
+
+        public static string Switcheroo2(string x)
+        {
+            return x.Replace("a", "d").Replace("b", "a").Replace("d", "b");
+        }
+
+        public static string Switcheroo3(string x)
+        {
+            return Regex.Replace(x, "[ab]", m => m.Value == "a" ? "b" : "a");
+        }
+
+        public static string Switcheroo4(string x)
+        {
+            return string.Concat(x.Select(c => c == 'a' ? 'b' : c == 'b' ? 'a' : c));
+        }
+
+        public static string Switcheroo5(string x)
+        {
+            return x.Replace("a", "B").Replace("b", "a").ToLower();
+        }
+        
+        
+        
         // https://www.codewars.com/kata/598057c8d95a04f33f00004e/csharp
         /// <summary>
         /// <para>Get the integers between two numbers</para>
