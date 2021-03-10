@@ -9,6 +9,37 @@ namespace CMDFun
 {
     class Kyu7
     {
+        
+        // https://www.codewars.com/kata/598057c8d95a04f33f00004e/csharp
+        /// <summary>
+        /// <para>Get the integers between two numbers</para>
+        /// </summary>
+        /// <param name="startNum">The starting number</param>
+        /// <param name="endNum">The ending number</param>
+        /// <returns>Array with numbers in between startNum and endNum</returns>
+        public static int[] Range(int startNum, int endNum)
+        {
+            List<int> listOfNumbers = new List<int>();
+
+            for (int i = startNum; i < endNum; ++i)
+            {
+                listOfNumbers.Add(i);
+            }
+
+            return listOfNumbers.ToArray();
+        }
+
+        public static int[] Range2(int startNum, int endNum)
+        {
+            return Enumerable.Range(startNum + 1, Math.Max(endNum - startNum - 1, 0)).ToArray();
+        }
+
+        public static int[] Range3(int s, int e) => e > s ? Enumerable.Range(s + 1, e - s - 1).ToArray() : new int[0];
+
+        public static int[] Range4(int s, int e) => Enumerable.Range(s + 1, Math.Max(e - s - 1, 0)).ToArray();
+        
+        
+        
         // https://www.codewars.com/kata/5467e4d82edf8bbf40000155/csharp
         /// <summary>
         /// <para>Descending Order</para>
