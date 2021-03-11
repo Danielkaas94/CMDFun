@@ -10,6 +10,41 @@ namespace CMDFun
     class Kyu7
     {
         
+        /// <summary>
+        /// The values of an array that are not odd.
+        /// Return the good values in the order they are given.
+        /// </summary>
+        /// <param name="values">int array with even and odd numbers</param>
+        /// <returns>the values of an array that are not odd</returns>
+        public static int[] NoOdds(int[] values)
+        {
+            List<int> noOddsList = new List<int>();
+
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (values[i] % 2 == 0)
+                {
+                    noOddsList.Add(values[i]);
+                }
+            }
+
+            return noOddsList.ToArray();
+        }
+
+        public static int[] NoOdds2(int[] values) => values.Where(v => v % 2 == 0).ToArray();
+
+        public static int[] NoOdds3(int[] values)
+        {
+            return values.Where(x => x % 2 == 0).ToArray();
+        }
+
+        public static int[] NoOdds4(int[] values)
+        {
+            return Array.FindAll(values, x => x % 2 == 0);
+        }
+        
+        
+        
         // https://www.codewars.com/kata/57f759bb664021a30300007d
         /// <summary>
         /// Given a string made up of letters a, b, and/or c,
