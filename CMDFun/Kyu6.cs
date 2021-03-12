@@ -9,6 +9,139 @@ namespace CMDFun
 {
     class Kyu6
     {
+        
+        // https://www.codewars.com/kata/5842df8ccbd22792a4000245/csharp
+        /// <summary>
+        /// You will be given a number and you will need to return it as a string in Expanded Form.
+        /// <para>For example: 70304 => "70000 + 300 + 4"</para>
+        /// </summary>
+        /// <param name="num">Long number</param>
+        /// <returns>String number in Expanded Form</returns>
+        public static string ExpandedForm(long num)
+        {
+            int length = num.ToString().Length;
+            string numberString = num.ToString();
+            string result = "";
+
+            if (length == 1)
+            {
+                return numberString;
+            }
+
+            for (int i = 0; i < length; i++)
+            {
+                if ('0' != numberString[i])
+                {
+                    result += numberString[i];
+
+                    for (int x = i + 1; x < length; x++)
+                    {
+                        result += "0";
+                    }
+
+                    if (i + 1 < length)
+                    {
+                        result += " + ";
+                    }
+                }
+            }
+
+            if ('+' == result[result.Length - 2])
+            {
+                return result.Remove(result.Length - 3,3);
+            }
+
+            return result;
+        }
+
+        public static string ExpandedForm2(long num)
+        {
+            var str = num.ToString();
+            return String.Join(" + ", str
+                .Select((x, i) => char.GetNumericValue(x) * Math.Pow(10, str.Length - i - 1))
+                .Where(x => x > 0));
+        }
+
+        public static string ExpandedForm3(long n)
+        {
+            return string.Join(" + ", $"{n}".Select((c, i) => c + new string('0', $"{n}".Length - i - 1)).Where(x => x[0] != '0'));
+        }
+
+        public static string ExpandedForm4(long num)
+        {
+            Stack<long> parts = new Stack<long>();
+
+            for (long m = 1, n = num; n > 0; n /= 10, m *= 10)
+            {
+                long digit = n % 10;
+                if (digit > 0)
+                {
+                    parts.Push(m * digit);
+                }
+            }
+
+            return string.Join(" + ", parts);
+        }
+
+        public static string ExpandedForm5(long num)
+        {
+            return String.Join(" + ", num.ToString()
+                                         .ToArray()
+                                         .Reverse()
+                                         .Select((x, i) => (x - 48) * Math.Pow(10, i))
+                                         .Reverse()
+                                         .Where(x => x != 0));
+
+        }
+
+        public static string ExpandedForm6(long num)
+        {
+            var numberAsString = $"{num}";
+
+            var parts = numberAsString
+                            .Select((n, i) => (n, i))
+                            .Where(_ => _.n != '0')
+                            .Select(_ => _.n + new string('0', numberAsString.Length - _.i - 1));
+
+            return string.Join(" + ", parts);
+        }
+
+        public static string ExpandedForm7(long num)
+        {
+            var totalLength = num.ToString().Length;
+            var output = string.Empty;
+
+            // 423040
+            for (int i = 0; i < totalLength; i++)
+            {
+                if (num.ToString()[i] == '0')
+                {
+                    continue;
+                }
+
+                else
+                {
+                    var difference = totalLength - (i + 1);
+                    output += num.ToString()[i];
+                    while (difference-- > 0)
+                    {
+                        output += "0";
+
+                        if (difference == 0)
+                        {
+                            output += " + ";
+                        }
+                    }
+
+                }
+
+            }
+
+            return output.TrimEnd(' ', '+', ' ');
+        }
+        
+        
+        
         // https://www.codewars.com/kata/534d2f5b5371ecf8d2000a08/train/csharp
         /// <summary>
         /// <para>Multiplication Table</para>
