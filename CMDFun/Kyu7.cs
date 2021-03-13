@@ -10,6 +10,7 @@ namespace CMDFun
     class Kyu7
     {
      
+        // https://www.codewars.com/kata/57d1f36705c186d018000813/csharp
         /// <summary>
         /// THIS CODE IS RAW!!!!
         /// </summary>
