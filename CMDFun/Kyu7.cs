@@ -9,6 +9,100 @@ namespace CMDFun
 {
     class Kyu7
     {
+     
+        /// <summary>
+        /// THIS CODE IS RAW!!!!
+        /// </summary>
+        /// <param name="a">Gordon Ramsey quote</param>
+        /// <returns>"What feck damn cake" => "WH@T!!!! F*CK!!!! D@MN!!!! C@K*!!!!"</returns>
+        public static string Gordon(string a)
+        {
+            string result = "";
+            string[] splitQuote = a.Split(' ');
+
+            foreach (var word in splitQuote)
+            {
+                for (int i = 0; i < word.Length; i++)
+                {
+                    switch (word[i].ToString().ToUpper())
+                    {
+                        case "A":
+                            result += "@";
+                            break;
+                        case "E":
+                            result += "*";
+                            break;
+                        case "I":
+                            result += "*";
+                            break;
+                        case "O":
+                            result += "*";
+                            break;
+                        case "U":
+                            result += "*";
+                            break;
+                        default:
+                            result += word[i].ToString().ToUpper();
+                            break;
+                    }
+
+                    if (i == word.Length - 1)
+                    {
+                        result += "!!!! ";
+                    }
+                }
+            }
+
+            return result.Trim();
+        }
+
+        public static string Gordon2(string a)
+        {
+            StringBuilder sb = new StringBuilder(a);
+
+            sb.Replace("a", "@")
+             .Replace("e", "*")
+             .Replace("i", "*")
+             .Replace("o", "*")
+             .Replace("u", "*")
+             .Replace(" ", "!!!! ")
+             ;
+
+            string now = string.Format("{0}!!!!", sb).ToUpper();
+            return now;
+        }
+
+        public static string Gordon3(string a)
+        {
+            return Regex.Replace(Regex.Replace(a.ToUpper(), @"[EIOU]", "*"), @"\s|$", "!!!!$0").Replace("A", "@");
+        }
+
+        public static string Gordon4(string a)
+        {
+            return a.ToUpper().Replace("A", "@").Replace("E", "*").Replace("O", "*").Replace("U", "*").Replace("I", "*").Replace(" ", "!!!! ") + "!!!!";
+        }
+
+        public static string Gordon5(string a)
+        {
+            return Regex.Replace(Regex.Replace(a.ToUpper(), @"\b(?<=\w)", "!!!!"),
+                @"[AEIOU]", t => "" + t == "A" ? "@" : "*");
+        }
+
+        public static string Gordon6(string a) => string.Concat(a.Select(c => "eouiu".Contains(c) ? "*" : c == ' ' ? "!!!! " : c == 'a' ? "@" : $"{c}")).ToUpper() + "!!!!";
+
+        public static string Gordon7(string a)
+        {
+            string b = a.ToUpper();
+            string c = b.Replace("A", "@");
+            string d = c.Replace("E", "*");
+            string e = d.Replace("I", "*");
+            string f = e.Replace("O", "*");
+            string g = f.Replace("U", "*");
+            string h = g.Replace(" ", "!!!! ");
+            return h + "!!!!";
+        }
+        
+        
         
         /// <summary>
         /// The values of an array that are not odd.
