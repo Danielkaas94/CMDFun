@@ -9,6 +9,59 @@ namespace CMDFun
 {
     class Kyu7
     {
+        // https://www.codewars.com/kata/5299413901337c637e000004/csharp
+        /// <summary>
+        /// <para>Return the Missing Element</para>
+        /// Sequence of unique integers between 0 and 9 (inclusive), and returns the missing element.
+        /// </summary>
+        /// <param name="superImportantArray">unique integers from 0 to 9 </param>
+        /// <returns>The Missing Number</returns>
+        public static int GetMissingElement(int[] superImportantArray)
+        {
+            for (int i = 0; i <= superImportantArray.Length; i++)
+            {
+               bool hasNumber = superImportantArray.Contains(i);
+
+                if (hasNumber == false)
+                {
+                    return i;
+                }
+            }
+
+            return -1337;
+        }
+
+        public static int GetMissingElement2(int[] superImportantArray)
+        {
+            return (int)Enumerable.Range(0, 9).Except(superImportantArray).FirstOrDefault();
+        }
+
+        public static int GetMissingElement3(int[] superImportantArray)
+        {
+            return 45 - superImportantArray.Sum();
+        }
+
+        public static int GetMissingElement4(int[] superImportantArray)
+        {
+            return Enumerable.Range(0, 10).First(i => !superImportantArray.Contains(i));
+        }
+
+        public static int GetMissingElement5(int[] superImportantArray)
+        {
+            return Enumerable.Range(0, superImportantArray.Count()).Except(superImportantArray).First();
+        }
+
+        public static int GetMissingElement6(int[] superImportantArray)
+        {
+            return Enumerable.Range(1, 9).Except(superImportantArray).FirstOrDefault();
+        }
+
+        public static int GetMissingElement7(int[] superImportantArray) => 45 - superImportantArray.Sum();
+
+        public static int GetMissingElement8(int[] superImportantArray) => Enumerable.Range(0, 10).Except(superImportantArray).Single();
+        
+        
+        
         // https://www.codewars.com/kata/563d54a7329a7af8f4000059/csharp
         /// <summary>
         /// <para>Put a Letter in a Column</para>
