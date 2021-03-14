@@ -9,6 +9,90 @@ namespace CMDFun
 {
     class Kyu7
     {
+        // https://www.codewars.com/kata/563d54a7329a7af8f4000059/csharp
+        /// <summary>
+        /// <para>Put a Letter in a Column</para>
+        /// Takes index [0, 8] and a character. It returns a string with a column. Put character in column marked with index.
+        /// <para>2, 'A' => "| | |A| | | | | | |"</para>
+        /// </summary>
+        /// <param name="index">Index of the letter</param>
+        /// <param name="character">The symbol, that should be inserted into the Column</param>
+        /// <returns></returns>
+        public static string BuildRowText(int index, char character)
+        {
+            string result = "";
+
+            for (int i = 0; i <= 8; i++)
+            {
+                if (i == index)
+                {
+                    result += "|";
+                    result += character;
+                }
+                else 
+                {
+                    result += "|";
+                    result += " ";
+                }
+            }
+
+            result += "|";
+
+            return result;
+        }
+
+        public static string BuildRowText2(int index, char character)
+        {
+            return "|" + string.Join("|", Enumerable.Range(0, 9).Select(i => i == index ? character : ' ')) + "|";
+        }
+
+        public static string BuildRowText3(int index, char character)
+        {
+            return new StringBuilder("| | | | | | | | | |") { [index * 2 + 1] = character }.ToString();
+        }
+
+        public static string BuildRowText4(int i, char c)
+        {
+            return string.Join("|", Enumerable.Range(0, 11).Select((x, j) => j == i + 1 ? c : ' ')).Trim();
+        }
+
+        public static string BuildRowText5(int index, char character) => string.Concat("| | | | | | | | | |".Select((c, i) => i == index * 2 + 1 ? character : c));
+
+        public static string BuildRowText6(int index, char character)
+        {
+            switch (index)
+            {
+                case 0:
+                    return "|" + character + "| | | | | | | | |";
+                case 1:
+                    return "| |" + character + "| | | | | | | |";
+                case 2:
+                    return "| | |" + character + "| | | | | | |";
+                case 3:
+                    return "| | | |" + character + "| | | | | |";
+                case 4:
+                    return "| | | | |" + character + "| | | | |";
+                case 5:
+                    return "| | | | | |" + character + "| | | |";
+                case 6:
+                    return "| | | | | | |" + character + "| | |";
+                case 7:
+                    return "| | | | | | | |" + character + "| |";
+                case 8:
+                    return "| | | | | | | | |" + character + "|";
+                default:
+                    return "| | | | | | | | | |";
+            }
+        }
+
+        public static string BuildRowText7(int index, char character)
+        {
+            char[] columns = "| | | | | | | | | |".ToCharArray();
+            columns[index * 2 + 1] = character;
+            return new String(columns);
+        }
+        
+        
         
         // https://www.codewars.com/kata/554b4ac871d6813a03000035/csharp
         /// <summary>
