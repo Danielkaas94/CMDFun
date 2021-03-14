@@ -9,6 +9,58 @@ namespace CMDFun
 {
     class Kyu7
     {
+        
+        // https://www.codewars.com/kata/554b4ac871d6813a03000035/csharp
+        /// <summary>
+        ///  given a string of space separated numbers,
+        ///  and have to return the highest and lowest number.
+        ///  <para>"1 2 3 4 5" => "5 1"</para>
+        /// </summary>
+        /// <param name="numbers">String numbers</param>
+        /// <returns>Highest and Lowest number</returns>
+        public static string HighAndLow(string numbers)
+        {
+            string result = "";
+            string[] stringNumbers = numbers.Split(' ');
+            List<int> ListInt = new List<int>();
+
+            for (int i = 0; i < stringNumbers.Length; i++)
+            {
+                ListInt.Add(Convert.ToInt32(stringNumbers[i]));
+            }
+
+            result += ListInt.Max();
+            result += " ";
+            result += ListInt.Min();
+
+            return result;
+        }
+
+        public static string HighAndLow2(string numbers)
+        {
+            var parsed = numbers.Split().Select(int.Parse);
+            return parsed.Max() + " " + parsed.Min();
+        }
+
+        public static string HighAndLow3(string numbers)
+        {
+            var numbersList = numbers.Split(' ').Select(x => Convert.ToInt32(x));
+            return string.Format("{0} {1}", numbersList.Max(), numbersList.Min());
+        }
+
+        public static string HighAndLow4(string numbers)
+        {
+            var nums = numbers.Split(' ').Select(Int32.Parse).ToArray();
+            return $"{nums.Max()} {nums.Min()}";
+        }
+
+        public static string HighAndLow5(string numbers)
+        {
+            var array = numbers.Split(' ').Select(int.Parse).OrderByDescending(p => p);
+            return $"{array.First()} {array.Last()}";
+        }
+        
+        
      
         // https://www.codewars.com/kata/57d1f36705c186d018000813/csharp
         /// <summary>
