@@ -8,6 +8,45 @@ namespace CMDFun
 {
     class Kyu8
     {
+        
+        // https://www.codewars.com/kata/555086d53eac039a2a000083/csharp
+        /// <summary>
+        /// If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
+        /// </summary>
+        /// <param name="flower1">Number of petals - Timmy</param>
+        /// <param name="flower2">Number of petals - Sarah</param>
+        /// <returns>True. If one of the flowers has an even number of petals and the other has an odd number of petals</returns>
+        public static bool Lovefunc(int flower1, int flower2)
+        {
+            if (flower1 % 2 == 1 && flower2 % 2 == 0 || flower2 % 2 == 1 && flower1 % 2 == 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool Lovefunc2(int flower1, int flower2)
+        {
+            return flower1 % 2 != flower2 % 2;
+        }
+
+        public static bool Lovefunc3(int flower1, int flower2)
+        {
+            return (flower1 + flower2) % 2 == 1;
+        }
+
+        public static bool Lovefunc4(int flower1, int flower2)
+        {
+            return Convert.ToBoolean((flower1 ^ flower2) & 1);
+        }
+
+        public static bool Lovefunc5(int f1, int f2) => (f1 + f2) % 2 != 0;
+
+        public static bool Lovefunc6(int flower1, int flower2) => flower1 % 2 != flower2 % 2;
+        
+        
+        
         // https://www.codewars.com/kata/563b74ddd19a3ad462000054/csharp
         /// <summary>
         /// Returns a string of alternating '1s' and '0s'. The string should start with a 1.
