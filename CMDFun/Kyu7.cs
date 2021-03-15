@@ -9,6 +9,83 @@ namespace CMDFun
 {
     class Kyu7
     {
+        // https://www.codewars.com/kata/54ff3102c1bad923760001f3/csharp
+        /// <summary>
+        /// Return the number (count) of vowels(a, e, i, o, u) in the given string.
+        /// </summary>
+        /// <param name="str">Something String word</param>
+        /// <returns>Count of vowels</returns>
+        public static int GetVowelCount_Prototype(string str)
+        {
+            //int vowelCount = 0;
+
+            //vowelCount = str.Select(x => "aeiou".Contains(x)).Count();
+
+            //vowelCount = str.Select(x => x).Count(x => "aeiou".Contains(x));
+            //vowelCount = str.Count(x => "aeiou".Contains(x));
+            int vowelCount = str.Count(x => "aeiou".Contains(x));
+
+            Console.WriteLine(vowelCount);
+
+            return vowelCount;
+        }
+
+        // https://www.codewars.com/kata/54ff3102c1bad923760001f3/csharp
+        /// <summary>
+        /// Return the number (count) of vowels(a, e, i, o, u) in the given string.
+        /// </summary>
+        /// <param name="str">Something String word</param>
+        /// <returns>Count of vowels</returns>
+        public static int GetVowelCount(string str) => str.Count(x => "aeiou".Contains(x));
+
+        public static int GetVowelCount2(string str)
+        {
+            return str.ToLower().Count(c => "aeiou".IndexOf(c) != -1);
+        }
+
+        public static int GetVowelCount3(string str)
+        {
+            return (Regex.Matches(str, @"[aeiouAEIOU]")).Count;
+        }
+
+        public static int GetVowelCount4(string str)
+        {
+            int vowelCount = 0;
+            string vowels = "aeiou";
+
+            foreach (char letter in str)
+            {
+                if (vowels.IndexOf(letter) != -1)
+                    vowelCount++;
+            }
+
+            return vowelCount;
+        }
+
+        public static int GetVowelCount5(string str)
+        {
+            char[] vowels = new[] { 'a', 'e', 'i', 'o', 'u' };
+
+            return str
+              .ToCharArray()
+              .Where(c => vowels.Contains(c))
+              .Count();
+        }
+
+        public static int GetVowelCount6(string str) => str.Split("aeiou".ToCharArray()).Length - 1;
+
+        public static int GetVowelCount7(string str)
+        {
+            int vowelCount = 0;
+
+            for (int i = 0; i < str.Length; i++)
+                if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u')
+                    vowelCount++;
+
+            return vowelCount;
+        }
+        
+        
         
         // https://www.codewars.com/kata/57e8fba2f11c647abc000944/csharp
         /// <summary>
