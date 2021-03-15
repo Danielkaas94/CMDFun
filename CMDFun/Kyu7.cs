@@ -9,6 +9,99 @@ namespace CMDFun
 {
     class Kyu7
     {
+        
+        // https://www.codewars.com/kata/57e8fba2f11c647abc000944/csharp
+        /// <summary>
+        /// <para>Disaster!! The boat has caught fire!!</para>
+        /// Change any instance of "Fire" into "~~". Then return the string.
+        /// </summary>
+        /// <param name="s">String with boaty McBoat words</param>
+        /// <returns>Fire => ~~</returns>
+        public static string FireFight(string s)
+        {
+            StringBuilder stringBuilder = new StringBuilder(s);
+            stringBuilder.Replace("Fire","~~");
+
+            return stringBuilder.ToString();
+        }
+
+        public static string FireFight2(string s)
+        {
+            return s.Replace("Fire", "~~");
+        }
+
+        public static string FireFight3(string s) => s.Replace("Fire", "~~");
+
+        public static string FireFight4(string s)
+        {
+            string target = "~~";
+            Regex regex = new Regex(@"Fire\w*");
+            string result = regex.Replace(s, target);
+            return result;
+        }
+
+        public static string FireFight5(string s)
+        {
+            string output = "";
+            string[] words = s.Split(' ');
+            foreach (string word in words)
+            {
+                if (word == "Fire" || word == "fire")
+                {
+                    output += "~~ ";
+                }
+                else
+                {
+                    output += word + " ";
+                }
+            }
+            return output.Substring(0, output.Length - 1);
+        }
+
+        public static string FireFight6(string s)
+        {
+            string[] splited = s.Split(" ");
+            string item = "Fire";
+            string newStr = null;
+            for (int i = 0; i < splited.Length; i++)
+            {
+                if (splited[i] == item)
+                {
+                    newStr += "~~";
+                }
+                else
+                {
+                    newStr += splited[i];
+                }
+                if (i < splited.Length - 1)
+                {
+                    newStr += " ";
+                }
+            }
+            return newStr;
+        }
+
+        public static string FireFight7(string str)
+        {
+            List<string> list = new List<string>();
+            string[] arr = str.Split(' ');
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == "Fire")
+                {
+                    list.Add("~~");
+                }
+                else
+                {
+                    list.Add(arr[i]);
+                }
+            }
+            string CS = string.Join(" ", list);
+            return CS;
+        }
+        
+        
+        
         // https://www.codewars.com/kata/5299413901337c637e000004/csharp
         /// <summary>
         /// <para>Return the Missing Element</para>
