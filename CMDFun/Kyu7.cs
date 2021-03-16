@@ -9,6 +9,111 @@ namespace CMDFun
 {
     class Kyu7
     {
+        
+        // https://www.codewars.com/kata/5d5ee4c35162d9001af7d699/csharp
+        /// <summary>
+        /// Your task is to find the sum of minimum value in each row.
+        /// </summary>
+        /// <param name="numbers">2D array with numbers</param>
+        /// <returns>Returns the sum of the 2D array</returns>
+        public static int SumOfMinimums(int[,] numbers)
+        {
+            int result = 0;
+
+            for (int i = 0; i < numbers.GetLength(0); i++)
+            {
+                List<int> tempList = new List<int>();
+
+                for (int x = 0; x < numbers.GetLength(1); x++)
+                {
+                    tempList.Add(numbers[i, x]);
+                }
+
+                result += tempList.Min();
+            }
+
+            return result;
+        }
+
+        public static int SumOfMinimums2(int[,] n)
+        {
+            return Enumerable.Range(0, n.GetLength(0))
+                             .Select(x => Enumerable.Range(0, n.GetLength(1)).Select(y => n[x, y]))
+                             .Sum(x => x.Min());
+        }
+
+        public static int SumOfMinimums3(int[,] n)
+        {
+            return Enumerable.Range(0, n.GetLength(0)).Select(x => Enumerable.Range(0, n.GetLength(1)).Select(y => n[x, y])).Sum(s => s.Min());
+        }
+
+        public static int SumOfMinimums4(int[,] n) => Enumerable.Range(0, n.GetUpperBound(0) + 1).Sum(i => Enumerable.Range(0, n.GetUpperBound(1) + 1).Min(j => n[i, j]));
+
+        public static int SumOfMinimums5(int[,] numbers)
+        {
+            int sum = 0;
+            int min = 0;
+
+            for (int i = 0; i < numbers.GetLength(0); i++)
+            {
+                min = numbers[i, 0];
+                for (int j = 1; j < numbers.GetLength(1); j++)
+                {
+                    if (min > numbers[i, j])
+                        min = numbers[i, j];
+                }
+                sum += min;
+            }
+
+            return sum;
+        }
+
+        public static int SumOfMinimums6(int[,] numbers)
+        {
+            int[] min = new int[numbers.GetLength(0)];
+            for (int i = 0; i < min.Length; i++)
+            {
+                min[i] = 2000000000;
+            }
+            int sum = 0;
+            for (int j = 0; j < numbers.GetLength(0); j++)
+            {
+                for (int i = 0; i < numbers.GetLength(1); i++)
+                {
+                    if (min[j] > numbers[j, i])
+                    {
+                        min[j] = numbers[j, i];
+                    }
+                }
+            }
+            foreach (int i in min)
+            {
+                sum += i;
+            }
+            return sum;
+        }
+
+        public static int SumOfMinimums7(int[,] numbers)
+        {
+            var rows = numbers.GetUpperBound(0) + 1;
+            var columns = numbers.Length / rows;
+            var result = 0;
+
+            for (int i = 0; i < rows; i++)
+            {
+                var min = numbers[i, 0];
+                for (var j = 1; j < columns; j++)
+                {
+                    if (numbers[i, j] < min) min = numbers[i, j];
+                }
+
+                result += min;
+            }
+            return result;
+        }
+        
+        
+        
         // https://www.codewars.com/kata/54ff3102c1bad923760001f3/csharp
         /// <summary>
         /// Return the number (count) of vowels(a, e, i, o, u) in the given string.
