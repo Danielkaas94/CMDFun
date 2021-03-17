@@ -9,6 +9,107 @@ namespace CMDFun
 {
     class Kyu6
     {
+        /// <summary>
+        /// <para>Split Strings</para>
+        /// Splits the string into pairs of two characters.
+        /// If the string contains an odd number of characters,
+        /// then it should replace the missing second character of the final pair with an underscore ('_').
+        /// </summary>
+        /// <param name="str">String Text</param>
+        /// <returns>Split in pairs, _ if odd number for the final</returns>
+        public static string[] SplitString(string str)
+        {
+            int count = 1;
+            int GroupSize = 2;
+            bool isOdd = str.Length % 2 == 1 ? true : false;
+
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (count == GroupSize)
+                {
+                    sb.Append(str[i]);
+                    sb.Append(" ");
+                    count = 1;
+                }
+                else
+                {
+                    sb.Append(str[i]);
+                    count++;
+                }
+            }
+
+            if (isOdd)
+            {
+                sb.Append("_");
+            }
+
+            return sb.ToString().Trim().Split(" ");
+        }
+
+        public static string[] SplitString2(string str)
+        {
+            if (str.Length % 2 == 1)
+                str += "_";
+
+            List<string> list = new List<string>();
+            for (int i = 0; i < str.Length; i += 2)
+            {
+                list.Add(str[i].ToString() + str[i + 1]);
+            }
+
+            return list.ToArray();
+        }
+
+        public static string[] SplitString3(string str)
+        {
+            if (str.Length % 2 != 0)
+                str += "_";
+            return Enumerable.Range(0, str.Length)
+              .Where(x => x % 2 == 0)
+              .Select(x => str.Substring(x, 2))
+              .ToArray();
+        }
+
+        public static string[] SplitString4(string str)
+        {
+            return Regex.Matches(str + "_", @"\w{2}").Select(x => x.Value).ToArray();
+        }
+
+        public static string[] SplitString5(string str) => Regex.Matches(str + "_", @"\w{2}").Select(x => x.Value).ToArray();
+
+        public static string[] SplitString6(string str)
+        {
+            var paddedString = str + "_";
+
+            return Enumerable.Range(0, (str.Length + 1) / 2).Select(i => paddedString.Substring(2 * i, 2)).ToArray();
+        }
+
+        public static string[] SplitString7(string str)
+        {
+            return Regex.Split((str.Length % 2 != 1 ? str : str + "_"), @"(?<=\G.{2})").Where(x => x != "").ToArray();
+        }
+
+        public static string[] SplitString8(string str)
+        {
+            return str
+              .ToCharArray()
+              // assign index for each char
+              .Select((c, i) => new { Index = i, Value = c })
+              // group by indexes
+              .GroupBy(o => o.Index / 2)
+              // from groups take ony values as array
+              .Select(g => g.Select(i => i.Value).ToArray())
+              // arrays with single element convert to "x_"
+              .Select(v => v.Count() == 2 ? v : new[] { v[0], '_' })
+              // convert to array of strings
+              .Select(v => new string(v))
+              // convert to array
+              .ToArray();
+        }
+        
+        
         
         // https://www.codewars.com/kata/5842df8ccbd22792a4000245/csharp
         /// <summary>
