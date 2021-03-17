@@ -9,6 +9,8 @@ namespace CMDFun
 {
     class Kyu6
     {
+        
+        // https://www.codewars.com/kata/515de9ae9dcfc28eb6000001/csharp
         /// <summary>
         /// <para>Split Strings</para>
         /// Splits the string into pairs of two characters.
