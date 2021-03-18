@@ -10,6 +10,105 @@ namespace CMDFun
     class Kyu7
     {
         
+        // https://www.codewars.com/kata/56b8903933dbe5831e000c76/csharp
+        /// <summary>
+        /// Basic Spoonerize
+        /// </summary>
+        /// <param name="str">String with two words</param>
+        /// <returns>"not picking" --> "pot nicking"</returns>
+        public static string Spoonerize(string str)
+        {
+            string result = "";
+            string tempString;
+            string[] tempStringArray = str.Split(" ");
+            string[] tempAlphaAndBravo = new string[2];
+            string tempA = tempStringArray[0].Substring(0, 1);
+            string tempB = tempStringArray[1].Substring(0, 1);
+            tempAlphaAndBravo[0] = tempB;
+            tempAlphaAndBravo[1] = tempA;
+
+            for (int i = 0; i < tempStringArray.Length; i++)
+            {
+
+                for (int x = 0; x < tempStringArray[i].Length; x++)
+                {
+                    tempString = tempStringArray[i];
+
+                    if (i == 0 && x == 0 || i == 1 && x == 0)
+                    {
+                        result += tempAlphaAndBravo[i];
+                    }
+                    else
+                    {
+                        result += tempString[x];
+                    }
+
+                    if (i == 0 && x == tempString.Length - 1)
+                    {
+                        result += " ";
+                    }
+                }
+            }
+            return result;
+        }
+
+        public static string Spoonerize2(string input)
+        {
+            string[] words = input.Split(' ');
+            return words[1][0] + words[0][1..] + ' ' + words[0][0] + words[1][1..];
+        }
+
+        public static string Spoonerize3(string str)
+        {
+            char[] chars = str.ToCharArray();
+            chars[0] = str[str.IndexOf(' ') + 1];
+            chars[str.IndexOf(' ') + 1] = str[0];
+            return new string(chars);
+        }
+
+        public static string Spoonerize4(string str)
+        {
+            return Regex.Replace(str, @"(.)(.* )(.)(.*)", "$3$2$1$4");
+        }
+
+        public static string Spoonerize5(string str)
+        {
+            var w = str.Split();
+            return $"{w[1][0]}{w[0][1..]} {w[0][0]}{w[1][1..]}";
+        }
+
+        public static string Spoonerize6(string str) => str.Substring(str.IndexOf(' ') + 1, 1) + str.Substring(1, str.IndexOf(' ') - 1) + " " + str[0..1] + str.Substring(str.IndexOf(' ') + 2);
+
+        public static string Spoonerize7(string str)
+        {
+            return str.Split(' ')[1][0] + str.Split(' ')[0].Substring(1) + " " + str.Split(' ')[0][0] + str.Split(' ')[1].Substring(1);
+        }
+
+        public static string Spoonerize8(string str)
+        {
+            var split = str.Split(' ');
+            var firstSymbol = split.First().First();
+            var lastSymbol = split.Last().First();
+
+            var firstWord = split.First();
+            var lastWord = split.Last();
+
+            var firstRemove = firstWord.Substring(1, firstWord.Length - 1);
+            var lastRemove = lastWord.Substring(1, lastWord.Length - 1);
+
+            return string.Join(" ", lastSymbol + firstRemove, firstSymbol + lastRemove);
+        }
+
+        public static string Spoonerize9(string str)
+        {
+            return $"{str.Substring(str.IndexOf(' ') + 1)[0]}" +
+              $"{str.Substring(1, str.IndexOf(' '))}" +
+              $"{str.Substring(0, str.IndexOf(' '))[0]}" +
+              $"{str.Substring(str.IndexOf(' ') + 2)}";
+        }
+        
+        
+        
         // https://www.codewars.com/kata/5d5ee4c35162d9001af7d699/csharp
         /// <summary>
         /// Your task is to find the sum of minimum value in each row.
