@@ -14,6 +14,13 @@ namespace CMDFun
     {
         static void Main(string[] args)
         {
+            
+            Kyu7.Spoonerize("Nitch Bigger");
+            Kyu7.Spoonerize("Pig Benis");
+
+            Console.ReadLine();
+            
+            
             string s =
     "<prod><name>drill</name><prx>99</prx><qty>5</qty></prod>\n\n" +
     "<prod><name>hammer</name><prx>10</prx><qty>50</qty></prod>\n\n" +
