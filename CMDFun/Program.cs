@@ -15,6 +15,7 @@ namespace CMDFun
         static void Main(string[] args)
         {
             
+            Kyu7.Spoonerize("Reanu Keeves");
             Kyu7.Spoonerize("Nitch Bigger");
             Kyu7.Spoonerize("Pig Benis");
 
