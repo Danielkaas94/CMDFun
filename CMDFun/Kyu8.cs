@@ -9,6 +9,50 @@ namespace CMDFun
     class Kyu8
     {
         
+        // https://www.codewars.com/kata/5a2b703dc5e2845c0900005a/csharp
+        /// <summary>
+        /// Check if an integer number is divisible by each out of two arguments.
+        /// </summary>
+        /// <param name="number">Number to be divided</param>
+        /// <param name="a">First number %</param>
+        /// <param name="b">Second number %</param>
+        /// <returns>Can be divisble by a and b</returns>
+        public static bool IsDivideBy(int number, int a, int b) => number % a == 0 && number % b == 0 ? true : false;
+
+        public static bool IsDivideBy2(int number, int a, int b) => (number % a == 0 && number % b == 0);
+
+        public static bool IsDivideBy3(int num, int a, int b)
+        {
+            double ma = (double)num / a;
+            double mb = (double)num / b;
+
+            if ((ma % 1 == 0) && (mb % 1 == 0))
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+
+        public static bool IsDivideBy4(int number, int a, int b) => number % a != 0 ? false : number % b == 0 ? true : false;
+
+        public static bool IsDivideBy5(int number, int a, int b)
+        {
+            int returnNumber, returnNumber2;
+
+            if (number < 0) number *= -1;
+            if (a < 0) a *= -1;
+            if (b < 0) b *= -1;
+
+            returnNumber = number % a;
+            returnNumber2 = number % b;
+
+            if (returnNumber == 0 && returnNumber2 == 0) return true;
+            return false;
+        }
+        
+        
+        
         // https://www.codewars.com/kata/57e76bc428d6fbc2d500036d/csharp
         /// <summary>
         /// <para>String and convert it into an array of words. For example:</para>
