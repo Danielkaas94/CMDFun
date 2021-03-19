@@ -9,6 +9,70 @@ namespace CMDFun
     class Kyu8
     {
         
+        // https://www.codewars.com/kata/57e76bc428d6fbc2d500036d/csharp
+        /// <summary>
+        /// <para>String and convert it into an array of words. For example:</para>
+        /// "OK Boomer" => "OK", "Boomer"
+        /// </summary>
+        /// <param name="str">String words with space inbetween</param>
+        /// <returns>string array each word separated</returns>
+        public static string[] StringToArray(string str) => str.Split(" ");
+
+        public static string[] StringToArray2(string str)
+        {
+            // Create placeHolder and the List to be appended.
+            string placeHolder = "";
+            List<string> words = new List<string>();
+
+            // Loop through all characters in string and store words when ' ''s are detected.
+            foreach (char c in str)
+            {
+                if (c.Equals(' '))
+                {
+                    words.Add(placeHolder);
+                    placeHolder = "";
+                    continue;
+                }
+
+                placeHolder += c;
+            }
+
+            // Add last word from string to words list.
+            words.Add(placeHolder);
+
+            // Convert List to Array.
+            string[] final = words.ToArray();
+            return final;
+        }
+
+        public static string[] StringToArray3(string str) => str.Split(new[] { " " }, StringSplitOptions.None);
+
+        public static string[] StringToArray4(string str)
+        {
+            List<string> stringList = new List<string>();
+            List<char> charList = new List<char>();
+
+            for (int index = 0; index < str.Length; index++)
+            {
+                if (str[index] != ' ')
+                {
+                    charList.Add(str[index]);
+                }
+                else
+                {
+                    string temporaryString = new string(charList.ToArray());
+                    stringList.Add(temporaryString);
+                    charList.Clear();
+                }
+            }
+            string finalString = new string(charList.ToArray());
+            stringList.Add(finalString);
+
+            return stringList.ToArray();
+        }
+        
+        
+        
         // https://www.codewars.com/kata/555086d53eac039a2a000083/csharp
         /// <summary>
         /// If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
