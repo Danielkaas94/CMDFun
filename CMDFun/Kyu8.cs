@@ -9,6 +9,86 @@ namespace CMDFun
     class Kyu8
     {
         
+        // https://www.codewars.com/kata/5808dcb8f0ed42ae34000031/csharp
+        /// <summary>
+        /// When provided with a number between 0-9, return it in words.
+        /// Input :: 1 Output:: "One".
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns>number in word form</returns>
+        public static string SwitchItUp(int number)
+        {
+            switch (number)
+            {
+                case 0:
+                    return "Zero";
+                    break;
+                case 1:
+                    return "One";
+                    break;
+                case 2:
+                    return "Two";
+                    break;
+                case 3:
+                    return "Three";
+                    break;
+                case 4:
+                    return "Four";
+                    break;
+                case 5:
+                    return "Five";
+                    break;
+                case 6:
+                    return "Six";
+                    break;
+                case 7:
+                    return "Seven";
+                    break;
+                case 8:
+                    return "Eight";
+                    break;
+                case 9:
+                    return "Nine";
+                    break;
+            }
+
+            return "";
+        }
+
+        public static string SwitchItUp2(int number)
+        {
+            var dic = new Dictionary<int, string>()
+                {
+                  {1, "One"},
+                  {2, "Two"},
+                  {3, "Three"},
+                  {4, "Four"},
+                  {5, "Five"},
+                  {6, "Six"},
+                  {7, "Seven"},
+                  {8, "Eight"},
+                  {9, "Nine"},
+                  {0, "Zero"}
+                };
+            return dic[number];
+        }
+
+        public static string SwitchItUp3(int number) => new[] { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" }[number];
+
+        public static string SwitchItUp4(int num)
+        {
+            return new string[] { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" }[num];
+        }
+
+        enum Digit { Zero, One, Two, Three, Four, Five, Six, Seven, Eight, Nine }
+
+        public static string SwitchItUp5(int number)
+        {
+            return ((Digit)number).ToString();
+        }
+        
+        
+        
         // https://www.codewars.com/kata/5a2b703dc5e2845c0900005a/csharp
         /// <summary>
         /// Check if an integer number is divisible by each out of two arguments.
