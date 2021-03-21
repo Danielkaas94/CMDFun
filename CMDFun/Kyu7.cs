@@ -10,6 +10,65 @@ namespace CMDFun
     class Kyu7
     {
         
+        //https://www.codewars.com/kata/539ee3b6757843632d00026b/csharp
+        /// <summary>
+        /// Returns an ordered list containing the indexes of all capital letters in the string.
+        /// </summary>
+        /// <param name="word">A word with random letters in uppercases</param>
+        /// <returns>The position of the word, where the letter is in uppercase</returns>
+        public static int[] Capitals(string word)
+        {
+            List<int> listOfCapitalPositions = new List<int>();
+
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (word[i].ToString() == word[i].ToString().ToUpper())
+                {
+                    listOfCapitalPositions.Add(i);
+                }
+            }
+
+            return listOfCapitalPositions.ToArray();
+        }
+
+        public static int[] Capitals2(string word)
+        {
+            return word.ToCharArray()
+              .Select((c, index) => new { CharAtIndex = c, Idx = index })  // Select word and project to array "char with Index"
+              .Where(indexedList => Char.IsUpper(indexedList.CharAtIndex))   // Filter where char is upp
+              .Select(selected => selected.Idx) // return what is required: list of indices
+              .ToArray();
+        }
+
+        public static int[] Capitals3(string word)
+        {
+            return word.Select((c, i) => Char.IsUpper(c) ? i : -1).Where(i => i >= 0).ToArray();
+        }
+
+        public static int[] Capitals4(string word)
+        {
+            return Regex.Matches(word, "[A-Z]").Select(m => m.Index).ToArray();
+        }
+
+        public static int[] Capitals5(string word)
+        {
+            return Enumerable.Range(0, word.Length).Where(i => char.IsUpper(word, i)).ToArray();
+        }
+
+        public static int[] Capitals6(string word)
+        {
+            return word.Select((x, n) => n).Where((x, i) => char.IsUpper(word, i)).ToArray();
+        }
+
+        public static int[] Capitals7(string word)
+        {
+            return (from Match m in Regex.Matches(word, @"[A-Z]")
+                    select m.Index
+                    ).ToArray<int>();
+        }
+        
+        
+        
         // https://www.codewars.com/kata/56b8903933dbe5831e000c76/csharp
         /// <summary>
         /// Basic Spoonerize
