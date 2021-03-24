@@ -8,6 +8,71 @@ namespace CMDFun
 {
     class Kyu8
     {
+        // https://www.codewars.com/kata/57cc975ed542d3148f00015b/train/csharp
+        /// <summary>
+        /// Check whether the provided array contains the value.
+        /// </summary>
+        /// <param name="a">Array object</param>
+        /// <param name="x">Value we want to check</param>
+        /// <returns>True, if the array contains the value</returns>
+        public static bool Check(object[] a, object x) => a.Contains(x);
+
+        public static bool Check2(object[] a, object x) => Array.IndexOf(a, x) != -1;
+
+        public static bool Check3(object[] a, object x)
+        {
+            bool rez = false;
+            foreach (var item in a)
+            {
+                if (item.Equals(x))
+                {
+                    rez = true;
+                }
+            }
+            return rez;
+        }
+
+        public static bool Check4(object[] a, object x)
+        {
+            return a.ToList().Any(i => i.Equals(x));
+        }
+
+        public static bool Check5(object[] a, object x)
+        {
+            foreach (object obj in a)
+            {
+                if (obj.ToString().Equals(x.ToString())) { return true; }
+            }
+            return false;
+        }
+
+        public static bool Check6(object[] a, object x)
+        {
+            foreach (object o in a)
+            {
+                switch (o)
+                {
+                    case int i:
+                        if (x is int && (int)x == i) return true;
+                        break;
+                    case string s:
+                        if (x is string && (string)x == s) return true;
+                        break;
+                    case char c:
+                        if (x is char && (char)x == c) return true;
+                        break;
+                }
+            }
+
+            return false;
+        }
+
+        public static bool Check7(object[] a, object x)
+        {
+            return a.Where(m => m.Equals(x)).Count() > 0;
+        }
+        
+        
      
         // https://www.codewars.com/kata/55a2d7ebe362935a210000b2/csharp
         /// <summary>
