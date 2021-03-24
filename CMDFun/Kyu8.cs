@@ -8,6 +8,85 @@ namespace CMDFun
 {
     class Kyu8
     {
+     
+        // https://www.codewars.com/kata/55a2d7ebe362935a210000b2/csharp
+        /// <summary>
+        /// Given an array of integers your solution should find the smallest integer.
+        /// </summary>
+        /// <param name="args">Array of integers </param>
+        /// <returns>Smallest integer</returns>
+        public static int FindSmallestInt(int[] args) => args.Min();
+
+        public static int FindSmallestInt2(int[] args)
+        {
+            int small = args[0];
+            foreach (int num in args)
+            {
+                if (small > num)
+                {
+                    small = num;
+                }
+            }
+            return small;
+        }
+
+        public static int FindSmallestInt3(int[] args)
+        {
+            Array.Sort(args);
+
+            return args[0];
+        }
+
+        public static int FindSmallestInt4(int[] args)
+        {
+            return Enumerable.Min(args);
+        }
+
+        public static int FindSmallestInt5(int[] args)
+        {
+            return (from e in args orderby e ascending select e).FirstOrDefault();
+        }
+
+        public static int FindSmallestInt6(int[] args)
+        {
+            int smallest = args[0];
+
+            for (int i = 0; i < args.Length; i++)
+            {
+                for (int k = 0; k < args.Length; k++)
+                {
+                    if (smallest > args[k])
+                    {
+                        smallest = args[k];
+                        break;
+                    }
+
+                }
+            }
+
+            return smallest;
+        }
+
+        public static int FindSmallestInt7(int[] args)
+        {
+            if (args.Length == 1) return args[0];
+            int n = FindSmallestInt7(args.Skip(1).ToArray());
+            return args[0] < n ? args[0] : n;
+        }
+
+        public static int FindSmallestInt8(int[] args) => args.OrderBy(n => n).First();
+
+        public static int FindSmallestInt9(int[] args)
+        {
+            return args.Aggregate(args[0], (smallest, next) => next < smallest ? next : smallest, num => num);
+        }
+
+        public static int FindSmallestInt10(int[] args)
+        {
+            return args.Min(i => i);
+        }
+        
+        
         
         // https://www.codewars.com/kata/5808dcb8f0ed42ae34000031/csharp
         /// <summary>
