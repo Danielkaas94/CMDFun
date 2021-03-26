@@ -9,6 +9,90 @@ namespace CMDFun
 {
     class Kyu7
     {
+        // https://www.codewars.com/kata/5a4138acf28b82aa43000117/csharp
+        /// <summary>
+        /// Find the maximum product obtained from multiplying 2 adjacent numbers in the array.
+        /// </summary>
+        /// <param name="array">Array with numbers, that could be a mixture of positives, negatives, but also zeroes .</param>
+        /// <returns>maximum product obtained from multiplying 2 adjacent numbers</returns>
+        public static int AdjacentElementsProduct(int[] array)
+        {
+            int tempHighestProduct;
+            int highestProduct = array[0] * array[1];
+
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                tempHighestProduct = array[i] * array[i + 1];
+
+                if (tempHighestProduct > highestProduct)
+                {
+                    highestProduct = tempHighestProduct;
+                }
+            }
+
+            return highestProduct;
+        }
+
+        public static int AdjacentElementsProduct2(int[] array)
+        {
+            return array.Skip(1).Select((x, i) => x * array[i]).Max();
+        }
+
+        public static int AdjacentElementsProduct3(int[] array)
+        {
+            return array.Skip(1).Zip(array, (x, y) => x * y).Max();
+        }
+
+        public static int AdjacentElementsProduct4(int[] array)
+        {
+            int max = Int32.MinValue;
+            for (int i = 0, j = 1; j < array.Length; i++, j++)
+            {
+                max = Math.Max(array[i] * array[j], max);
+            }
+            return max;
+        }
+
+        public static int AdjacentElementsProduct5(int[] a) => Enumerable.Range(0, a.Length - 1).Aggregate(int.MinValue, (s, n) => Math.Max(s, a[n] * a[n + 1]));
+
+        public static int AdjacentElementsProduct6(int[] array) => Enumerable.Range(0, array.Length - 1).Select(x => array[x] * array[x + 1]).Max();
+
+        public static int AdjacentElementsProduct7(int[] array)
+        {
+            return Enumerable.Range(1, array.Length - 1).Select(a => array[a - 1] * array[a]).ToArray().Max();
+        }
+
+        public static int AdjacentElementsProduct8(int[] array)
+        {
+            List<int> newArray = new List<int>();
+
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                newArray.Add(array[i] * array[i + 1]);
+            }
+
+            return newArray.Max();
+        }
+
+        public static int AdjacentElementsProduct9(int[] array)
+        {
+            int l = 0;
+            int r = 1;
+            int max = array[l] * array[r];
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                int cur = array[l] * array[r];
+                if (cur > max)
+                {
+                    max = cur;
+                }
+                l++;
+                r++;
+            }
+            return max;
+        }
+        
+        
         
         //https://www.codewars.com/kata/539ee3b6757843632d00026b/csharp
         /// <summary>
