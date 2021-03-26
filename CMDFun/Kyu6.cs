@@ -9,6 +9,23 @@ namespace CMDFun
 {
     class Kyu6
     {
+        // https://www.codewars.com/kata/56a5d994ac971f1ac500003e/train/csharp
+        /// <summary>
+        /// <para>Consecutive strings</para>
+        /// You are given an array(list) strarr of strings and an integer k. 
+        /// Your task is to return the first longest string consisting of k consecutive strings taken in the array.
+        /// <para>n being the length of the string array, if n = 0 or k > n or k bigger or equal than 0 return "".</para>
+        /// </summary>
+        /// <param name="strarr">String Array</param>
+        /// <param name="k">Consecutive Strings</param>
+        /// <returns></returns>
+        public static String LongestConsec(string[] strarr, int k)
+        {
+            // your code
+            return "";
+        }
+        
+        
         
         // https://www.codewars.com/kata/515de9ae9dcfc28eb6000001/csharp
         /// <summary>
