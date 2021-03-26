@@ -15,6 +15,12 @@ namespace CMDFun
         static void Main(string[] args)
         {
             
+            Kyu7.AdjacentElementsProduct(new int[] { 1, 2, 3 });                                // 6
+            Kyu7.AdjacentElementsProduct(new int[] { 9, 5, 10, 2, 24, -1, -48 });               // 50
+            Kyu7.AdjacentElementsProduct(new int[] { -23, 4, -5, 99, -27, 329, -2, 7, -921 });  // -14
+            Kyu7.AdjacentElementsProduct(new int[] { 0, 1, 0, 1, 0, 1000 });                    // 0
+            
+            
             Kyu7.Spoonerize("Reanu Keeves");
             Kyu7.Spoonerize("Nitch Bigger");
             Kyu7.Spoonerize("Pig Benis");
