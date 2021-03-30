@@ -16,11 +16,12 @@ namespace CMDFun
         {
             
             /*
+                LF
+
+                L
                 F
 
-                F
-
-                F
+                LF
             */
             
             
