@@ -16,15 +16,16 @@ namespace CMDFun
         {
             
             /*
-                RSELF
+                URSELF
 
+                U
                 R
                 S
                 E
                 L
                 F
 
-                RSELF
+                URSELF
             */
             
             
