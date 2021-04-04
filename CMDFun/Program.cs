@@ -16,8 +16,9 @@ namespace CMDFun
         {
             
             /*
-                K YOURSELF
+                CK YOURSELF
 
+                C
                 K
 
                 Y
@@ -29,7 +30,7 @@ namespace CMDFun
                 L
                 F
 
-                K YOURSELF
+                CK YOURSELF
             */
             
             
