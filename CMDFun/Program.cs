@@ -16,7 +16,9 @@ namespace CMDFun
         {
             
             /*
-                FUCK YOURSELF
+                O FUCK YOURSELF
+                
+                O
 
                 F
                 U
@@ -32,7 +34,7 @@ namespace CMDFun
                 L
                 F
 
-                FUCK YOURSELF
+                O FUCK YOURSELF
             */
             
             
