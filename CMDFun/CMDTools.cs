@@ -154,3 +154,228 @@ namespace CMDFun
         }
     }
 }
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq;
+using System.IO;
+
+namespace DEV_Tools
+{
+    public class AutomaticDirCreator
+    {
+
+        public AutomaticDirCreator()
+        {
+            // Automatic Dir Creation ✝
+            Console.WriteLine("Automatic Dir Creation");
+            //ADC();
+            ADC2(5);
+        }
+
+        private void ADClean(int limit)
+        {
+            // For Daily Dir
+            string month = DateTime.Now.ToString("MMMM"); month = month.First().ToString().ToUpper() + month.Substring(1);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
+            string parentName = DateTime.Now.ToString("Y");
+            int creationCounter = 0;
+
+            bool IsWeekend;
+
+            int daysInThisMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            string DeskTopParentFolder = path + parentName.First().ToString().ToUpper() + parentName.Substring(1);
+
+            int dayCounter = DateTime.Now.Day;
+            DateTime nowTemp = DateTime.Now;
+
+            System.IO.Directory.CreateDirectory(DeskTopParentFolder);
+
+            for (int i = dayCounter; i < daysInThisMonth; i++)
+            {
+                IsWeekend = nowTemp.DayOfWeek.ToString() == "Saturday" || nowTemp.DayOfWeek.ToString() == "Sunday";
+
+                //if (!IsWeekend)
+                if (!IsWeekend && creationCounter < limit)
+                {
+                    System.IO.Directory.CreateDirectory($"{path} {i}. {month}"); creationCounter++;
+                }
+
+                nowTemp = nowTemp.AddDays(1); // Next Day
+            }
+        }
+
+        private void ADC2(int limit)
+        {
+            // For Daily Dir
+            string month = DateTime.Now.ToString("MMMM"); month = month.First().ToString().ToUpper() + month.Substring(1);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
+            string parentName = DateTime.Now.ToString("Y");
+            int creationCounter = 0;
+
+            bool IsWeekend = DateTime.Now.DayOfWeek.ToString() == "Saturday" || DateTime.Now.DayOfWeek.ToString() == "Sunday";
+
+            int daysInThisMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            string DeskTopParentFolder = path + parentName.First().ToString().ToUpper() + parentName.Substring(1);
+
+            int dayCounter = DateTime.Now.Day;
+            DateTime nowTemp = DateTime.Now;
+
+
+            // Create Main Parent Folder
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(DeskTopParentFolder);
+            System.IO.Directory.CreateDirectory(DeskTopParentFolder);
+
+            for (int i = dayCounter; i < daysInThisMonth; i++)
+            {
+                IsWeekend = nowTemp.DayOfWeek.ToString() == "Saturday" || nowTemp.DayOfWeek.ToString() == "Sunday";
+
+                //if (!IsWeekend)
+                if (!IsWeekend && creationCounter < limit)
+                    {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine(nowTemp.DayOfWeek);
+
+                    // Create Child Folder
+                    System.IO.Directory.CreateDirectory($"{path} {i}. {month}"); creationCounter++;
+                    Console.WriteLine($"{path} {i}. {month}");
+                }
+
+                nowTemp = nowTemp.AddDays(1); // Next Day
+            }
+        }
+
+        private void ADC()
+        {
+
+            // For Daily Dir
+            string month = DateTime.Now.ToString("MMMM"); month = month.First().ToString().ToUpper() + month.Substring(1);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
+            string parentName = DateTime.Now.ToString("Y");
+
+            // The Real Parent Folder
+            string DeskTopParentFolder = path + parentName.First().ToString().ToUpper() + parentName.Substring(1);
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+
+            Console.WriteLine(DeskTopParentFolder);
+            //Console.WriteLine(DeskTopParentDir);    
+
+            //Console.WriteLine(DateTime.Today.Day); // If Else Logic
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(DateTime.Now.ToString("MMMM")); // This one works
+            Console.WriteLine(DateTime.Now.ToString("Y")); // This one works - Parent Folder
+
+            Console.WriteLine("Creating Dir on Desktop wait...");
+
+            if (!System.IO.Directory.Exists(@"C:\Folder\Test"))
+            {
+                //Console.WriteLine(System.IO.Directory.CreateDirectory(""));
+            }
+            Console.ReadLine();
+        }
+
+        private static void ADC_Test()
+        {
+
+            bool IsWeekend = DateTime.Now.DayOfWeek.ToString() == "Saturday" || DateTime.Now.DayOfWeek.ToString() == "Sunday";
+            Console.WriteLine(IsWeekend);
+
+            int daysInThisMonth = DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month);
+            string dayOfTheWeek = DateTime.Now.DayOfWeek.ToString();
+
+            int dayCounter = DateTime.Now.Day;
+            DateTime date = DateTime.Now.AddDays(1);
+            DateTime nowTemp = DateTime.Now;
+
+            Console.ForegroundColor = ConsoleColor.Magenta;
+
+                Console.WriteLine(daysInThisMonth); // Max Cap
+                Console.WriteLine(dayOfTheWeek);
+                Console.WriteLine(DateTime.Now.Day);
+                Console.WriteLine(date.ToString("D"));
+
+            // Create Main Parent Folder
+            //System.IO.Directory.CreateDirectory("");
+
+
+            for (int i = dayCounter; i < daysInThisMonth; i++)
+            {
+                IsWeekend = nowTemp.DayOfWeek.ToString() == "Saturday" || nowTemp.DayOfWeek.ToString() == "Sunday";
+
+                //if (nowTemp.DayOfWeek.ToString() != "Saturday" || nowTemp.DayOfWeek.ToString() != "Sunday") // Does not work?
+                if (!IsWeekend)
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine(nowTemp.DayOfWeek);
+
+                    // Create Child Folder
+
+                }
+                else // This one never works?
+                {
+                    Console.WriteLine("Weekend!!!!!!!!!!!!!!!!!!!!!!!!! REEEEEEEEEEEEEEEEEEEEE");
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine(nowTemp.DayOfWeek);
+                }
+
+                nowTemp = nowTemp.AddDays(1);
+                Console.WriteLine(nowTemp);
+                Console.WriteLine(nowTemp.DayOfWeek);
+                //nowTemp = DateTime.Now.AddDays(1);
+            }
+
+            //Console.WriteLine(DateTime.DaysInMonth().ToString());
+        }
+
+        private static void ADC_Test2()
+        {
+
+            string month = DateTime.Now.ToString("MMMM");
+            month = month.First().ToString().ToUpper() + month.Substring(1);
+            Console.WriteLine(month);
+
+            //string path2 = Environment.SpecialFolder.Desktop.ToString();
+            //Console.WriteLine(path2);
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\";
+            Console.WriteLine(path);
+
+            string parentName = DateTime.Now.ToString("Y");
+
+            //string DeskTopParentDir = path + "\\" + DateTime.Now.ToString("Y");
+
+            string DeskTopParentDir2 = path + parentName[0].ToString().ToUpper() + parentName.Substring(1);
+            string DeskTopParentDir3 = path + parentName.First().ToString().ToUpper() + parentName.Substring(1);
+
+            //string DeskTopParentDir = path + month;
+
+            Console.WriteLine(DeskTopParentDir3);
+            //Console.WriteLine(DeskTopParentDir);    
+
+            Console.WriteLine(DateTime.Today.Day);
+            Console.WriteLine(DateTime.Now.Month.ToString("MMMM"));
+            Console.WriteLine(DateTime.Today.Month.ToString("MMMM"));
+            Console.WriteLine(DateTime.Now.ToString("MMMM")); // This one works
+            Console.WriteLine(DateTime.Now.ToString("Y")); // This one works - Parent Folder
+
+            //Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            //Console.ForegroundColor = ConsoleColor.White;
+            //Console.BackgroundColor = ConsoleColor.Blue;
+            //Console.Clear();
+
+            Console.WriteLine("Creating Dir on Desktop wait...");
+
+            if (!System.IO.Directory.Exists(@"C:\Folder\Test"))
+            {
+                //Console.WriteLine(System.IO.Directory.CreateDirectory(""));
+            }
+
+            Console.ReadLine();
+        }
+
+    }
+}
