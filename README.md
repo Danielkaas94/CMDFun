@@ -72,7 +72,7 @@ The string strCommandToCMD could be something like "netsh wlan show networks".
 
 # Nice NuGets - NuGet Must Haves
 
-## [Bogus]("https://github.com/LinkedInLearning/11-tips-for-dotnet-6-2486135/blob/Tip07/source/DataLib/DataRepository.cs")
+## [Bogus](https://github.com/LinkedInLearning/11-tips-for-dotnet-6-2486135/blob/Tip07/source/DataLib/DataRepository.cs)
 
 ### Useful for creating dummy data
 
@@ -174,7 +174,7 @@ namespace DataLib {
 }
 ```
 
-## [Humanizer]("https://github.com/LinkedInLearning/11-tips-for-dotnet-6-2486135/blob/Tip04/source/TipsConsole/Examples.cs")
+## [Humanizer](https://github.com/LinkedInLearning/11-tips-for-dotnet-6-2486135/blob/Tip04/source/TipsConsole/Examples.cs)
 
 ### Human-like text
 
