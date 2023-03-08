@@ -2,6 +2,9 @@
 Maybe this repository will get a new name. When I started this project, I wanted to get some values from the command-line interface.
 Instead this is also a collection of methods. There is most likely two versions of the same method, a collection of "Gist".
 
+Anyway, it is a sin for not using [Viasfora](https://viasfora.com/)
+
+
 Here is an example: Two versions of the same method.  👀
 ```csharp
         /// <summary>
