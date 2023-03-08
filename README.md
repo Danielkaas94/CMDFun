@@ -237,6 +237,103 @@ namespace TipsConsole {
 
 ## [Dummy RestAPI Example 🔗](https://www.dummy.restapiexample.com/)
 
+```csharp
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using RestSharp;
+using Newtonsoft.Json;
+namespace RestAPI_Prototype
+{
+    internal class Program
+    {
+        // https://www.youtube.com/watch?v=qm29vYcYBeg&ab_channel=soulgear
+
+        static void Main(string[] args)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Well, time to code or what?");
+
+            /* 
+            Credits: soul gear 
+            https://www.youtube.com/watch?v=qm29vYcYBeg&ab_channel=soulgear
+            */ 
+            GetDataFromRestAPI();
+            CreateDataWithRestAPI();
+        }
+        
+        private static void GetDataFromRestAPI()
+        {
+            var client = new RestClient("https://dummy.restapiexample.com/api/v1/");
+            var request = new RestRequest("employees");
+            var response = client.Get(request);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                string rawResponse = response.Content;
+                Console.WriteLine("Result");
+                Console.ResetColor();
+                Console.WriteLine(rawResponse);
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("ERROR");
+            }
+        }
+        
+        private static void CreateDataWithRestAPI()
+        {
+            // https://dummy.restapiexample.com/api/v1/create
+
+            Console.WriteLine("CreateDataWithRestAPI");
+
+            var client = new RestClient("https://dummy.restapiexample.com/api/v1/");
+            var request = new RestRequest("create", Method.Post);
+            request.AddParameter("Name", "Underpaid Test Employee");
+            request.AddParameter("salary", "30000");
+            request.AddParameter("age", "28");
+            request.AddHeader("Content-Type", "application/json charset=utf-8");
+
+
+            var response = client.Execute(request);
+
+            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("ERROR");
+            }
+        }
+    }
+}
+
+
+public class Rootobject
+{
+    public string status { get; set; }
+    public Datum[] data { get; set; }
+    public string message { get; set; }
+}
+
+public class Datum
+{
+    public int id { get; set; }
+    public string employee_name { get; set; }
+    public int employee_salary { get; set; }
+    public int employee_age { get; set; }
+    public string profile_image { get; set; }
+}        
+
+```
+
+
 <p align="center">
   <img alt="CMDFun in Action!" src="https://i.imgur.com/zFOCp.png">
 </p>
