@@ -232,6 +232,7 @@ namespace TipsConsole {
 }
 ```
 
+## [Dummy RestAPI Example 🔗](https://www.dummy.restapiexample.com/)
 
 <p align="center">
   <img alt="CMDFun in Action!" src="https://i.imgur.com/zFOCp.png">
