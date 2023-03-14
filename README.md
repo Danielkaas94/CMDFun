@@ -333,6 +333,10 @@ public class Datum
 
 ```
 
+<p align="center">
+  <img alt="Did you know - Paste JSON As Classes" src="https://github.com/Danielkaas94/CMDFun/blob/master/Cool%20I%20can%20rest%20now.png?raw=true">
+</p>
+
 
 <p align="center">
   <img alt="CMDFun in Action!" src="https://i.imgur.com/zFOCp.png">
