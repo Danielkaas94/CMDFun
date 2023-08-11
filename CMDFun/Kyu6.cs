@@ -946,5 +946,70 @@ namespace CMDFun
                 throw new NotImplementedException();
             }
         }
+
+
+        
+        public List<string> wave(string str)
+        {
+
+            List<string> list = new List<string>();
+            int index = 0;
+
+            foreach (char c in str)
+            {
+                if (c != ' ')
+                {
+                    StringBuilder sb = new StringBuilder(str);
+                    sb.Replace(c, char.ToUpper(c), index, 1);
+                    list.Add(sb.ToString());
+                }
+
+                index++;
+            }
+
+            foreach (string item in list)
+            {
+                Console.WriteLine(item);
+            }
+
+            return list;
+        }
+
+
+        public List<string> wave2(string str) =>
+              str
+                .Select((c, i) => str.Substring(0, i) + Char.ToUpper(c) + str.Substring(i + 1))
+                .Where(x => x != str)
+                .ToList();
+
+
+        public List<string> wave3(string s)
+        {
+            return Enumerable.Range(0, s.Length)
+                .Select(i => string.Concat(s.Select((x, y) => y == i ? char.ToUpper(x) : x)))
+                .Where(x => x != s).ToList();
+        }
+
+        public List<string> wave4(string str)
+        {
+            return str.Select((x, i) => str.Substring(0, i) + char.ToUpper(str[i]) + str.Substring(i + 1)).Where(x => x.Any(char.IsUpper)).ToList();
+        }
+
+        public List<string> wave5(string str)
+        {
+            List<string> mexicanWave = new List<string>();
+            for (int i = 0; i < str.Length; i++)
+            {
+                char[] a = str.ToCharArray();
+                if (a[i] != 32)
+                {
+                    a[i] = char.ToUpper(a[i]);
+                    mexicanWave.Add(new string(a));
+                }
+            }
+            return mexicanWave;
+        }
+        
+        
     }
 }
