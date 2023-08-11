@@ -53,4 +53,103 @@ namespace CMDFun
             return (valueA + valueB).ToString();
         }
     }
+
+    public class Matrix
+{
+
+    //  https://www.codewars.com/kata/52a382ee44408cea2500074c/csharp
+    public static int Determinant(int[][] matrix)
+    {
+        int n = matrix.Length;
+
+        // Base case: For a 1x1 matrix, determinant is the single element
+        if (n == 1)
+        {
+            return matrix[0][0];
+        }
+        // Base case: For a 2x2 matrix, calculate determinant using formula
+        else if (n == 2)
+        {
+            return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0];
+        }
+        else
+        {
+            int determinant = 0;
+            
+            // Loop through the first row of the matrix
+            for (int i = 0; i < n; i++)
+            {
+                // Calculate the minor matrix by excluding the current column
+                int[][] minor = CreateMinor(matrix, i);
+            
+                // Determine the sign based on the position in the matrix
+                int sign = (i % 2 == 0) ? 1 : -1;
+            
+                // Recursively calculate the determinant of the minor matrix
+                determinant += sign * matrix[0][i] * Determinant(minor);
+            }
+        
+            return determinant;
+        }
+    }
+
+    private static int[][] CreateMinor(int[][] matrix, int colToExclude)
+    {
+        int n = matrix.Length;
+        int[][] minor = new int[n - 1][];
+
+        // Loop through rows of the matrix to create the minor matrix
+        for (int i = 1; i < n; i++)
+        {
+            minor[i - 1] = new int[n - 1];
+            for (int j = 0, col = 0; j < n; j++)
+            {
+                // Exclude the specified column while creating the minor matrix
+                if (j != colToExclude)
+                {
+                    minor[i - 1][col] = matrix[i][j];
+                    col++;
+                }
+            }
+        }
+    
+        return minor;
+    }
+}
+
+
+
+
+public class Matrix2
+{
+   public static int Determinant(int[][] m)
+   {
+       if (m.Length == 1) return m[0][0];
+       if (m.Length == 2) return m[0][0]*m[1][1]-m[0][1]*m[1][0];
+       if (m.Length == 3) return m[0][0]*m[1][1]*m[2][2]-m[0][0]*m[2][1]*m[1][2]-m[1][0]*m[0][1]*m[2][2]+m[1][0]*m[2][1]*m[0][2]+m[2][0]*m[0][1]*m[1][2]-m[2][0]*m[1][1]*m[0][2];
+       var d = 0;
+       for (var i=0; i<m.Length; i++) 
+       {
+           var e = m[0][i];
+           d += (int)Math.Pow(-1,i+2) * e * Determinant(Minor(m,i));
+       }
+       return d;
+   }
+  
+   private static int[][] Minor(int[][] source, int i) 
+   {
+       int[][] m = new int[source.Length-1][];
+       for (var k=0; k<m.Length; k++) 
+       {
+           var p = 0;
+           m[k] = new int[source[k+1].Length-1];
+           for (var j=0; j<m[k].Length; j++) 
+           {
+               if (i==j) p++;
+               m[k][j] = source[k+1][j+p];
+           }
+       }
+       return m;
+   }
+}
 }
